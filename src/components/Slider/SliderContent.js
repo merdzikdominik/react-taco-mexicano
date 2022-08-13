@@ -3,7 +3,7 @@ import SliderButton from "./SliderButton";
 
 const SliderMessage = styled.div`
     position: absolute;
-    top: 20px;
+    top: 60px;
     z-index: 4;
     width: 100%;
     height: 500px;

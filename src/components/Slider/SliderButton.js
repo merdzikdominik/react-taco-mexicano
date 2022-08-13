@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Button = styled.button`
     width: 280px;
     position: absolute;
-    top: 455px;
+    top: 465px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -14,7 +14,6 @@ const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    // padding: 1.2em 2.8em;
     padding: 20px 40px;
     text-transform: uppercase;
     font-size: 1.1rem;

@@ -19,8 +19,12 @@ const StyledSlideShowSlider = styled.div`
 const StyledSlideShowDots = styled.div`
     text-align: center;
     position: relative;
-    top: -60px;
+    top: -40px;
     z-index: 2;
+
+    @media (min-width: 1200px) {
+        top: -60px;
+    }
 `;
 
 const StyledSlideShowDot = styled.div`
