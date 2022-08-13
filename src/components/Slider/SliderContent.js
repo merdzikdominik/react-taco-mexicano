@@ -15,6 +15,7 @@ import SliderButton from "./SliderButton";
 
 const SliderMessage = styled.div`
     position: absolute;
+    top: 20px;
     z-index: 4;
     width: 100%;
     height: 500px;
@@ -25,7 +26,6 @@ const SliderMessage = styled.div`
     font-family: 'League Spartan', sans-serif;
     font-size: 1.4rem;
     line-height: 30px;
-    // padding: 150px 0;
     color: #fff;
 
     span {

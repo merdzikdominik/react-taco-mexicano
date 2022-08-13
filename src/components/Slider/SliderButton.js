@@ -1,21 +1,38 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-    width: 200px;
-    height: 50px;
-    background-color: rgb(173, 33, 24);
-    border: none;
-    font-family: 'League Spartan', sans-serif;
-    font-size: 1.1rem;
-    text-align: center;
-    color: #fff;
-    text-transform: uppercase;
+    width: 280px;
     position: absolute;
-    z-index: 5;
     top: 455px;
-    margin: 0 auto;
     left: 0;
     right: 0;
+    margin: 0 auto;
+    z-index: 5;
+    background-color: rgb(173, 33, 24);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 1.2em 2.8em;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    color: #fff;
+
+    background-image: linear-gradient(45deg, yellow 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    
+    transition: background 300ms ease-in-out;
+    
+    &:hover {
+        background-position: 0;
+        color: #000;
+        transition: 300ms ease;
+    }
 
     @media (min-width: 1200px) {
         width: 300px;
