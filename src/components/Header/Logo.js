@@ -7,7 +7,6 @@ const StyledLogo = styled.img`
     position: absolute;
     z-index: 999;
     left: 10px;
-    top: 10px;
 
     @media (min-width: 1200px) {
         padding: 0 10px;

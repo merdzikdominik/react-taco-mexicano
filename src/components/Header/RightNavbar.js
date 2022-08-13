@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import mexicanPattern from '../../assets/mexican-pattern.jpg';
 
 const StyledUl = styled.ul`
     margin: 0;
@@ -18,6 +19,7 @@ const StyledUl = styled.ul`
     position: fixed;
     top: 0;
     background-color: #FFBC23;
+    background-image: url(${mexicanPattern});
     right: ${props => props.theme.right}%;
     transition: all 0.3s ease-in-out;
     -webkit-box-shadow: -9px 8px 11px -7px rgba(66, 68, 90, 1);
@@ -74,6 +76,7 @@ const StyledUl = styled.ul`
     @media (min-width: 1200px) {
         flex-direction: row;
         background-color: initial;
+        background-image: none;
         width: initial;
         height: initial;
         padding: 10px;

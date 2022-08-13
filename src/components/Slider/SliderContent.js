@@ -1,18 +1,6 @@
 import styled from "styled-components";
 import SliderButton from "./SliderButton";
 
-// const Content = styled.div`
-//     position: absolute;
-//     z-index: 4;
-//     width: 100%;
-//     height: 500px;
-//     // background-color: red;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-// `;
-
 const SliderMessage = styled.div`
     position: absolute;
     top: 20px;
