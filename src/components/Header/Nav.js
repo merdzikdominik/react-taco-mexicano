@@ -7,9 +7,10 @@ const StyledNav = styled.nav`
     height: 60px;
     background-color: #3E3E3E;
     display: flex;
+    position: fixed;
+    z-index: 998;
 
     @media (min-width: 1200px) {
-        height: 100%;
         justify-content: space-around;
     }
 `;

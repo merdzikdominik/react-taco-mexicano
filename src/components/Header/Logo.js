@@ -4,7 +4,7 @@ import logo from '../../assets/logo-copy2.png';
 const StyledLogo = styled.img`
     width: 100px;
     height: 100px;
-    position: absolute;
+    position: fixed;
     z-index: 999;
     left: 10px;
 

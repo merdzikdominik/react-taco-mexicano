@@ -8,6 +8,11 @@ const StyledSlideShow = styled.section`
     margin: 0 auto;
     overflow: hidden;
     max-width: 100%;
+    max-height: 500px;
+
+    @media (min-width: 1200px) {
+        max-height: 650px;
+    }
 `;
 
 const StyledSlideShowSlider = styled.div`
