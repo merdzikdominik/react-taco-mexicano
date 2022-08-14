@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Grid from './Grid';
+import HeroDescription from './HeroDescription';
 
 const Content = styled.section`
     width: 100%;
@@ -24,7 +24,7 @@ export default function StartingPageContent() {
     return (
         <Content>
             <Header>Dlaczego warto u nas zjeść? To proste!</Header>
-            <Grid/>
+            <HeroDescription/>
         </Content>
     );
 }

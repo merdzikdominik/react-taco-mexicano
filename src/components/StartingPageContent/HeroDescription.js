@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import qualityRibbon from '../../assets/quality-ribbon.png'
 import delivs from '../../assets/deliveries.png'
+import charity from '../../assets/charity.png'
 
 const Content = styled.div`
     display: flex;
     flex-direction: column;
-    // gap: 5px;
 
     @media (min-width: 1200px) {
         flex-direction: row;
@@ -15,7 +15,6 @@ const Content = styled.div`
 const ContentRow = styled.div`
     display: flex;
     flex-direction: column;
-    // gap: 5px;
 
     @media (min-width: 1200px) {
         flex-direction: row;
@@ -39,6 +38,7 @@ const Text = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 
     @media (min-width: 1200px) {
         width: 300px;
@@ -46,7 +46,7 @@ const Text = styled.div`
     }
 `;
 
-export default function Grid() {
+export default function HeroDescription() {
     return(
         <Content>
             <ContentRow>
@@ -58,7 +58,13 @@ export default function Grid() {
             <ContentRow>
                 <Image src={delivs}/>
                 <Text>
-                    Dzięki współpracy ze znanymi firmami dowozowymi nie trzeba długo czekać na zamówienie :)
+                    Dzięki współpracy ze znanymi firmami dowozowymi nie trzeba długo czekać na zamówienie
+                </Text>
+            </ContentRow>
+            <ContentRow>
+                <Image src={charity}/>
+                <Text>
+                    Zamawiając u nas jedzenie tym samym wspomagasz potrzebujących, nie tylko Ty się najesz :)
                 </Text>
             </ContentRow>
         </Content>
