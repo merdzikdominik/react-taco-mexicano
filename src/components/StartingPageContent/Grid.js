@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import transparentVeggies from '../../assets/veggies-transparent.png'
+import qualityRibbon from '../../assets/quality-ribbon.png'
 import delivs from '../../assets/deliveries.png'
 
 const Content = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    // gap: 5px;
 
     @media (min-width: 1200px) {
         flex-direction: row;
@@ -15,14 +15,14 @@ const Content = styled.div`
 const ContentRow = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    // gap: 5px;
 
     @media (min-width: 1200px) {
         flex-direction: row;
     }
 `;
 
-const Block = styled.img`
+const Image = styled.img`
     width: 200px;
     height: 200px;
     object-fit: contain;
@@ -33,10 +33,12 @@ const Block = styled.img`
         height: 300px;
     }
 `;
-const Block2 = styled.div`
+const Text = styled.div`
     width: 200px;
     height: 200px;
-    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @media (min-width: 1200px) {
         width: 300px;
@@ -48,12 +50,16 @@ export default function Grid() {
     return(
         <Content>
             <ContentRow>
-                <Block src={transparentVeggies}/>
-                <Block2/>
+                <Image src={qualityRibbon}/>
+                <Text>
+                    Zapewniamy 100% gwarancje świeżych składników, z których przygotowywane są nasze dania
+                </Text>
             </ContentRow>
             <ContentRow>
-                <Block src={delivs}/>
-                <Block2/>
+                <Image src={delivs}/>
+                <Text>
+                    Dzięki współpracy ze znanymi firmami dowozowymi nie trzeba długo czekać na zamówienie :)
+                </Text>
             </ContentRow>
         </Content>
     );

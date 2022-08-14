@@ -79,13 +79,13 @@ const StyledUl = styled.ul`
         background-image: none;
         width: initial;
         height: initial;
-        padding: 10px;
+        padding: 0 100px;
         position: relative;
         right: 0 !important;
         box-shadow: none;
 
         li {
-            padding: 25px 10px;
+            padding: 0 15px;
             color: #fff;
             border: none;
         }

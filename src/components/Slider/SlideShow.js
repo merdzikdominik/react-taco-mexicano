@@ -8,7 +8,7 @@ const StyledSlideShow = styled.section`
     margin: 0 auto;
     overflow: hidden;
     max-width: 100%;
-    max-height: 500px;
+    max-height: 600px;
 
     @media (min-width: 1200px) {
         max-height: 650px;
@@ -51,7 +51,7 @@ const StyledImage = styled.img`
     display: inline-block;
     background-size: cover !important;
     object-fit: cover;
-    height: 500px;
+    height: 600px;
     width: 100%;
     min-height: 300px;
     filter: brightness(70%);

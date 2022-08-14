@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Button = styled.button`
     width: 280px;
     position: absolute;
-    top: 465px;
+    top: 485px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -35,7 +35,7 @@ const Button = styled.button`
 
     @media (min-width: 1200px) {
         width: 300px;
-        top: 600px;
+        top: 530px;
     }
 `;
 

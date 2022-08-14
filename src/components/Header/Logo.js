@@ -1,24 +1,30 @@
 import styled from 'styled-components';
 import logo from '../../assets/logo-copy2.png';
 
-const StyledLogo = styled.img`
-    width: 100px;
-    height: 100px;
-    position: fixed;
+const LogoContainer = styled.div`
+    width: 110px;
+    height: 110px;
+    position: absolute;
     z-index: 999;
-    left: 10px;
 
     @media (min-width: 1200px) {
-        padding: 0 10px;
+        position: relative;
+        left: 0;
+        padding: 0 100px;
         width: 150px;
         height: 150px;
     }
 `;
 
+const StyledLogo = styled.img`
+    width: inherit;
+    height: inherit;
+`;
+
 export default function Logo() {
     return (
-        <div>
+        <LogoContainer>
             <StyledLogo src={logo}/>
-        </div>
+        </LogoContainer>
     );
 }

@@ -6,13 +6,13 @@ const SliderMessage = styled.div`
     top: 60px;
     z-index: 4;
     width: 100%;
-    height: 500px;
+    height: 440px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-family: 'League Spartan', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     line-height: 30px;
     color: #fff;
 
@@ -20,8 +20,14 @@ const SliderMessage = styled.div`
         padding: 0 70px;
     }
 
+    @media (min-width: 350px) {
+        span {
+            font-size: 1.8rem;
+        }
+    }
+
     @media (min-width: 1200px) {
-        top: 150px;
+        top: 90px;
 
         span {
             font-size: 2rem;

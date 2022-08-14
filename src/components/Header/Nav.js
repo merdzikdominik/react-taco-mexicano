@@ -8,10 +8,10 @@ const StyledNav = styled.nav`
     background-color: #3E3E3E;
     display: flex;
     position: fixed;
-    z-index: 998;
+    z-index: 1000;
 
     @media (min-width: 1200px) {
-        justify-content: space-around;
+        justify-content: space-between;
     }
 `;
 
@@ -19,11 +19,9 @@ export default function Nav() {
 
 
     return (
-        <header>
-            <StyledNav>
-                <Logo/>
-                <Hamburger/>
-            </StyledNav>
-        </header>
+        <StyledNav>
+            <Logo/>
+            <Hamburger/>
+        </StyledNav>
     );
 }
