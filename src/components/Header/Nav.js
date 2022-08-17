@@ -8,6 +8,7 @@ const StyledNav = styled.nav`
     background-color: #3E3E3E;
     display: flex;
     position: fixed;
+    top: 0;
     z-index: 1000;
 
     @media (min-width: 1200px) {

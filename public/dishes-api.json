@@ -3,424 +3,506 @@
         {
             "dish_id": "a1",
             "dish_name": "Ziemniak zapiekany z farszem",
-            "dish_price": "13.00"
+            "dish_price": "13.00",
+            "dish_category": "appetizers"
         },
         {
             "dish_id": "a2",
             "dish_name": "Frytki z batatów z parmezanem",
-            "dish_price": "11.50"
+            "dish_price": "11.50",
+            "dish_category": "appetizers"
         },
         {
             "dish_id": "a3",
             "dish_name": "Nachos + sos pomidorowo-czosnkowy",
-            "dish_price": "13.50"
+            "dish_price": "13.50",
+            "dish_category": "appetizers"
         },
         {
             "dish_id": "a4",
             "dish_name": "Nachos + sos serowy ",
-            "dish_price": "14.50"
+            "dish_price": "14.50",
+            "dish_category": "appetizers"
         },
         {
             "dish_id": "a5",
             "dish_name": "Nachos + quacamole",
-            "dish_price": "15.50"
+            "dish_price": "15.50",
+            "dish_category": "appetizers"
         },
         {
             "dish_id": "a6",
             "dish_name": "Callos flaczki po andaluzyjsku z pieczywem czosnkowym",
-            "dish_price": "13.00"
+            "dish_price": "13.00",
+            "dish_category": "appetizers"
         },
         {
             "dish_id": "a7",
             "dish_name": "Krewetki z grilla przystawka",
-            "dish_price": "30.00"
+            "dish_price": "30.00",
+            "dish_category": "appetizers"
         }
     ],
     "soups": [
         {
             "dish_id": "so1",
             "dish_name": "Zupa chili z pieczywem czosnkowym",
-            "dish_price": "13.50"
+            "dish_price": "13.50",
+            "dish_category": "soups"
         },
         {
             "dish_id": "so2",
             "dish_name": "Zupa meksykańska z pieczywem czosnkowym",
-            "dish_price": "13.50"
+            "dish_price": "13.50",
+            "dish_category": "soups"
         },
         {
             "dish_id": "so3",
             "dish_name": "Zupa z kaktusa z jajkiem",
-            "dish_price": "12.00"
+            "dish_price": "12.00",
+            "dish_category": "soups"
         }
     ],
     "salats": [
         {
             "dish_id": "sa1",
             "dish_name": "Patatas z sałatką z kurczaka",
-            "dish_price": "19.50"
+            "dish_price": "19.50",
+            "dish_category": "salats"
         },
         {
             "dish_id": "sa2",
             "dish_name": "Sałatka wegetariańska",
-            "dish_price": "19.00"
+            "dish_price": "19.00",
+            "dish_category": "salats"
         },
         {
             "dish_id": "sa3",
             "dish_name": "Sałatka z kurczakiem, ryżem i ananasem",
-            "dish_price": "20.50"
+            "dish_price": "20.50",
+            "dish_category": "salats"
         },
         {
             "dish_id": "sa4",
             "dish_name": "Sałatka z grilowanym kurczakiem",
-            "dish_price": "23.00"
+            "dish_price": "23.00",
+            "dish_category": "salats"
         },
         {
             "dish_id": "sa5",
             "dish_name": "Sałatka z kaktusa z nachosami",
-            "dish_price": "18.50"
+            "dish_price": "18.50",
+            "dish_category": "salats"
         },
         {
             "dish_id": "sa6",
             "dish_name": "Sałatka avocado z nachosami",
-            "dish_price": "20.50"
+            "dish_price": "20.50",
+            "dish_category": "salats"
         },
         {
             "dish_id": "sa7",
             "dish_name": "Avocado z sałatką z krewetek",
-            "dish_price": "22.50"
+            "dish_price": "22.50",
+            "dish_category": "salats"
         }
     ],
     "mexican_dishes": [
         {
             "dish_id": "md1",
             "dish_name": "Taco wegetariańskie, sałatki",
-            "dish_price": "16.00"
+            "dish_price": "16.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md2",
             "dish_name": "Taco z mięsem i kukurydzą, sałatki",
-            "dish_price": "18.50"
+            "dish_price": "18.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md3",
             "dish_name": "Taco z mięsem i fasolką, sałatki",
-            "dish_price": "18.50"
+            "dish_price": "18.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md4",
             "dish_name": "Quesadilla z serem",
-            "dish_price": "14.00"
+            "dish_price": "14.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md5",
             "dish_name": "Quesadilla ze szpinakiem i serami",
-            "dish_price": "16.50"
+            "dish_price": "16.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md6",
             "dish_name": "Quesadilla z mięsem mielonym",
-            "dish_price": "16.50"
+            "dish_price": "16.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md7",
             "dish_name": "Quesadilla z grilowanym kurczakiem",
-            "dish_price": "16.50"
+            "dish_price": "16.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md8",
             "dish_name": "Quesadilla z boczkiem",
-            "dish_price": "16.50"
+            "dish_price": "16.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md9",
             "dish_name": "Quesadilla z chorizo i awokado",
-            "dish_price": "17.00"
+            "dish_price": "17.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md10",
             "dish_name": "Burrito wegetariańskie, sałatki",
-            "dish_price": "17.50"
+            "dish_price": "17.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md11",
             "dish_name": "Burrito wegetariańskie z ryżem, sałatki",
-            "dish_price": "22.00"
+            "dish_price": "22.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md12",
             "dish_name": "Burrito Santa Fe, sałatki",
-            "dish_price": "23.00"
+            "dish_price": "23.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md13",
             "dish_name": "Burrito z mięsem i kukurydzą, sałatki",
-            "dish_price": "23.00"
+            "dish_price": "23.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md14",
             "dish_name": "Burrito z mięsem i fasolą",
-            "dish_price": "23.00"
+            "dish_price": "23.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md15",
             "dish_name": "Burrito z kurczakiem i pieczarkami",
-            "dish_price": "23.00"
+            "dish_price": "23.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md16",
             "dish_name": "Enchilada wegetariańska, sałatki",
-            "dish_price": "17.50"
+            "dish_price": "17.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md17",
             "dish_name": "Enchilada z mięsem i kukurydzą",
-            "dish_price": "23.00"
+            "dish_price": "23.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md18",
             "dish_name": "Enchilada z mięsem i fasolą",
-            "dish_price": "23.00"
+            "dish_price": "23.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md19",
             "dish_name": "Enchilada z kurczakiem i pieczarkami",
-            "dish_price": "23.00"
+            "dish_price": "23.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md20",
             "dish_name": "Chimichanga wegetariańska",
-            "dish_price": "21.00"
+            "dish_price": "21.00",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md21",
             "dish_name": "Chimichanga z kurczakiem",
-            "dish_price": "22.50"
+            "dish_price": "22.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md22",
             "dish_name": "Chimichanga z mięsem wieprzowym",
-            "dish_price": "22.50"
+            "dish_price": "22.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md23",
             "dish_name": "Chimichanga z kurczakiem i warzywami",
-            "dish_price": "22.50"
+            "dish_price": "22.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md24",
             "dish_name": "Tortilla chico",
-            "dish_price": "20.50"
+            "dish_price": "20.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md25",
             "dish_name": "Tacos nadziewany kurczakiem",
-            "dish_price": "20.50"
+            "dish_price": "20.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md26",
             "dish_name": "Tostada",
-            "dish_price": "22.50"
+            "dish_price": "22.50",
+            "dish_category": "mexican_dishes"
         },
         {
             "dish_id": "md27",
             "dish_name": "Chili con carne",
-            "dish_price": "21.50"
+            "dish_price": "21.50",
+            "dish_category": "mexican_dishes"
         }
     ],
     "grill_dishes": [
         {
             "dish_id": "gd1",
             "dish_name": "Filet z kurczaka z grila z sosami",
-            "dish_price": "30.00"
+            "dish_price": "30.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd2",
             "dish_name": "Filet z kurczaka z grila z ananasem",
-            "dish_price": "31.00"
+            "dish_price": "31.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd3",
             "dish_name": "Fajitas z kurczaka",
-            "dish_price": "30.00"
+            "dish_price": "30.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd4",
             "dish_name": "Szaszłyk drobiowy",
-            "dish_price": "31.00"
+            "dish_price": "31.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd5",
             "dish_name": "Filet de polo z kurczaka z warzywami",
-            "dish_price": "31.00"
+            "dish_price": "31.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd6",
             "dish_name": "Filet nadziewany chico",
-            "dish_price": "31.00"
+            "dish_price": "31.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd7",
             "dish_name": "Fileciki panierowane chico",
-            "dish_price": "31.00"
+            "dish_price": "31.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd8",
             "dish_name": "Karczek z grila z sosami",
-            "dish_price": "30.00"
+            "dish_price": "30.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd9",
             "dish_name": "Stek wieprzowy z grila, sos barbecue",
-            "dish_price": "31.00"
+            "dish_price": "31.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd10",
             "dish_name": "Stek wieprzowy z grila z sosami",
-            "dish_price": "31.00"
+            "dish_price": "31.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd11",
             "dish_name": "Fajitas z polędwicy wieprzowej",
-            "dish_price": "32.00"
+            "dish_price": "32.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd12",
             "dish_name": "Polędwica wieprzowa z zielonym pieprzem",
-            "dish_price": "33.00"
+            "dish_price": "33.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd13",
             "dish_name": "Polędwica wieprzowa, sos orzechowy",
-            "dish_price": "33.00"
+            "dish_price": "33.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd14",
             "dish_name": "Polędwica wieprzowa z grila z sosami",
-            "dish_price": "33.00"
+            "dish_price": "33.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd15",
             "dish_name": "Szaszłyk z polędwicy wieprzowej",
-            "dish_price": "33.00"
+            "dish_price": "33.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd16",
             "dish_name": "Polędwica wołowa z grila tex-mex",
-            "dish_price": "53.00"
+            "dish_price": "53.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd17",
             "dish_name": "Fajitas z polędwicy wołowej",
-            "dish_price": "42.00"
+            "dish_price": "42.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd18",
             "dish_name": "Polędwica wołowa z grila z zielonym pieprzem",
-            "dish_price": "53.00"
+            "dish_price": "53.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd19",
             "dish_name": "Półmisek meksykański",
-            "dish_price": "42.00"
+            "dish_price": "42.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd20",
             "dish_name": "Półmisek dla dwojga",
-            "dish_price": "64.00"
+            "dish_price": "64.00",
+            "dish_category": "grill_dishes"
         },
         {
             "dish_id": "gd21",
             "dish_name": "Hamburger wołowy tex-mex",
-            "dish_price": "29.00"
+            "dish_price": "29.00",
+            "dish_category": "grill_dishes"
         }
     ],
     "fish_dishes": [
         {
             "dish_id": "fd1",
             "dish_name": "Dorsz w sosie śmietanowym",
-            "dish_price": "34.50"
+            "dish_price": "34.50",
+            "dish_category": "fish_dishes"
         },
         {
             "dish_id": "fd2",
             "dish_name": "Pstrąg smażony",
-            "dish_price": "34.50"
+            "dish_price": "34.50",
+            "dish_category": "fish_dishes"
         },
         {
             "dish_id": "fd3",
             "dish_name": "Łosoś z sosem krewetkowym",
-            "dish_price": "42.50"
+            "dish_price": "42.50",
+            "dish_category": "fish_dishes"
         },
         {
             "dish_id": "fd4",
             "dish_name": "Krewetki z grila",
-            "dish_price": "39.50"
+            "dish_price": "39.50",
+            "dish_category": "fish_dishes"
         },
         {
             "dish_id": "fd5",
             "dish_name": "Owoce morza",
-            "dish_price": "44.00"
+            "dish_price": "44.00",
+            "dish_category": "fish_dishes"
         }
     ],
     "desserts": [
         {
             "dish_id": "d1",
             "dish_name": "Puchar owocowy",
-            "dish_price": "15.00"
+            "dish_price": "15.00",
+            "dish_category": "desserts"
         },
         {
             "dish_id": "d2",
             "dish_name": "Puchar lodowy",
-            "dish_price": "15.00"
+            "dish_price": "15.00",
+            "dish_category": "desserts"
         },
         {
             "dish_id": "d3",
             "dish_name": "Puchar owocowo-lodowy",
-            "dish_price": "15.00"
+            "dish_price": "15.00",
+            "dish_category": "desserts"
         },
         {
             "dish_id": "d4",
             "dish_name": "Lody waniliowe z gorącymi malinami / wiśniami",
-            "dish_price": "16.50"
+            "dish_price": "16.50",
+            "dish_category": "desserts"
         },
         {
             "dish_id": "d5",
             "dish_name": "Naleśniki z serem i owocami",
-            "dish_price": "15.50"
+            "dish_price": "15.50",
+            "dish_category": "desserts"
         },
         {
             "dish_id": "d6",
             "dish_name": "Banan zapiekany z lodami",
-            "dish_price": "16.50"
+            "dish_price": "16.50",
+            "dish_category": "desserts"
         },
         {
             "dish_id": "d7",
             "dish_name": "Szarlotka z karmelem",
-            "dish_price": "12.50"
+            "dish_price": "12.50",
+            "dish_category": "desserts"
         },
         {
             "dish_id": "d8",
             "dish_name": "Szarlotka na ciepło z lodami",
-            "dish_price": "14.50"
+            "dish_price": "14.50",
+            "dish_category": "desserts"
         },
         {
             "dish_id": "d9",
             "dish_name": "Sernik meksykański",
-            "dish_price": "13.50"
+            "dish_price": "13.50",
+            "dish_category": "desserts"
         },
         {
             "dish_id": "d10",
             "dish_name": "Sernik na ciepło z malinami / wiśniami",
-            "dish_price": "14.50"
+            "dish_price": "14.50",
+            "dish_category": "desserts"
         },
         {
             "dish_id": "d11",
             "dish_name": "Ciasto brownie z lodami waniliowymi",
-            "dish_price": "13.50"
+            "dish_price": "13.50",
+            "dish_category": "desserts"
         },
         {
             "dish_id": "d12",
             "dish_name": "Beza z kremem mascarpone i truskawkami",
-            "dish_price": "14.50"
+            "dish_price": "14.50",
+            "dish_category": "desserts"
         }
     ]
 }
