@@ -1,14 +1,17 @@
+import { Routes, Route } from 'react-router-dom';
 import Nav from "./components/Header/Nav";
-import SlideShow from "./components/Slider/SlideShow";
 import Footer from "./components/Footer/Footer";
-import StartingPageContent from "./components/StartingPageContent/StartingPageContent";
+import StartingPage from "./components/StartingPage/StartingPage";
+import Menu from './components/Menu/Menu';
 
 function App() {
   return (
     <>
       <Nav/>
-      <SlideShow/>
-      <StartingPageContent/>
+      <Routes>
+        <Route path='/' element={<StartingPage/>}/>
+        <Route path='/menu' element={<Menu/>}/>
+      </Routes>
       <Footer/>
     </>
   );

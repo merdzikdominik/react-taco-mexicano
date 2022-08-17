@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { sliderData } from "../../slider-data";
+import { sliderData } from "../../../slider-data";
 import { ThemeProvider } from "styled-components";
 import { useState, useEffect, useRef } from "react";
 import SliderContent from "./SliderContent";

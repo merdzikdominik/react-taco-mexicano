@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import SlideShow from '../StartingPage/Slider/SlideShow';
 import qualityRibbon from '../../assets/quality-ribbon.png'
 import delivs from '../../assets/deliveries.png'
 import charity from '../../assets/charity.png'
@@ -64,30 +65,33 @@ const Header = styled.h1`
     padding: 20px 0;
 `
 
-export default function StartingPageContent() {
+export default function StartingPage() {
     return (
-        <Content>
-            <Header>Dlaczego warto u nas zjeść? To proste!</Header>
-            <BadgeContainer>
-                <Badge>
-                    <Image src={qualityRibbon}/>
-                    <Text>
-                        Zapewniamy 100% gwarancje świeżych składników, z których przygotowywane są nasze dania
-                    </Text>
-                </Badge>
-                <Badge>
-                    <Image src={delivs}/>
-                    <Text>
-                        Dzięki współpracy ze znanymi firmami dowozowymi nie trzeba długo czekać na zamówienie
-                    </Text>
-                </Badge>
-                <Badge>
-                    <Image src={charity}/>
-                    <Text>
-                        Zamawiając u nas jedzenie tym samym wspomagasz potrzebujących, nie tylko Ty się najesz :)
-                    </Text>
-                </Badge>
-            </BadgeContainer>
-        </Content>
+        <>
+            <SlideShow/>
+            <Content>
+                <Header>Dlaczego warto u nas zjeść? To proste!</Header>
+                <BadgeContainer>
+                    <Badge>
+                        <Image src={qualityRibbon}/>
+                        <Text>
+                            Zapewniamy 100% gwarancje świeżych składników, z których przygotowywane są nasze dania
+                        </Text>
+                    </Badge>
+                    <Badge>
+                        <Image src={delivs}/>
+                        <Text>
+                            Dzięki współpracy ze znanymi firmami dowozowymi nie trzeba długo czekać na zamówienie
+                        </Text>
+                    </Badge>
+                    <Badge>
+                        <Image src={charity}/>
+                        <Text>
+                            Zamawiając u nas jedzenie tym samym wspomagasz potrzebujących, nie tylko Ty się najesz :)
+                        </Text>
+                    </Badge>
+                </BadgeContainer>
+            </Content>
+        </>
     );
 }
