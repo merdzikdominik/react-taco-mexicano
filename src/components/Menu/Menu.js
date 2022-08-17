@@ -4,11 +4,12 @@ import MenuItem from "./MenuItem";
 
 const MenuContainer = styled.div`
     width: 100%;
-    background-color: red;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     padding-top: 60px;
+    gap: 10px;
+    background-color: #eee;
 
     h1 {
         text-align: right;
