@@ -12,6 +12,7 @@ export default function MenuItems({ currentItems }) {
             {currentItems && currentItems.map(dish => <MenuItem key={dish.dish_id} 
                                                                 dish={dish.dish_name} 
                                                                 price={dish.dish_price} 
+                                                                category={dish.dish_category}
                                                         />)}
         </>
     );

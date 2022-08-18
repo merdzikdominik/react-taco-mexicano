@@ -23,12 +23,12 @@ const MenuContainer = styled.div`
 export default function Menu() {
     const dishes = useDishes();
     
-    console.log(dishes);
+    // console.log(dishes[0].slice(1, 4));
 
     return (
         <MenuContainer>
             <h1>Menu</h1>
-            {/* <PaginatedItems itemsPerPage={7}/> */}
+            <PaginatedItems itemsPerPage={7} items={dishes}/>
         </MenuContainer>
     );
 }

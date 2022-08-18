@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 const Container = styled.div`
     width: 90%;
-    height: 100px;
+    // height: 100px;
     display: flex;
     margin: 0 auto;
+    padding: 10px;
     justify-content: space-between;
     align-items: center;
     background-color: #fafafa;
@@ -12,9 +13,13 @@ const Container = styled.div`
 `;
 
 const LeftSide = styled.div`
-    width: 60%;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
     min-width: 120px;
     padding: 20px;
+    // background-color: red;
+
 
     @media (min-width: 1200px) {
         width: 80%;
@@ -33,10 +38,11 @@ const Input = styled.input`
     width: 30px;
 `;
 
-export default function MenuItem({ dish, price }) {
+export default function MenuItem({ dish, price, category }) {
     return (
         <Container>
             <LeftSide>
+                <span>{category}</span>
                 <span>{dish}</span>
             </LeftSide>
             <RighSide>
