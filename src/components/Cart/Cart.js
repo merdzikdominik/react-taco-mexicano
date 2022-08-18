@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 const CartContainer = styled.div`
     width: 90%;
@@ -17,9 +18,11 @@ const CartContainer = styled.div`
 `;
 
 export default function Cart() {
+    const state = useSelector(state => state.dishesss);
+
     return (
         <CartContainer>
-            asd
+            {state}
         </CartContainer>
     );
 }

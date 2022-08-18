@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react';
 import styled from 'styled-components';
 import ReactPaginate from 'react-paginate';
-import useDishes from '../../hooks/useDishes';
+// import useDishes from '../../hooks/useDishes';
 import MenuItems from './MenuItems';
 
 const Pagination = styled(ReactPaginate)`
@@ -25,9 +25,6 @@ export default function PaginatedItems({ itemsPerPage, items }) {
     // following the API or data you're working with.
     const [itemOffset, setItemOffset] = useState(0);
     // const items = useDishes();
-    const [itemIndex, setItemIndex] = useState(0);
-
-    // console.log(items[0])
 
     useEffect(() => {
         // Fetch items from another resources.
@@ -42,7 +39,6 @@ export default function PaginatedItems({ itemsPerPage, items }) {
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % items.length;
         setItemOffset(newOffset);
-        setItemIndex(prev => prev + 1);
     };
 
     return (

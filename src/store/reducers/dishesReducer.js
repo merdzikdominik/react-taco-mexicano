@@ -1,16 +1,15 @@
 const initialState = {
-    dishes: 'asd'
+    dishes: []
 };
 
 const dishesReducer = (state = initialState, action) => {
     switch(action.type) {
         case 'ADD_DISH_TO_ORDER':
-            // const updatedDishes = state.dishes.concat(action.payload);
+            const updatedDishes = state.dishes.concat(action.payload);
 
-            console.log(state.dishes);
             return {
                 ...state,
-                dishes: state.dishes
+                dishes: updatedDishes
             }
 
         default: 
