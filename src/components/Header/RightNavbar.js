@@ -1,5 +1,9 @@
+import { useState } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import mexicanPattern from '../../assets/mexican-pattern.jpg';
+import Cart from '../Cart/Cart';
 
 const StyledUl = styled.ul`
     margin: 0;
@@ -32,9 +36,14 @@ const StyledUl = styled.ul`
         color: #FFBC23;
         border-bottom: 1px solid #333;
 
-        &:nth-child(4) {
+        &:nth-child(5) {
             border: none;
         }
+    }
+
+    .shopping-cart {
+        color: #fff;
+        font-size: 40px;
     }
 
     a {
@@ -90,6 +99,11 @@ const StyledUl = styled.ul`
             border: none;
         }
 
+        .shopping-cart {
+            color: #fff;
+            font-size: 25px;
+        }
+
         a:hover {
             filter: brightness(0) saturate(100%) invert(76%) sepia(99%) saturate(1703%) hue-rotate(338deg) brightness(102%) contrast(101%);
         }
@@ -97,20 +111,32 @@ const StyledUl = styled.ul`
 `;
 
 export default function RightNavbar() {
+    const [cartClicked, setCartClicked] = useState(false);
+
+    const cartHandler = () => {
+        setCartClicked(prev => !prev);
+    }
+
     return (
-        <StyledUl>
-            <li>
-                <a href='www.google.com'>Menu</a>
-            </li>
-            <li>
-                <a href='www.google.com'>Kontakt</a>
-            </li>
-            <li>
-                <a href='www.google.com'>Godziny Otwarcia</a>
-            </li>
-            <li>
-                <a href='www.google.com'>Lokalizacja</a>
-            </li>
-        </StyledUl>
+        <>
+            <StyledUl>
+                <li>
+                    <FontAwesomeIcon icon={faShoppingCart} className='shopping-cart' onClick={cartHandler}/>
+                </li>
+                <li>
+                    <a href='www.google.com'>Menu</a>
+                </li>
+                <li>
+                    <a href='www.google.com'>Kontakt</a>
+                </li>
+                <li>
+                    <a href='www.google.com'>Godziny Otwarcia</a>
+                </li>
+                <li>
+                    <a href='www.google.com'>Lokalizacja</a>
+                </li>
+            </StyledUl>
+            {cartClicked && <Cart />}
+        </>
     );
 }
