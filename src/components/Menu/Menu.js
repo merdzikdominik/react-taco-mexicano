@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import PaginatedItems from './Pagination';
+import PaginatedItems from './PaginatedItems';
+import useDishes from '../../hooks/useDishes';
 
 const MenuContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 80px auto;
+    margin: 140px auto;
     gap: 10px;
     background-color: #eee;
 
@@ -20,11 +21,14 @@ const MenuContainer = styled.div`
 `;
 
 export default function Menu() {
+    const dishes = useDishes();
+    
+    console.log(dishes);
+
     return (
         <MenuContainer>
             <h1>Menu</h1>
-            <PaginatedItems itemsPerPage={9}/>
-            
+            {/* <PaginatedItems itemsPerPage={7}/> */}
         </MenuContainer>
     );
 }
