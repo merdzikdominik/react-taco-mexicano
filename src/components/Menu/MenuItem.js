@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -43,6 +43,7 @@ const Input = styled.input`
 export default function MenuItem({ id, dish, price, category }) {
     const inputRef = useRef();
     const dispatch = useDispatch();
+    const state = useSelector(state => state.dishes);
 
     const addToCartHandler = (event) => {
         const payload = {
@@ -55,6 +56,8 @@ export default function MenuItem({ id, dish, price, category }) {
 
         dispatch({ type: 'ADD_DISH_TO_ORDER', payload});
     }
+
+    console.log(state);
 
     return (
         <Container>
