@@ -14,8 +14,12 @@ const dishesReducer = (state = initialState, action) => {
                     return acc + curr.amount
                 }, action.payload.amount);
 
+                //TODO: transform it to the number if it causes trouble during total price calculations
+                const adjustedPrice = (findExistingDish.price * adjustedAmount).toFixed(2);
+
                 updatedDish = {
                     ...findExistingDish,
+                    price: adjustedPrice,
                     amount: adjustedAmount
                 };
 
@@ -23,7 +27,12 @@ const dishesReducer = (state = initialState, action) => {
                 updatedDishes = removeExistingDish.concat(updatedDish);
 
             } else{
-                updatedDishes = state.dishes.concat(action.payload);
+                updatedDish = {
+                    ...action.payload,
+                    price: (action.payload.price * action.payload.amount).toFixed(2),
+                };
+
+                updatedDishes = state.dishes.concat(updatedDish);
             }
 
             return {

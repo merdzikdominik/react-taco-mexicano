@@ -37,7 +37,8 @@ const RighSide = styled.div`
 `;
 
 const Input = styled.input`
-    width: 30px;
+    width: 35px;
+    text-align: center;
 `;
 
 export default function MenuItem({ id, dish, price, category }) {
@@ -45,7 +46,7 @@ export default function MenuItem({ id, dish, price, category }) {
     const dispatch = useDispatch();
     const state = useSelector(state => state.dishes);
 
-    const addToCartHandler = (event) => {
+    const addToCartHandler = (event) => {       
         const payload = {
             id,
             dish,
@@ -57,8 +58,6 @@ export default function MenuItem({ id, dish, price, category }) {
         dispatch({ type: 'ADD_DISH_TO_ORDER', payload});
     }
 
-    console.log(state);
-
     return (
         <Container>
             <LeftSide>
@@ -67,7 +66,7 @@ export default function MenuItem({ id, dish, price, category }) {
             </LeftSide>
             <RighSide>
                 <span>{price} zł</span>
-                <Input type='number' placeholder='1' ref={inputRef}></Input>
+                <Input type='number' placeholder='0' required ref={inputRef} min='0' max='7'></Input>
                 <button onClick={addToCartHandler}>ADD</button>
             </RighSide>
         </Container>
