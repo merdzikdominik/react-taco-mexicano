@@ -1,5 +1,6 @@
 import { useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../store/actions/action-creators';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -44,18 +45,17 @@ const Input = styled.input`
 export default function MenuItem({ id, dish, price, category }) {
     const inputRef = useRef();
     const dispatch = useDispatch();
-    const state = useSelector(state => state.dishes);
 
     const addToCartHandler = (event) => {       
         const payload = {
             id,
             dish,
-            price,
+            price: +price,
             category,
             amount: +inputRef.current.value
         };
 
-        dispatch({ type: 'ADD_DISH_TO_ORDER', payload});
+        dispatch(addToCart(payload));
     }
 
     return (
@@ -66,7 +66,8 @@ export default function MenuItem({ id, dish, price, category }) {
             </LeftSide>
             <RighSide>
                 <span>{price} zł</span>
-                <Input type='number' placeholder='0' required ref={inputRef} min='0' max='7'></Input>
+                {/* TODO: build brand new input component */}
+                <Input type='number' placeholder='0' ref={inputRef} min='0' max='7'></Input>
                 <button onClick={addToCartHandler}>ADD</button>
             </RighSide>
         </Container>

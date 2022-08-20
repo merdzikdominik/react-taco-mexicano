@@ -1,44 +1,72 @@
 const initialState = {
-    dishes: []
+    dishes: [],
+    totalPrice: 0
 };
 
 const dishesReducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'ADD_DISH_TO_ORDER':
-            let updatedDish, updatedDishes;
+        case 'ADD_DISH_TO_ORDER': {
+            let updatedTotalPrice, updatedDishes, updatedDish;
+            
+            updatedTotalPrice = state.totalPrice + action.payload.price * action.payload.amount;
 
-            const findExistingDish = state.dishes.find(item => item.id === action.payload.id);
-
-            if (findExistingDish) {
-                const adjustedAmount = state.dishes.filter(item => item.id === action.payload.id).reduce((acc, curr) => {
-                    return acc + curr.amount
-                }, action.payload.amount);
-
-                //TODO: transform it to the number if it causes trouble during total price calculations
-                const adjustedPrice = (findExistingDish.price * adjustedAmount).toFixed(2);
-
+            const foundDishIndex = state.dishes.findIndex(dish => dish.id === action.payload.id);
+            const foundDish = state.dishes[foundDishIndex];
+            
+            if (foundDish) {
                 updatedDish = {
-                    ...findExistingDish,
-                    price: adjustedPrice,
-                    amount: adjustedAmount
+                    ...foundDish,
+                    amount: foundDish.amount + action.payload.amount,
                 };
 
-                const removeExistingDish = state.dishes.filter(item => item.id !== action.payload.id);
-                updatedDishes = removeExistingDish.concat(updatedDish);
+                updatedDishes = [...state.dishes];
+                updatedDishes[foundDishIndex] = updatedDish;
+                updatedTotalPrice = state.totalPrice + foundDish.price * action.payload.amount;
 
-            } else{
-                updatedDish = {
-                    ...action.payload,
-                    price: (action.payload.price * action.payload.amount).toFixed(2),
-                };
-
-                updatedDishes = state.dishes.concat(updatedDish);
+            } else {
+                updatedDishes = state.dishes.concat(action.payload);
             }
+
+            console.log('added', state)
 
             return {
                 ...state,
-                dishes: updatedDishes
+                dishes: updatedDishes,
+                totalPrice: updatedTotalPrice
             }
+        }
+
+        case 'REMOVE_DISH_FROM_ORDER': {
+            let updatedDish, updatedDishes, updatedTotalPrice;
+
+            const foundDish = state.dishes.find(dish => dish.id === action.payload.id);
+            const foundDishIndex = state.dishes.findIndex(dish => dish.id === action.payload.id);
+            const foundDishAmount = foundDish.amount;
+
+            if (foundDish) {
+                updatedDish = {
+                    ...foundDish,
+                    amount: foundDish.amount - 1
+                }
+
+                updatedDishes = [...state.dishes];
+                updatedDishes[foundDishIndex] = updatedDish;
+                updatedTotalPrice = state.totalPrice - updatedDishes[foundDishIndex].price;
+
+            }
+
+            if (foundDishAmount === 1) {
+                updatedDishes = state.dishes.filter(dish => dish.id !== action.payload.id);
+            }
+
+            console.log('removed', state)
+
+            return {
+                ...state,
+                dishes: updatedDishes,
+                totalPrice: updatedTotalPrice
+            }
+        }
 
         default: 
             return state;

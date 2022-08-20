@@ -1,9 +1,10 @@
-import { useState } from 'react';
+// import { useState } from 'react';
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import mexicanPattern from '../../assets/mexican-pattern.jpg';
-import Cart from '../Cart/Cart';
+// import Cart from '../Cart/Cart';
 
 const StyledUl = styled.ul`
     margin: 0;
@@ -111,32 +112,25 @@ const StyledUl = styled.ul`
 `;
 
 export default function RightNavbar() {
-    const [cartClicked, setCartClicked] = useState(false);
-
-    const cartHandler = () => {
-        setCartClicked(prev => !prev);
-    }
-
     return (
         <>
             <StyledUl>
                 <li>
-                    <FontAwesomeIcon icon={faShoppingCart} className='shopping-cart' onClick={cartHandler}/>
+                    <Link to='cart'><FontAwesomeIcon icon={faShoppingCart} className='shopping-cart'/>Koszyk</Link>
                 </li>
                 <li>
-                    <a href='www.google.com'>Menu</a>
+                    <Link to='menu'>Menu</Link>
                 </li>
                 <li>
-                    <a href='www.google.com'>Kontakt</a>
+                    <Link to='contact' >Kontakt</Link>
                 </li>
                 <li>
-                    <a href='www.google.com'>Godziny Otwarcia</a>
+                    <Link to ='hours' >Godziny Otwarcia</Link>
                 </li>
                 <li>
-                    <a href='www.google.com'>Lokalizacja</a>
+                    <Link to='location' >Lokalizacja</Link>
                 </li>
             </StyledUl>
-            {cartClicked && <Cart />}
         </>
     );
 }
