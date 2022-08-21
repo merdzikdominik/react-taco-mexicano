@@ -1,11 +1,14 @@
 import { createStore } from 'redux';
-// import reducers from './reducers';
-import dishesReducer from './reducers/dishesReducer'
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import dishesReducer from './reducers/dishesReducer';
 
-// const initialState = {
-//     dishes: []
-// };
+const persistConfig = {
+    key: 'root',
+    storage,
+}
 
-const store = createStore(dishesReducer);
+const persistedReducer = persistReducer(persistConfig, dishesReducer);
 
-export default store;
+export const store = createStore(persistedReducer);
+export const persistor = persistStore(store);
