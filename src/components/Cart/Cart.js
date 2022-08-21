@@ -32,6 +32,7 @@ export default function Cart() {
                 <span>Suma</span>
                 <span>{totalPrice}</span>
             </div>
+            {/* TODO: implement payments */}
         </CartContainer>
     );
 }

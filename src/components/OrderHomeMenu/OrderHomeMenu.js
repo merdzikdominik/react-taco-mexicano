@@ -20,7 +20,7 @@ const MenuContainer = styled.div`
     }
 `;
 
-export default function Menu() {
+export default function OrderHomeMenu() {
     const dishes = useDishes();
     
     // console.log(dishes[0].slice(1, 4));

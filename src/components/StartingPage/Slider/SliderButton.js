@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Button = styled.button`
@@ -41,6 +42,8 @@ const Button = styled.button`
 
 export default function SliderButton() {
     return (
-        <Button>Zamów teraz</Button>
+        <Link to='order-home'>
+            <Button>Zamów do domu</Button>
+        </Link>
     );
 }
