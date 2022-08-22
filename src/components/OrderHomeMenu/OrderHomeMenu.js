@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PaginatedItems from './PaginatedItems';
 import useDishes from '../../hooks/useDishes';
 
-const MenuContainer = styled.div`
+const MenuContainer = styled.section`
     width: 100%;
     display: flex;
     flex-direction: column;

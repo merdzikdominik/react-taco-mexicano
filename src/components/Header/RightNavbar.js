@@ -116,19 +116,19 @@ export default function RightNavbar() {
         <>
             <StyledUl>
                 <li>
-                    <Link to='cart'><FontAwesomeIcon icon={faShoppingCart} className='shopping-cart'/>Koszyk</Link>
+                    <Link to='koszyk'><FontAwesomeIcon icon={faShoppingCart} className='shopping-cart'/>Koszyk</Link>
                 </li>
                 <li>
                     <Link to='menu'>Menu</Link>
                 </li>
                 <li>
-                    <Link to='contact' >Kontakt</Link>
+                    <Link to='kontakt' >Kontakt</Link>
                 </li>
                 <li>
-                    <Link to ='hours' >Godziny Otwarcia</Link>
+                    <Link to='godziny-otwarcia' >Godziny Otwarcia</Link>
                 </li>
                 <li>
-                    <Link to='location' >Lokalizacja</Link>
+                    <Link to='lokalizacja' >Lokalizacja</Link>
                 </li>
             </StyledUl>
         </>

@@ -3,7 +3,7 @@ import useDishes from "../../hooks/useDishes";
 import MenuItem from "./MenuItem";
 import MenuCategoryWrapper from "./MenuCategoryWrapper";
 
-const Container = styled.div`
+const Container = styled.section`
     width: 100%;
     padding-top: 60px;
 `;

@@ -42,7 +42,7 @@ const Button = styled.button`
 
 export default function SliderButton() {
     return (
-        <Link to='order-home'>
+        <Link to='zamow-do-domu'>
             <Button>Zamów do domu</Button>
         </Link>
     );

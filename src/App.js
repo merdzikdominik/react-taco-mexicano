@@ -5,6 +5,8 @@ import StartingPage from "./components/StartingPage/StartingPage";
 import OrderHomeMenu from './components/OrderHomeMenu/OrderHomeMenu';
 import Cart from './components/Cart/Cart';
 import StaticMenu from './components/StaticMenu/StaticMenu';
+import Contact from './components/Contact/Contact';
+import OpenHours from './components/OpenHours/OpenHours';
 
 function App() {
   return (
@@ -12,9 +14,11 @@ function App() {
       <Nav/>
       <Routes>
         <Route path='/' element={<StartingPage/>}/>
+        <Route path='/koszyk' element={<Cart/>}/>
         <Route path='/menu' element={<StaticMenu/>}/>
-        <Route path='/order-home' element={<OrderHomeMenu/>}/>
-        <Route path='/cart' element={<Cart/>}/>
+        <Route path='/kontakt' element={<Contact/>}/>
+        <Route path='/godziny-otwarcia' element={<OpenHours/>}/>
+        <Route path='/zamow-do-domu' element={<OrderHomeMenu/>}/>
       </Routes>
       <Footer/>
     </>
