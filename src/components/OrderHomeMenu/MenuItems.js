@@ -1,10 +1,19 @@
+import { useState, useEffect } from 'react';
+import useDishes from '../../hooks/useDishes';
 import MenuItem from './MenuItem';
 
 export default function MenuItems({ currentItems, searchedDish }) {
+    const dishes = useDishes();
+    const [updatedDishes, setUpdatedDishes] = useState(currentItems);
+
+    useEffect(() => {
+        if (searchedDish !== '') setUpdatedDishes(dishes);
+        else setUpdatedDishes(currentItems);
+    }, [dishes, searchedDish, currentItems])
 
     return (
         <>
-            {currentItems && currentItems
+            {updatedDishes && updatedDishes
                 .filter(dish => dish.dish_name.toLowerCase().includes(searchedDish))
                 .map(dish => <MenuItem  key={dish.dish_id} 
                                         id={dish.dish_id}
