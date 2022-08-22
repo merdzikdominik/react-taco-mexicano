@@ -7,6 +7,7 @@ import Cart from './components/Cart/Cart';
 import StaticMenu from './components/StaticMenu/StaticMenu';
 import Contact from './components/Contact/Contact';
 import OpenHours from './components/OpenHours/OpenHours';
+import Location from './components/Location/Location';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/menu' element={<StaticMenu/>}/>
         <Route path='/kontakt' element={<Contact/>}/>
         <Route path='/godziny-otwarcia' element={<OpenHours/>}/>
+        <Route path='/lokalizacja' element={<Location/>}/>
         <Route path='/zamow-do-domu' element={<OrderHomeMenu/>}/>
       </Routes>
       <Footer/>
