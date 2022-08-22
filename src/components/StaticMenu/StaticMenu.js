@@ -20,7 +20,7 @@ export default function StaticMenu() {
     });
 
     const dishesByCategory = dishCategories.map(category => filteredDishes.map((item, index) => {
-        if (item.category === category) return <MenuCategoryWrapper category={category} items={item.dishes} />;
+        if (item.category === category) return <MenuCategoryWrapper key={index} category={category} items={item.dishes} />;
     }))
 
     return (
