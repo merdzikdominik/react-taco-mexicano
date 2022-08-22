@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import useDishes from "../../hooks/useDishes";
-// import MenuItem from "./MenuItem";
+import MenuItem from "./MenuItem";
 import MenuCategoryWrapper from "./MenuCategoryWrapper";
 
 const Container = styled.div`
@@ -19,24 +19,11 @@ export default function StaticMenu() {
         }
     });
 
-    const formatted = dishCategories.map((category, index) => <MenuCategoryWrapper key={index} category={category} items={filteredDishes}></MenuCategoryWrapper>);
-
-
-    // const formatted = dishCategories.map(category => 
-    //                                         <MenuCategoryWrapper category={category}>
-    //                                             {filteredDishes.map((item, index) => 
-    //                                                 <MenuItem 
-    //                                                     title={item.dishes[index]} 
-    //                                                     price={item.category}>
-    //                                                 </MenuItem>)}
-    //                                         </MenuCategoryWrapper>);
-
-    // const formatted = filteredDishes.map(subArr => subArr
-    //                                 .map(dish => <MenuItem  title={dish.dish_name} 
-    //                                                         price={dish.dish_price}>
-    //                                             </MenuItem>));
-
-    // console.log(filteredDishes);
+    const formatted = dishCategories.map(category => filteredDishes.map((item, index) => {
+        if (item.category === category) {
+            return <MenuCategoryWrapper category={category} items={item.dishes} />;
+        } else return;
+    }))
 
     return (
         <Container>

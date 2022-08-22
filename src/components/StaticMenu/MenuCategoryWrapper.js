@@ -8,13 +8,16 @@ const Container = styled.div`
 `;
 
 export default function MenuCategoryWrapper({ category, items }) {
-    console.log(items);
+    // console.log(items);
+    const displayItems = items.map(item => <MenuItem title={item.dish_name} price={item.dish_price}/>)
 
     return (
         <Container>
             <h1>{category}</h1>
-            {items.map(item => <MenuItem title={item.category === category && item.dishes.map(dish => dish.dish_name)} price={item.category === category && item.dishes.map(dish => dish.dish_price)}/>)}
-            {/* {items.map(item => item.category === category && item.dishes.map(dish => dish.dish_name))} */}
+            {displayItems}
+            {/* <MenuItem title={title} price={price}/> */}
+            {/* {items.map(item => <MenuItem    title={item.category === category && item.dishes.map(dish => dish.dish_name)} 
+                                            price={item.category === category && item.dishes.map(dish => dish.dish_price)}/>)} */}
         </Container>
     );
 }
