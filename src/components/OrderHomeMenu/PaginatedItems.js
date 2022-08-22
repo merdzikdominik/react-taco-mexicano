@@ -11,13 +11,10 @@ const Pagination = styled(ReactPaginate)`
 
     li {
         display: inline-block;
-        // border: 1px solid #c3c3c3;
-        // background-color: #fff;
-        // padding: 10px;
     }
 `;
 
-export default function PaginatedItems({ itemsPerPage, items }) {
+export default function PaginatedItems({ itemsPerPage, items, searchedDish }) {
     // We start with an empty list of items.
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
@@ -43,7 +40,7 @@ export default function PaginatedItems({ itemsPerPage, items }) {
 
     return (
         <>
-            <MenuItems currentItems={currentItems} />
+            <MenuItems currentItems={currentItems} searchedDish={searchedDish} />
             <Pagination
                 breakLabel="..."
                 nextLabel="next >"

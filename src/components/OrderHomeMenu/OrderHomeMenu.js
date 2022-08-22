@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import PaginatedItems from './PaginatedItems';
 import useDishes from '../../hooks/useDishes';
+import Input from '../reusable/Input';
+import { useState } from 'react';
 
 const MenuContainer = styled.section`
     width: 100%;
@@ -20,15 +22,38 @@ const MenuContainer = styled.section`
     }
 `;
 
+const MenuHeaderSection = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+const H1 = styled.h1`
+    font-size: 30px;
+`;
+
 export default function OrderHomeMenu() {
     const dishes = useDishes();
+    const [searchedDish, setSearchedDish] = useState('');
     
-    // console.log(dishes[0].slice(1, 4));
+    const handleGetSearchedDish = (event) => {
+        setSearchedDish(event.target.value);
+    }
 
     return (
         <MenuContainer>
-            <h1>Menu</h1>
-            <PaginatedItems itemsPerPage={7} items={dishes}/>
+            <MenuHeaderSection>
+                <Input  label='Order' 
+                        input={{
+                            id: 'amount_',
+                            type: 'text',
+                            placeholder: 'Wprowadź danie',
+                            onChange: handleGetSearchedDish
+                        }}
+                />
+                <H1>Na co masz dziś ochotę?</H1>
+            </MenuHeaderSection>
+            <PaginatedItems itemsPerPage={7} items={dishes} searchedDish={searchedDish}/>
         </MenuContainer>
     );
 }
