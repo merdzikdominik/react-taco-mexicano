@@ -37,7 +37,7 @@ const StyledUl = styled.ul`
         color: #FFBC23;
         border-bottom: 1px solid #333;
 
-        &:nth-child(5) {
+        &:nth-child(6) {
             border: none;
         }
     }
@@ -117,6 +117,9 @@ export default function RightNavbar() {
             <StyledUl>
                 <li>
                     <Link to='koszyk'><FontAwesomeIcon icon={faShoppingCart} className='shopping-cart'/>Koszyk</Link>
+                </li>
+                <li>
+                    <Link to='zamow-do-domu'>Zamów do domu</Link>
                 </li>
                 <li>
                     <Link to='menu'>Menu</Link>
