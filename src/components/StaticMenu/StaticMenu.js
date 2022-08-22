@@ -19,15 +19,13 @@ export default function StaticMenu() {
         }
     });
 
-    const formatted = dishCategories.map(category => filteredDishes.map((item, index) => {
-        if (item.category === category) {
-            return <MenuCategoryWrapper category={category} items={item.dishes} />;
-        } else return;
+    const dishesByCategory = dishCategories.map(category => filteredDishes.map((item, index) => {
+        if (item.category === category) return <MenuCategoryWrapper category={category} items={item.dishes} />;
     }))
 
     return (
         <Container>
-            {formatted}
+            {dishesByCategory}
         </Container>
     );
 }
