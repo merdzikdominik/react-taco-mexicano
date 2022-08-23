@@ -10,6 +10,7 @@ import Contact from './components/Contact/Contact';
 import OpenHours from './components/OpenHours/OpenHours';
 import Location from './components/Location/Location';
 import Checkout from './components/Cart/Checkout';
+import Page404 from './components/Page404/Page404';
 
 function App() {
   const isFillingForm = useSelector(state => state.fillingFormReducer.isFillingForm);
@@ -18,6 +19,7 @@ function App() {
     <>
       <Nav/>
       <Routes>
+        <Route path='*' element={<Page404/>}/>
         <Route path='/' element={<StartingPage/>}/>
         <Route path='/koszyk' element={<Cart/>}/>
         {isFillingForm && <Route path='/koszyk/podsumowanie' element={<Checkout/>} />}
