@@ -2,18 +2,18 @@ import { createStore, combineReducers } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import dishesReducer from './reducers/dishesReducer';
-import clickedReducer from './reducers/clickedReducer';
+import fillingFormReducer from './reducers/fillingFormReducer';
 
 const dishesPersistConfig = {
     key: 'dishes',
     storage,
-    blacklist: ['clickedReducer']
+    blacklist: ['fillingFormReducer']
 };
 
 const persistedDishesReducer = persistReducer(dishesPersistConfig, dishesReducer);
 
 const combinedReducers = {
-    clickedReducer,
+    fillingFormReducer,
     dishesReducer: persistedDishesReducer
 };
 

@@ -12,7 +12,7 @@ import Location from './components/Location/Location';
 import Checkout from './components/Cart/Checkout';
 
 function App() {
-  const isFillingForm = useSelector(state => state.clickedReducer.isFillingForm);
+  const isFillingForm = useSelector(state => state.fillingFormReducer.isFillingForm);
 
   return (
     <>

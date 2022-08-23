@@ -2,7 +2,7 @@ const initialState = {
     isFillingForm: false
 };
 
-export default function clickedReducer(state = initialState, action) {
+export default function fillingFormReducer(state = initialState, action) {
     switch(action.type) {
         case 'FILLING_THE_FORM': {
             let currentlyFilling;
