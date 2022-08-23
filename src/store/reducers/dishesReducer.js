@@ -3,7 +3,7 @@ const initialState = {
     totalPrice: 0
 };
 
-const dishesReducer = (state = initialState, action) => {
+export default function dishesReducer(state = initialState, action) {
     switch(action.type) {
         case 'ADD_DISH_TO_ORDER': {
             let updatedTotalPrice, updatedDishes, updatedDish;
@@ -72,5 +72,3 @@ const dishesReducer = (state = initialState, action) => {
             return state;
     }
 };
-
-export default dishesReducer;

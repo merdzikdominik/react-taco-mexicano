@@ -22,3 +22,10 @@ export const decrement = (id) => {
         }
     };
 };
+
+export const isFillignForm = (isTrue) => {
+    return {
+        type: 'FILLING_THE_FORM',
+        payload: isTrue
+    }
+}

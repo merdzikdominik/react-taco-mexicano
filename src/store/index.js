@@ -1,14 +1,32 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import dishesReducer from './reducers/dishesReducer';
+import clickedReducer from './reducers/clickedReducer';
 
-const persistConfig = {
-    key: 'root',
+const dishesPersistConfig = {
+    key: 'dishes',
     storage,
-}
+    blacklist: ['clickedReducer']
+};
 
-const persistedReducer = persistReducer(persistConfig, dishesReducer);
+const persistedDishesReducer = persistReducer(dishesPersistConfig, dishesReducer);
 
-export const store = createStore(persistedReducer);
+const combinedReducers = {
+    clickedReducer,
+    dishesReducer: persistedDishesReducer
+};
+
+const reducer = combineReducers(combinedReducers);
+
+// const reducers = combineReducers({
+//     dishesReducer: persistedDishesReducer, 
+//     clickedReducer});
+
+// const reducers = combineReducers({
+//     dishesReducer: persistedDishesReducer
+// });
+
+export const store = createStore(reducer);
+// export const store = createStore(persistedDishesReducer);        working
 export const persistor = persistStore(store);
