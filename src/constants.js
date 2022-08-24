@@ -22,3 +22,30 @@ export const OPEN_HOURS_POSITIONS = [
     {id: '6', day: 'Sobota', time: '10:00 - 23:00'},
     {id: '7', day: 'Niedziela', time: '10:00 - 23:00'}
 ];
+
+export const inputFillData = [
+    {
+        labelName: 'Imię',
+        inputPlaceholder: 'Wprowadź imię'
+    },
+    {
+        labelName: 'Nazwisko',
+        inputPlaceholder: 'Wprowadź nazwisko'
+    },
+    {
+        labelName: 'Miasto',
+        inputPlaceholder: 'Wprowadź miasto'
+    },
+    {
+        labelName: 'Ulica',
+        inputPlaceholder: 'Wprowadź ulicę'
+    },
+    {
+        labelName: 'Numer domu',
+        inputPlaceholder: 'Wprowadź numer domu'
+    },
+    {
+        labelName: 'Numer mieszkania (opcjonalnie)',
+        inputPlaceholder: 'Wprowadź numer mieszkania'
+    }
+];

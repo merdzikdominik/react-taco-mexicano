@@ -9,7 +9,7 @@ const Container = styled.section`
 `;
 
 export default function StaticMenu() {
-    const cartHasItems = useSelector(state => state.dishesReducer.dishes.length !== 0);
+    const cartHasItems = useSelector(state => state.dishes.length !== 0);
     console.log(cartHasItems);
     const dishes = useDishes();
     const dishCategories = ['Przystawka', 'Zupa', 'Sałatka', 'Danie meksykańskie', 'Danie z grilla', 'Danie rybne', 'Deser'];
