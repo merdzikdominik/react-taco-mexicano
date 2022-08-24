@@ -1,6 +1,6 @@
 import styled from "styled-components";
+import { useSelector } from 'react-redux';
 import useDishes from "../../hooks/useDishes";
-import MenuItem from "./MenuItem";
 import MenuCategoryWrapper from "./MenuCategoryWrapper";
 
 const Container = styled.section`
@@ -9,6 +9,8 @@ const Container = styled.section`
 `;
 
 export default function StaticMenu() {
+    const cartHasItems = useSelector(state => state.dishesReducer.dishes.length !== 0);
+    console.log(cartHasItems);
     const dishes = useDishes();
     const dishCategories = ['Przystawka', 'Zupa', 'Sałatka', 'Danie meksykańskie', 'Danie z grilla', 'Danie rybne', 'Deser'];
 

@@ -13,7 +13,9 @@ import Checkout from './components/Cart/Checkout';
 import Page404 from './components/Page404/Page404';
 
 function App() {
-  const isFillingForm = useSelector(state => state.fillingFormReducer.isFillingForm);
+  // const isFillingForm = useSelector(state => state.fillingFormReducer.isFillingForm);
+  const cartHasItems = useSelector(state => state.dishes.length !== 0);
+  console.log(cartHasItems);
 
   return (
     <>
@@ -22,7 +24,7 @@ function App() {
         <Route path='*' element={<Page404/>}/>
         <Route path='/' element={<StartingPage/>}/>
         <Route path='/koszyk' element={<Cart/>}/>
-        {isFillingForm && <Route path='/koszyk/podsumowanie' element={<Checkout/>} />}
+        {cartHasItems && <Route path='/koszyk/podsumowanie' element={<Checkout/>} />}
         <Route path='/menu' element={<StaticMenu/>}/>
         <Route path='/kontakt' element={<Contact/>}/>
         <Route path='/godziny-otwarcia' element={<OpenHours/>}/>

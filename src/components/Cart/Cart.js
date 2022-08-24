@@ -4,9 +4,8 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import CartItem from './CartItem';
 import Checkout from './Checkout';
-import { isFillignForm } from '../../store/actions/action-creators';
 
-const CartContainer = styled.div`
+const CartContainer = styled.section`
     // display: flex;
     // flex-direction: column;
     // justify-content: center;
@@ -32,22 +31,16 @@ const Button = styled.button`
 
 export default function Cart() {
     const dispatch = useDispatch();
-    const dishes = useSelector(state => state.dishesReducer.dishes);
-    const totalPrice = useSelector(state => state.dishesReducer.totalPrice);
+    const dishes = useSelector(state => state.dishes);
+    const totalPrice = useSelector(state => state.totalPrice);
     const [dishesExist, setDishesExist] = useState(false); 
 
     // const dishesLength = dishes.length > 0;
-
-    console.log(useSelector((state) => state))
 
     useEffect(() => {
         if(dishes.length > 0) setDishesExist(true);
         else setDishesExist(false);
     }, [dishes])
-
-    const handleCheckout = () => {
-        dispatch(isFillignForm(true));
-    }
 
     return (
         <CartContainer>
@@ -58,7 +51,7 @@ export default function Cart() {
             </div>
             {dishesExist && 
                 <Link to={`podsumowanie`}>
-                    <Button onClick={handleCheckout}>Realizuj zamówienie</Button>
+                    <Button>Realizuj zamówienie</Button>
                 </Link>}
             {/* TODO: implement payments */}
         </CartContainer>
