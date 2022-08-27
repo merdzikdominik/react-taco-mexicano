@@ -1,8 +1,9 @@
 import { useRef } from "react";
 import styled from "styled-components";
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Input from '../reusable/Input'
-import { getDatabase, ref, child, push, update } from "firebase/database"
+import { ref, child, push, update } from "firebase/database"
+import { db } from "../../firebase";
 
 const MainContainer = styled.section`
     width: 100%;
@@ -21,7 +22,8 @@ const FormContainer = styled.div`
 
 // TODO: array.map is a side effect, put all array operations inside useEffect hook
 export default function Checkout() {
-    // const cartHasItems = useSelector(state => state.dishes.length !== 0);
+    const orders = useSelector(state => state.dishes);
+    const totalPrice = useSelector(state => state.totalPrice);
 
     const firstNameRef = useRef();
     const secondNameRef = useRef();
@@ -39,15 +41,16 @@ export default function Checkout() {
             city: cityRef.current.value,
             street: streetRef.current.value,
             house: houseRef.current.value,
-            flat: flatRef.current.value
+            flat: flatRef.current.value,
+            orders,
+            totalPrice 
         }
-
-        const db = getDatabase();
 
         const newOrderKey = push(child(ref(db), 'Orders')).key;
         const updates = {};
 
         updates['/Orders/' + newOrderKey] = userData;
+        console.log(userData);
 
         return update(ref(db), updates);
     }

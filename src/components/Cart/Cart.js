@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import CartItem from './CartItem';
-import Checkout from './Checkout';
 
 const CartContainer = styled.section`
     width: 100%;
@@ -24,7 +23,6 @@ const Button = styled.button`
 `;
 
 export default function Cart() {
-    const dispatch = useDispatch();
     const dishes = useSelector(state => state.dishes);
     const totalPrice = useSelector(state => state.totalPrice);
     const [dishesExist, setDishesExist] = useState(false); 

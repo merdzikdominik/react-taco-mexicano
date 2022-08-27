@@ -1,5 +1,5 @@
-// import firebase from 'firebase/compat/app';
 import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDYHbo65qOe1witLKeG7UgCr0Ctro1tUJs",
@@ -11,8 +11,9 @@ const firebaseConfig = {
     appId: "1:282141583036:web:7e7555b1aa2dc365d652b9"
   };
 
-initializeApp(firebaseConfig);
-// export const db = getDatabase(app);
+// initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+export const db = getDatabase(app);
 
 // const firebaseConfig = {
 //     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
