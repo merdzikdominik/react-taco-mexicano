@@ -29,3 +29,9 @@ export const isFillignForm = (isTrue) => {
         payload: isTrue
     }
 }
+
+export const clearDishes = () => {
+    return {
+        type: 'CLEAR_DISHES'
+    }
+};

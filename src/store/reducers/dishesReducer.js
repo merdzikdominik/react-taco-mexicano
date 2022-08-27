@@ -68,6 +68,14 @@ export default function dishesReducer(state = initialState, action) {
             }
         }
 
+        case 'CLEAR_DISHES': {
+            return {
+                ...state,
+                dishes: [],
+                totalPrice: 0
+            }
+        }
+
         default: 
             return state;
     }

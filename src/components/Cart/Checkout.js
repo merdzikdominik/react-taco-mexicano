@@ -1,9 +1,11 @@
 import { useRef } from "react";
 import styled from "styled-components";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Input from '../reusable/Input'
 import { ref, child, push, update } from "firebase/database"
 import { db } from "../../firebase";
+import { useNavigate } from 'react-router-dom';
+import { clearDishes } from "../../store/actions/action-creators";
 
 const MainContainer = styled.section`
     width: 100%;
@@ -22,8 +24,11 @@ const FormContainer = styled.div`
 
 // TODO: array.map is a side effect, put all array operations inside useEffect hook
 export default function Checkout() {
+    const dispatch = useDispatch();
     const orders = useSelector(state => state.dishes);
     const totalPrice = useSelector(state => state.totalPrice);
+
+    const navigate = useNavigate();
 
     const firstNameRef = useRef();
     const secondNameRef = useRef();
@@ -42,6 +47,7 @@ export default function Checkout() {
             street: streetRef.current.value,
             house: houseRef.current.value,
             flat: flatRef.current.value,
+            date: new Date().toLocaleString(),
             orders,
             totalPrice 
         }
@@ -51,6 +57,10 @@ export default function Checkout() {
 
         updates['/Orders/' + newOrderKey] = userData;
         console.log(userData);
+
+        // localStorage.clear();
+        dispatch(clearDishes());
+        navigate('/');
 
         return update(ref(db), updates);
     }
