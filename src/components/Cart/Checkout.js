@@ -1,7 +1,8 @@
+import { useRef } from "react";
 import styled from "styled-components";
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import Input from '../reusable/Input'
-import { inputFillData } from "../../constants";
+import { getDatabase, ref, child, push, update } from "firebase/database"
 
 const MainContainer = styled.section`
     width: 100%;
@@ -20,20 +21,81 @@ const FormContainer = styled.div`
 
 // TODO: array.map is a side effect, put all array operations inside useEffect hook
 export default function Checkout() {
-    const cartHasItems = useSelector(state => state.dishes.length !== 0);
+    // const cartHasItems = useSelector(state => state.dishes.length !== 0);
+
+    const firstNameRef = useRef();
+    const secondNameRef = useRef();
+    const cityRef = useRef();
+    const streetRef = useRef();
+    const houseRef = useRef();
+    const flatRef = useRef();
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+
+        const userData = {
+            firstName: firstNameRef.current.value,
+            secondName: secondNameRef.current.value,
+            city: cityRef.current.value,
+            street: streetRef.current.value,
+            house: houseRef.current.value,
+            flat: flatRef.current.value
+        }
+
+        const db = getDatabase();
+
+        const newOrderKey = push(child(ref(db), 'Orders')).key;
+        const updates = {};
+
+        updates['/Orders/' + newOrderKey] = userData;
+
+        return update(ref(db), updates);
+    }
 
     return (
         <MainContainer>
             Podsumowanie
             <FormContainer>
-                {inputFillData.map((input, index) => <Input label={input.labelName} 
-                                                            input={{
-                                                                id: `formInput${index}`,
-                                                                type: 'text',
-                                                                placeholder: input.inputPlaceholder
-                                                            }}
-                                                        />)}
-                <button type='submit'>Prześlij dane</button>
+                <form onSubmit={handleFormSubmit}>
+                    <Input label='Imię' input={{
+                        id: `formInput`,
+                        type: 'text',
+                        placeholder: 'Wprowadź imię',
+                        ref: firstNameRef
+                    }}/>
+                    <Input label='Nazwisko' input={{
+                        id: `formInput`,
+                        type: 'text',
+                        placeholder: 'Wprowadź nazwisko',
+                        ref: secondNameRef
+                    }}/>
+                    <Input label='Miasto' input={{
+                        id: `formInput`,
+                        type: 'text',
+                        placeholder: 'Wprowadź miasto',
+                        ref: cityRef
+                    }}/>
+                    <Input label='Ulica' input={{
+                        id: `formInput`,
+                        type: 'text',
+                        placeholder: 'Wprowadź ulicę',
+                        ref: streetRef
+                    }}/>
+                    <Input label='Nr domu' input={{
+                        id: `formInput`,
+                        type: 'text',
+                        placeholder: 'Wprowadź numer domu',
+                        ref: houseRef
+                    }}/>
+                    <Input label='Nr mieszkania (opcjonalnie)' input={{
+                        id: `formInput`,
+                        type: 'text',
+                        placeholder: 'Wprowadź numer mieszkania',
+                        ref: flatRef
+                    }}/>
+
+                    <button type='submit'>Prześlij dane</button>
+                </form>
             </FormContainer>
         </MainContainer>
     );
