@@ -58,7 +58,7 @@ export default function Checkout() {
         updates['/Orders/' + newOrderKey] = userData;
         console.log(userData);
 
-        // localStorage.clear();
+        localStorage.clear();
         dispatch(clearDishes());
         navigate('/');
 
