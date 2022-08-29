@@ -3,12 +3,25 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import CartItem from './CartItem';
+import mexicanPattern from '../../assets/mexican-pattern.jpg';
 
 const CartContainer = styled.section`
     width: 100%;
-    height: 100vh;
-    background-color: red;
+    // height: 100vh;
     padding-top: 60px;
+    margin: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+`;
+
+const OrdersContainer = styled.div`
+    width: 90%;
+    padding: 20px;
+    // background-color: blue;
+    background-image: url(${mexicanPattern});
+    border-radius: 20px;
 `;
 
 const TotalPriceContainer = styled.div`
@@ -18,8 +31,17 @@ const TotalPriceContainer = styled.div`
     align-items: center;
 `;
 
+const MakeOrderContainer = styled.div`
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: green;
+`;
+
 const Button = styled.button`
-    margin-top: 200px;
+    border: none;
 `;
 
 export default function Cart() {
@@ -35,20 +57,24 @@ export default function Cart() {
 
     return (
         <CartContainer>
-            {dishes.map(item => <CartItem   key={item.id} 
-                                            id={item.id} 
-                                            dish={item.dish} 
-                                            price={item.price} 
-                                            amount={item.amount}>
-                                </CartItem>)}
-            <TotalPriceContainer>
-                <span>Suma</span>
-                <span>{totalPrice}</span>
-            </TotalPriceContainer>
-            {dishesExist && 
-                <Link to={`podsumowanie`}>
-                    <Button>Realizuj zamówienie</Button>
-                </Link>}
+            <OrdersContainer>
+                {dishes.map(item => <CartItem   key={item.id} 
+                                                id={item.id} 
+                                                dish={item.dish} 
+                                                price={item.price} 
+                                                amount={item.amount}>
+                                    </CartItem>)}
+            </OrdersContainer>
+            <MakeOrderContainer>
+                <TotalPriceContainer>
+                    <span>Suma</span>
+                    <span>{totalPrice}</span>
+                </TotalPriceContainer>
+                {dishesExist && 
+                    <Link to={`podsumowanie`}>
+                        <Button>Realizuj zamówienie</Button>
+                    </Link>}
+            </MakeOrderContainer>
         </CartContainer>
     );
 }

@@ -1,32 +1,64 @@
 import { useDispatch } from 'react-redux';
 import { decrement, addToCart } from '../../store/actions/action-creators';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
 const Container = styled.div`
     width: 100%;
     padding: 20px;
     display: flex;
-    justify-content: space-evenly;
-    background-color: green;
-
-    .left-side, .right-side {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .right-side {
-        width: 90px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .amount-container {
-        width: 90px;
-        display: flex;
-        justify-content: space-between;
-    }
-    
+    justify-content: space-between;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    font-family: 'League Spartan', sans-serif;
 `;
+
+const OrderInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+const Dish = styled.span`
+    font-size: 20px;
+`;
+
+const Price = styled(Dish)`
+    font-weight: 700;
+`;
+
+const QuantityContainer = styled(OrderInfo)`
+    width: 90px;
+    justify-content: center;
+    align-items: center;
+`;
+
+const QuantityInfo = styled.div`
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
+`;
+
+const QuantityHeader = styled(Dish)``;
+const QuantityNumber = styled(Price)``;
+
+const MinusButton = styled(FontAwesomeIcon)`
+    cursor: pointer;
+
+    &:hover {
+        font-size: 1.4rem;
+        transition: all 0.2s ease-in; 
+        color: #fff;
+    }
+
+    &:not( :hover ) {
+        font-size: 1.5rem;
+        transition: all 0.3s ease-in-out;
+        color: #000;
+    }
+`;
+
+const PlusButton = styled(MinusButton)``;
 
 
 export default function CartItem({ id, dish, price, amount }) {
@@ -44,18 +76,18 @@ export default function CartItem({ id, dish, price, amount }) {
 
     return (
         <Container>
-            <div className='left-side'>
-                <span>{dish}</span>
-                <span>{formattedPrice} zł</span>
-            </div>
-            <div className='right-side'>
-                <span>Ilość</span>
-                <div className='amount-container'>
-                    <button onClick={decrementItemHandler.bind(null, id)}>-</button>
-                    <span>{amount}</span>
-                    <button onClick={incrementItemHandler.bind(null, id)}>+</button>
-                </div>
-            </div>
+            <OrderInfo>
+                <Dish>{dish}</Dish>
+                <Price>{formattedPrice} zł</Price>
+            </OrderInfo>
+            <QuantityContainer>
+                <QuantityHeader>Ilość</QuantityHeader>
+                <QuantityInfo>
+                    <MinusButton icon={faMinusCircle} onClick={decrementItemHandler.bind(null, id)}>-</MinusButton>
+                    <QuantityNumber>{amount}</QuantityNumber>
+                    <PlusButton icon={faPlusCircle} onClick={incrementItemHandler.bind(null, id)}>+</PlusButton>
+                </QuantityInfo>
+            </QuantityContainer>
         </Container>
     );
 }
