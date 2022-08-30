@@ -4,29 +4,51 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import CartItem from './CartItem';
 import mexicanPattern from '../../assets/mexican-pattern.jpg';
-// import mariaczips from '../../assets/mariaczips.gif';
-// import mariachi from '../../assets/mariachis.png';
+import mariaczips from '../../assets/mariaczi_the_fastest.gif';
+import mexicanStuff from '../../assets/mexican-sfuff.png';
 
-const CartContainer = styled.section`
+const CartWrapper = styled.section`
     width: 100%;
-    // height: 100vh;
-    padding-top: 60px;
-    margin: 60px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(${mexicanStuff});
+    background-repeat: no-repeat;
+    background-size: cover;
+`;
+
+const CartContainer = styled.div`
+    // width: 100%;
+    padding: 60px 0;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+
+    @media (min-width: 1200px) {
+        flex-direction: row-reverse;
+        padding: 30px;
+        align-items: initial;
+        justify-content: initial;
+        border-radius: 15px;
+        gap: 0;
+        display: ${props => props.showCartContainer ? 'flex' : 'none'};
+    }
 `;
 
 const OrdersContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 90%;
     padding: 20px;
-    // background-color: blue;
-    background-image: url(${mexicanPattern});
+    background-image: url(${props => props.ordersExist ? mexicanPattern : ''});
     border-radius: 20px;
-    -webkit-box-shadow: -7px 8px 17px -9px rgba(66, 68, 90, 1);
-    -moz-box-shadow: -7px 8px 17px -9px rgba(66, 68, 90, 1);
-    box-shadow: -7px 8px 17px -9px rgba(66, 68, 90, 1);
+    -webkit-box-shadow: ${props => props.ordersExist ? '-7px 8px 17px -9px rgba(66, 68, 90, 1);' : ''}
+    -moz-box-shadow: ${props => props.ordersExist ? '-7px 8px 17px -9px rgba(66, 68, 90, 1);' : ''}
+    box-shadow: ${props => props.ordersExist ? '-7px 8px 17px -9px rgba(66, 68, 90, 1);' : ''}
 `;
 
 const TotalPriceContainer = styled.div`
@@ -38,7 +60,7 @@ const TotalPriceContainer = styled.div`
 
 const MakeOrderContainer = styled.div`
     width: 90%;
-    display: flex;
+    display: ${props => props.showOrdersContainer ? 'flex' : 'none'};
     justify-content: space-between;
     align-items: center;
     padding: 20px;
@@ -46,6 +68,12 @@ const MakeOrderContainer = styled.div`
     border-radius: 15px;
     font-family: 'League Spartan', sans-serif;
 
+    @media (min-width: 1200px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+    }
 `;
 
 const PaymentHeader = styled.span`
@@ -57,19 +85,26 @@ const Payment = styled.span`
     font-weight: 700;
 `;
 
-// const Mariachis = styled.div`
-//     background-image: url(${mariaczips});
-//     width: 600px;
-//     height: 400px;
-//     object-fit: cover;
-// `;
+const Mariachis = styled.div`
+    background-image: url(${mariaczips});
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: none;
+
+    @media (min-width: 1200px) {
+        display: ${props => props.showMariachi ? 'block' : 'none'};
+    }
+`;
 
 const Button = styled.button`
-    width: 100px;
+    width: 120px;
     border: none;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     background-color: #FAB200;
+    font-size: 1.2rem;
     color: #fff;
 
     &:hover {
@@ -83,6 +118,16 @@ const Button = styled.button`
     }
 `;
 
+const NoOrdersInCart = styled.h1`
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: ${props => props.showCartIsEmptyText ? 'none' : 'block'};
+    padding: 0 30px;
+`;
 
 export default function Cart() {
     const dishes = useSelector(state => state.dishes);
@@ -97,26 +142,29 @@ export default function Cart() {
     }, [dishes])
 
     return (
-        <CartContainer>
-            <OrdersContainer>
-                {dishes.map(item => <CartItem   key={item.id} 
-                                                id={item.id} 
-                                                dish={item.dish} 
-                                                price={item.price} 
-                                                amount={item.amount}>
-                                    </CartItem>)}
-            </OrdersContainer>
-            <MakeOrderContainer>
-                {/* <Mariachis/> */}
-                <TotalPriceContainer>
-                    <PaymentHeader>Do zapłaty:</PaymentHeader>
-                    <Payment>{formattedTotalPrice} zł</Payment>
-                </TotalPriceContainer>
-                {dishesExist && 
-                    <Link to={`podsumowanie`}>
-                        <Button>Realizuj zamówienie</Button>
-                    </Link>}
-            </MakeOrderContainer>
-        </CartContainer>
+        <CartWrapper>
+            <CartContainer showCartContainer={dishesExist}>
+                <OrdersContainer ordersExist={dishesExist}>
+                    {dishes.map(item => <CartItem   key={item.id} 
+                                                    id={item.id} 
+                                                    dish={item.dish} 
+                                                    price={item.price} 
+                                                    amount={item.amount}>
+                                        </CartItem>)}
+                </OrdersContainer>
+                <MakeOrderContainer showOrdersContainer={dishesExist}>
+                    <TotalPriceContainer>
+                        <PaymentHeader>Do zapłaty:</PaymentHeader>
+                        <Payment>{formattedTotalPrice} zł</Payment>
+                    </TotalPriceContainer>
+                    {dishesExist &&
+                        <Link to={'podsumowanie'}>
+                            <Button>Realizuj zamówienie</Button>
+                        </Link>}
+                </MakeOrderContainer>
+            </CartContainer>
+            <Mariachis showMariachi={dishesExist}/>
+            <NoOrdersInCart showCartIsEmptyText={dishesExist}>Twój koszyk jest pusty... Masz na coś ochotę?</NoOrdersInCart>
+        </CartWrapper>
     );
 }
