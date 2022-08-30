@@ -7,6 +7,7 @@ import styled from 'styled-components';
 const Container = styled.div`
     width: 100%;
     padding: 20px;
+    margin: 10px 0;
     display: flex;
     justify-content: space-between;
     background-color: rgba(255,255,255,0.3);
@@ -44,18 +45,21 @@ const QuantityNumber = styled(Price)``;
 
 const MinusButton = styled(FontAwesomeIcon)`
     cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease-in-out;
+    color: #000;
 
     &:hover {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         transition: all 0.2s ease-in; 
         color: #fff;
     }
 
-    &:not( :hover ) {
-        font-size: 1.5rem;
-        transition: all 0.3s ease-in-out;
-        color: #000;
-    }
+    // &:not( :hover ) {
+    //     font-size: 1.5rem;
+    //     transition: all 0.3s ease-in-out;
+    //     color: #000;
+    // }
 `;
 
 const PlusButton = styled(MinusButton)``;
