@@ -29,9 +29,7 @@ export default function CartBadge() {
 
     return (
         <BadgeContainer>
-            <FontAwesomeIcon icon={faShoppingCart} size='xl'>
-
-            </FontAwesomeIcon>
+            <FontAwesomeIcon icon={faShoppingCart} size='xl'/>
             <Badge itemsAmount={overallOrdersAmount}>{overallOrdersAmount}</Badge>
         </BadgeContainer>
     );
