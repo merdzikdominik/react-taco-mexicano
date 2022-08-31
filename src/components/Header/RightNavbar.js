@@ -1,7 +1,8 @@
 // import { useState } from 'react';
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import CartBadge from "./CartBadge";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import mexicanPattern from '../../assets/mexican-pattern.jpg';
 // import Cart from '../Cart/Cart';
@@ -42,10 +43,10 @@ const StyledUl = styled.ul`
         }
     }
 
-    .shopping-cart {
-        color: #fff;
-        font-size: 40px;
-    }
+    // .shopping-cart {
+    //     color: #fff;
+    //     font-size: 40px;
+    // }
 
     a {
         font-weight: 400;
@@ -116,7 +117,7 @@ export default function RightNavbar() {
         <>
             <StyledUl>
                 <li>
-                    <Link to='koszyk'><FontAwesomeIcon icon={faShoppingCart} className='shopping-cart'/>Koszyk</Link>
+                    <Link to='koszyk'><CartBadge/></Link>
                 </li>
                 <li>
                     <Link to='zamow-do-domu'>Zamów do domu</Link>

@@ -95,6 +95,27 @@ const Mariachis = styled.div`
 
     @media (min-width: 1200px) {
         display: ${props => props.showMariachi ? 'block' : 'none'};
+
+        animation-name: bump;
+        animation-duration: 0.3s;
+
+        @keyframes bump {
+            0% {
+                transform: scale(0.9);
+            }
+            25% {
+                transform: scale(1.2);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            75% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
     }
 `;
 
