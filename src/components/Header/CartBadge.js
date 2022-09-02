@@ -16,6 +16,7 @@ const BadgeContainer = styled.div`
 `;
 
 const Badge = styled.span`
+    display: ${props => props.itemsAmount === 0 ? 'none': 'block'};
     position: relative;
     top: -25px;
     right: 15px;
