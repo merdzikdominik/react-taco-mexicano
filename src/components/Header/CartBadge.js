@@ -17,8 +17,8 @@ const BadgeContainer = styled.div`
 
 const Badge = styled.span`
     position: relative;
-    top: -15px;
-    right: 10px;
+    top: -25px;
+    right: 15px;
     font-size: 1rem;
     font-weight: 900;
     text-align: center;
@@ -28,7 +28,10 @@ const Badge = styled.span`
     padding: ${props => props.itemsAmount < 10 ? '7px 9px' : '7px'}; 
 
     @media (min-width: 1200px) {
-        padding: ${props => props.itemsAmount < 10 ? '5px 7px' : '5px'};;
+        position: absolute;
+        top: -15px;
+        right: 50px;
+        padding: ${props => props.itemsAmount < 10 ? '1px 8px' : '1px 6px'};
     }
 `;
 
@@ -42,7 +45,6 @@ export default function CartBadge() {
         <BadgeContainer>
             <FontAwesomeIcon icon={faShoppingCart} className='icon'/>
             <Badge itemsAmount={overallOrdersAmount}>{overallOrdersAmount}</Badge>
-            
         </BadgeContainer>
     );
 }

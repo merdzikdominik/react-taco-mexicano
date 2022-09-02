@@ -47,21 +47,9 @@ const StyledUl = styled.ul`
     a {
         display: flex;
         flex-direction: column;
-        // flex-direction: row;
         font-weight: 400;
         color: #fff;
         text-decoration: none;
-
-        // &:hover {
-        //     background: url("https://ewebdesign.com/wp-content/themes/ewebdesign/assets/img/wave.svg");
-        //     background-repeat: repeat-x;
-        //     background-size: 15px 5px; 
-        //     background-position: 2px 19px;
-        //     background-color: transparent;
-        //     animation: move 15s linear infinite;
-        //     -webkit-animation: move 15s linear infinite;
-        //     -webkit-text-decoration-skip: objects;
-        // }
     }
 
     @-webkit-keyframes move {
@@ -103,6 +91,7 @@ const StyledUl = styled.ul`
             flex-direction: row;
             position: relative;
             transition: all 0.15s ease-out;
+            gap: 10px;
 
             &:before {
                 content: "";
@@ -111,7 +100,7 @@ const StyledUl = styled.ul`
                 height: 1px;
                 bottom: 0;
                 left: 0;
-                background-color: #FFBC23;
+                background-color: yellow;
                 visibility: hidden;
                 -webkit-transform: scaleX(0);
                 transform: scaleX(0);
