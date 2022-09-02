@@ -1,7 +1,8 @@
 // import { useState } from 'react';
 import { Link } from "react-router-dom";
 import CartBadge from "./CartBadge";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMapLocationDot, faPhone, faClock, faClipboardList, faHouse } from "@fortawesome/free-solid-svg-icons";
 // import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import mexicanPattern from '../../assets/mexican-pattern.jpg';
@@ -43,44 +44,41 @@ const StyledUl = styled.ul`
         }
     }
 
-    // .shopping-cart {
-    //     color: #fff;
-    //     font-size: 40px;
-    // }
-
     a {
+        display: flex;
+        flex-direction: column;
+        // flex-direction: row;
         font-weight: 400;
         color: #fff;
         text-decoration: none;
-        padding-bottom: 10px;
 
-        &:hover {
-            background: url("https://ewebdesign.com/wp-content/themes/ewebdesign/assets/img/wave.svg");
-            background-repeat: repeat-x;
-            background-size: 15px 5px; 
-            background-position: 2px 19px;
-            background-color: transparent;
-            animation: move 15s linear infinite;
-            -webkit-animation: move 15s linear infinite;
-            -webkit-text-decoration-skip: objects;
-        }
+        // &:hover {
+        //     background: url("https://ewebdesign.com/wp-content/themes/ewebdesign/assets/img/wave.svg");
+        //     background-repeat: repeat-x;
+        //     background-size: 15px 5px; 
+        //     background-position: 2px 19px;
+        //     background-color: transparent;
+        //     animation: move 15s linear infinite;
+        //     -webkit-animation: move 15s linear infinite;
+        //     -webkit-text-decoration-skip: objects;
+        // }
     }
 
     @-webkit-keyframes move {
         from {
-            background-position: 2px 19px;
+            mask-position: 2px 19px;
         }
           to {
-            background-position: 500px 19px;
+            mask-position: 500px 19px;
         }
     }
         
     @keyframes move {
         from {
-            background-position: 2px 19px;
+            mask-position: 2px 19px;
         }
         to {
-            background-position: 500px 19px;
+            mask-position: 500px 19px;
         }
     }
 
@@ -101,14 +99,34 @@ const StyledUl = styled.ul`
             border: none;
         }
 
-        .shopping-cart {
-            color: #fff;
-            font-size: 25px;
+        a {
+            flex-direction: row;
+            position: relative;
+            transition: all 0.15s ease-out;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                bottom: 0;
+                left: 0;
+                background-color: #FFBC23;
+                visibility: hidden;
+                -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+                -webkit-transition: all .5s cubic-bezier(1,.25,0,.75) 0s;
+                transition: all .5s cubic-bezier(1,.25,0,.75) 0s;
+            }
+
+            &:hover:before {
+                visibility: visible;
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+            }
+
         }
 
-        a:hover {
-            filter: brightness(0) saturate(100%) invert(76%) sepia(99%) saturate(1703%) hue-rotate(338deg) brightness(102%) contrast(101%);
-        }
     }
 `;
 
@@ -117,22 +135,22 @@ export default function RightNavbar() {
         <>
             <StyledUl>
                 <li>
-                    <Link to='koszyk'><CartBadge/></Link>
+                    <Link to='koszyk'><CartBadge/>Koszyk</Link>
                 </li>
                 <li>
-                    <Link to='zamow-do-domu'>Zamów do domu</Link>
+                    <Link to='zamow-do-domu'><FontAwesomeIcon icon={faHouse}/>Zamów do domu</Link>
                 </li>
                 <li>
-                    <Link to='menu'>Menu</Link>
+                    <Link to='menu'><FontAwesomeIcon icon={faClipboardList}/>Menu</Link>
                 </li>
                 <li>
-                    <Link to='kontakt' >Kontakt</Link>
+                    <Link to='kontakt'><FontAwesomeIcon icon={faPhone}/>Kontakt</Link>
                 </li>
                 <li>
-                    <Link to='godziny-otwarcia' >Godziny Otwarcia</Link>
+                    <Link to='godziny-otwarcia'><FontAwesomeIcon icon={faClock}/>Godziny Otwarcia</Link>
                 </li>
                 <li>
-                    <Link to='lokalizacja' >Lokalizacja</Link>
+                    <Link to='lokalizacja'><FontAwesomeIcon icon={faMapLocationDot}/>Lokalizacja</Link>
                 </li>
             </StyledUl>
         </>

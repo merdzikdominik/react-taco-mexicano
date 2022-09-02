@@ -4,21 +4,32 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import styled from 'styled-components';
 
 const BadgeContainer = styled.div`
-    display: initial;
+    .icon {
+        font-size: 2rem;
+    }
+
+    @media (min-width: 1200px) {
+        .icon {
+            font-size: 1.3rem;
+        }
+    }
 `;
 
 const Badge = styled.span`
     position: relative;
     top: -15px;
     right: 10px;
-    z-index: 10;
     font-size: 1rem;
     font-weight: 900;
     text-align: center;
     color: #fff;
     background-color: red;
     border-radius: 50%;
-    padding: ${props => props.itemsAmount < 10 ? '7px 9px' : '7px'};
+    padding: ${props => props.itemsAmount < 10 ? '7px 9px' : '7px'}; 
+
+    @media (min-width: 1200px) {
+        padding: ${props => props.itemsAmount < 10 ? '5px 7px' : '5px'};;
+    }
 `;
 
 export default function CartBadge() {
@@ -29,8 +40,9 @@ export default function CartBadge() {
 
     return (
         <BadgeContainer>
-            <FontAwesomeIcon icon={faShoppingCart} size='xl'/>
+            <FontAwesomeIcon icon={faShoppingCart} className='icon'/>
             <Badge itemsAmount={overallOrdersAmount}>{overallOrdersAmount}</Badge>
+            
         </BadgeContainer>
     );
 }
