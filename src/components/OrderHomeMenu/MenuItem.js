@@ -1,19 +1,18 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/actions/action-creators';
 import styled from 'styled-components';
 import Input from '../reusable/Input';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
     width: 90%;
-    // height: 100px;
     display: flex;
     margin: 0 auto;
     padding: 10px;
     justify-content: space-between;
     align-items: center;
-    // background-color: #fafafa;
-    // background-color: rgba(255,255,255,0.7);
     background-color: green;
     border-radius: 15px;
     overflow-x: hidden;
@@ -25,8 +24,6 @@ const LeftSide = styled.div`
     width: 70%;
     min-width: 120px;
     padding: 10px;
-    // background-color: red;
-
 
     @media (min-width: 1200px) {
         width: 80%;
@@ -42,16 +39,61 @@ const RighSide = styled.div`
     padding: 5px;
 `;
 
-// const Input = styled.input`
-//     width: 35px;
-//     text-align: center;
-// `;
+const Form = styled.form`
+    display: flex;
+`;
+
+const Button = styled.button`
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    animation-name: ${props => props.isClicked ? 'bump' : ''};
+    animation-duration: 0.3s;
+    transition: ease;
+
+    // &:active {
+    //     animation-name: bump;
+    //     animation-duration: 1.3s;
+    //     transition: ease-out;
+    // }
+
+    @keyframes bump {
+        0% {
+            transform: scale(1.9);
+        }
+        25% {
+            transform: scale(2.2);
+        }
+        50% {
+            transform: scale(2.5);
+        }
+        75% {
+            transform: scale(2.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+`;
 
 export default function MenuItem({ id, dish, price, category }) {
     const inputRef = useRef();
     const dispatch = useDispatch();
+    const [clicked, setClicked] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setClicked(false);
+        }, 300);
+
+        return () => {
+            clearTimeout(timer);
+        }
+    }, [clicked]);
 
     const addToCartHandler = (event) => {       
+        event.preventDefault();
+
         const payload = {
             id,
             dish,
@@ -71,19 +113,20 @@ export default function MenuItem({ id, dish, price, category }) {
             </LeftSide>
             <RighSide>
                 <span>{price} zł</span>
-                {/* <Input type='number' placeholder='0' ref={inputRef} min='0' max='7'></Input> */}
-                <Input  input={{
-                                id: 'search',
-                                type: 'number',
-                                ref: inputRef,
-                                min: '0',
-                                max: '7',
-                                placeholder: '0',
-                                style: {width: '35px', textAlign: 'center', borderRadius: '5px'}
-                            }}
-                        padding='0 15px'
-                />
-                <button onClick={addToCartHandler}>+</button>
+                <Form onSubmit={addToCartHandler}>
+                    <Input  input={{
+                                    id: 'search',
+                                    type: 'number',
+                                    ref: inputRef,
+                                    min: '0',
+                                    max: '7',
+                                    placeholder: '0',
+                                    style: {width: '35px', textAlign: 'center', borderRadius: '5px'}
+                                }}
+                            containerPadding='0 15px'
+                    />
+                    <Button type='submit' onClick={() => setClicked(true)} isClicked={clicked}><FontAwesomeIcon icon={faCartPlus}/></Button>
+                </Form>
             </RighSide>
         </Container>
     );

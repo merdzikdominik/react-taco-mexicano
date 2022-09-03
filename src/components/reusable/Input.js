@@ -17,9 +17,9 @@ const CustomInput = styled.input`
     border: none;
 `;
 
-export default function Input({ id, label, input, padding }) {
+export default function Input({ id, label, input, containerPadding }) {
     return (
-        <MainContainer padding={padding}>
+        <MainContainer padding={containerPadding}>
             <Label htmlFor={id}>{label}</Label>
             <CustomInput {...input} />
         </MainContainer>
