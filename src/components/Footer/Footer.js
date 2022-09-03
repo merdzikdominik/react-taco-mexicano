@@ -8,10 +8,8 @@ const StyledFooter = styled.footer`
     justify-content: center;
     word-break: normal;
     font-family: 'League Spartan', sans-serif;
-    // position: fixed;
-    // left:0;
-    // bottom:0;
-    // right:0;
+    position: relative;
+    z-index: 7;
 
     span {
         padding: 30px 0;

@@ -11,8 +11,10 @@ const Container = styled.div`
     padding: 10px;
     justify-content: space-between;
     align-items: center;
-    background-color: #fafafa;
+    // background-color: #fafafa;
+    background-color: rgba(255,255,255,0.7);
     border-radius: 15px;
+    overflow-x: hidden;
 `;
 
 const LeftSide = styled.div`
@@ -66,9 +68,8 @@ export default function MenuItem({ id, dish, price, category }) {
             </LeftSide>
             <RighSide>
                 <span>{price} zł</span>
-                {/* TODO: build brand new input component */}
                 <Input type='number' placeholder='0' ref={inputRef} min='0' max='7'></Input>
-                <button onClick={addToCartHandler}>ADD</button>
+                <button onClick={addToCartHandler}>DODAJ MNIE KURWA</button>
             </RighSide>
         </Container>
     );

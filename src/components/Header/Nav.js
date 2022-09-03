@@ -13,13 +13,11 @@ const StyledNav = styled.nav`
     z-index: 1000;
 
     @media (min-width: 1200px) {
-        justify-content: space-between;
+        justify-content: space-around;
     }
 `;
 
 export default function Nav() {
-
-
     return (
         <StyledNav>
             <Link to='/'><Logo/></Link>

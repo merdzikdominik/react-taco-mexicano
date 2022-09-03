@@ -13,6 +13,7 @@ const Label = styled.label`
 const CustomInput = styled.input`
     width: 200px;
     padding: 5px;
+    border: none;
 `;
 
 export default function Input({ id, label, input }) {

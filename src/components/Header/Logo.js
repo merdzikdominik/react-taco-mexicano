@@ -10,7 +10,7 @@ const LogoContainer = styled.div`
     @media (min-width: 1200px) {
         position: relative;
         left: 0;
-        padding: 0 100px;
+        // padding: 0 100px;
         width: 150px;
         height: 150px;
     }

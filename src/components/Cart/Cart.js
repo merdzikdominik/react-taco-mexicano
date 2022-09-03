@@ -13,8 +13,8 @@ const CartWrapper = styled.section`
     display: flex;
     flex-direction: column;
     background-image: url(${mexicanStuff});
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-repeat: no-repeat;
+    // background-size: cover;
 `;
 
 const CartContainer = styled.div`
