@@ -11,7 +11,7 @@ const Menu = styled.section`
     background-image: url(${mexicanStuff});
     width: 100%;
     min-height: 100vh;
-    padding: 10px;
+    overflow: auto;
 `;
 
 const MenuContainer = styled.div`
@@ -36,9 +36,11 @@ const MenuHeaderSection = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
 
     @media (min-width: 1200px) {
-        flex-direction: row;
+        justify-content: space-between;
+        flex-direction: row-reverse;
     }
 `;
 
@@ -47,7 +49,8 @@ const H1 = styled.h1`
     font-size: 30px;
     text-align: center;
     padding: 0 50px;
-    color: #fff;
+    margin: 0;
+    color: #000;
     
     @media (min-width: 1200px) {
         text-align: right;
@@ -66,6 +69,7 @@ export default function OrderHomeMenu() {
         <Menu>
             <MenuContainer>
                 <MenuHeaderSection>
+                    <H1>Na co masz dziś ochotę?</H1>
                     <Input  label='' 
                             input={{
                                 id: 'filter',
@@ -75,12 +79,9 @@ export default function OrderHomeMenu() {
                                 style: { borderRadius: '5px' }
                             }}
                     />
-                    <H1>Na co masz dziś ochotę?</H1>
                 </MenuHeaderSection>
                 <PaginatedItems itemsPerPage={7} items={dishes} searchedDish={searchedDish}/>
             </MenuContainer>
-            {/* <VideoBackground/> */}
-            {/* <BrownStripe /> */}
         </Menu>
     );
 }

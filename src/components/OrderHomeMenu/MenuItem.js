@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/actions/action-creators';
 import styled from 'styled-components';
+import Input from '../reusable/Input';
 
 const Container = styled.div`
     width: 90%;
@@ -12,7 +13,8 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     // background-color: #fafafa;
-    background-color: rgba(255,255,255,0.7);
+    // background-color: rgba(255,255,255,0.7);
+    background-color: green;
     border-radius: 15px;
     overflow-x: hidden;
 `;
@@ -22,7 +24,7 @@ const LeftSide = styled.div`
     flex-direction: column;
     width: 70%;
     min-width: 120px;
-    padding: 20px;
+    padding: 10px;
     // background-color: red;
 
 
@@ -32,17 +34,18 @@ const LeftSide = styled.div`
 `;
 
 const RighSide = styled.div`
+    // max-width: 250px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
 `;
 
-const Input = styled.input`
-    width: 35px;
-    text-align: center;
-`;
+// const Input = styled.input`
+//     width: 35px;
+//     text-align: center;
+// `;
 
 export default function MenuItem({ id, dish, price, category }) {
     const inputRef = useRef();
@@ -68,8 +71,19 @@ export default function MenuItem({ id, dish, price, category }) {
             </LeftSide>
             <RighSide>
                 <span>{price} zł</span>
-                <Input type='number' placeholder='0' ref={inputRef} min='0' max='7'></Input>
-                <button onClick={addToCartHandler}>DODAJ MNIE KURWA</button>
+                {/* <Input type='number' placeholder='0' ref={inputRef} min='0' max='7'></Input> */}
+                <Input  input={{
+                                id: 'search',
+                                type: 'number',
+                                ref: inputRef,
+                                min: '0',
+                                max: '7',
+                                placeholder: '0',
+                                style: {width: '35px', textAlign: 'center', borderRadius: '5px'}
+                            }}
+                        padding='0 15px'
+                />
+                <button onClick={addToCartHandler}>+</button>
             </RighSide>
         </Container>
     );

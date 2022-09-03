@@ -3,7 +3,8 @@ import styled from "styled-components";
 const MainContainer = styled.div`
     // width: 100px;
     // height: auto;
-    padding: 0 50px;
+    // padding: 0 50px;
+    padding: ${props => props.padding ? props.padding : '0 50px'};
 `;
 
 const Label = styled.label`
@@ -16,9 +17,9 @@ const CustomInput = styled.input`
     border: none;
 `;
 
-export default function Input({ id, label, input }) {
+export default function Input({ id, label, input, padding }) {
     return (
-        <MainContainer>
+        <MainContainer padding={padding}>
             <Label htmlFor={id}>{label}</Label>
             <CustomInput {...input} />
         </MainContainer>
