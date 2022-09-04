@@ -59,16 +59,16 @@ const Button = styled.button`
 
     @keyframes bump {
         0% {
-            transform: scale(1.9);
+            transform: scale(0.9);
         }
         25% {
-            transform: scale(2.2);
+            transform: scale(1.2);
         }
         50% {
-            transform: scale(2.5);
+            transform: scale(1.5);
         }
         75% {
-            transform: scale(2.2);
+            transform: scale(1.2);
         }
         100% {
             transform: scale(1);
@@ -94,15 +94,19 @@ export default function MenuItem({ id, dish, price, category }) {
     const addToCartHandler = (event) => {       
         event.preventDefault();
 
+        const amount = +inputRef.current.value;
+
+        if (amount === 0) return;
         const payload = {
             id,
             dish,
             price: +price,
             category,
-            amount: +inputRef.current.value
+            amount
         };
 
         dispatch(addToCart(payload));
+
     }
 
     return (
