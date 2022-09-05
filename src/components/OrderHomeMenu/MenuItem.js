@@ -13,7 +13,7 @@ const Container = styled.div`
     padding: 10px;
     justify-content: space-between;
     align-items: center;
-    background-color: green;
+    background-color: rgba(255,255,255,.4);
     border-radius: 15px;
     overflow-x: hidden;
 `;
@@ -24,6 +24,7 @@ const LeftSide = styled.div`
     width: 70%;
     min-width: 120px;
     padding: 10px;
+    color: #fff;
 
     @media (min-width: 1200px) {
         width: 80%;
@@ -37,6 +38,7 @@ const RighSide = styled.div`
     justify-content: space-evenly;
     align-items: center;
     padding: 5px;
+    color: #fff;
 `;
 
 const Form = styled.form`

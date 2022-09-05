@@ -3,9 +3,13 @@ import PaginatedItems from './PaginatedItems';
 import useDishes from '../../hooks/useDishes';
 import Input from '../reusable/Input';
 import { useState } from 'react';
+import mexicanPattern from '../../assets/mexican-pattern.jpg';
+import mexicanPatternGreen from '../../assets/mexican-pattern__green.jpg';
 // import VideoBackground from './VideoBackground';
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 // import BrownStripe from './BrownStripe';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Menu = styled.section`
     background-image: url(${mexicanStuff});
@@ -22,9 +26,12 @@ const MenuContainer = styled.div`
     margin: 140px auto;
     gap: 2px;
     border-radius: 20px;
-    background-color: rgba(222,222,222,0.3);
+    background-image: url(${mexicanPatternGreen});
     position: relative;
     z-index: 3;
+    -webkit-box-shadow: -7px 4px 24px -12px rgba(66, 68, 90, 1);
+    -moz-box-shadow: -7px 4px 24px -12px rgba(66, 68, 90, 1);
+    box-shadow: -7px 4px 24px -12px rgba(66, 68, 90, 1);
 
     @media (min-width: 1200px) {
         max-width: 800px;
@@ -50,11 +57,27 @@ const H1 = styled.h1`
     text-align: center;
     padding: 0 50px;
     margin: 0;
-    color: #000;
+    color: #fff;
     
     @media (min-width: 1200px) {
         text-align: right;
     }
+`;
+
+const Icon = styled(FontAwesomeIcon).attrs(props => ({
+    icon: faSearch
+}))`
+    color: #000;
+    background-color: #fff;
+    align-items: center;
+    // padding: 5.8px;
+    padding: 9px;
+    cursor: pointer;
+`;
+
+const Filter = styled.div`
+    display: flex;
+    padding: 0 50px;
 `;
 
 export default function OrderHomeMenu() {
@@ -70,15 +93,19 @@ export default function OrderHomeMenu() {
             <MenuContainer>
                 <MenuHeaderSection>
                     <H1>Na co masz dziś ochotę?</H1>
-                    <Input  label='' 
-                            input={{
-                                id: 'filter',
-                                type: 'text',
-                                placeholder: 'Wyszukaj danie',
-                                onChange: handleGetSearchedDish,
-                                style: { borderRadius: '5px' }
-                            }}
-                    />
+                        <Filter>
+                            <Icon icon={faSearch}/>    
+                            <Input  label='' 
+                                    input={{
+                                        id: 'filter',
+                                        type: 'text',
+                                        placeholder: 'Wyszukaj danie',
+                                        onChange: handleGetSearchedDish,
+                                        // style: { borderRadius: '5px' }
+                                    }}
+                                    containerPadding='0'
+                            />
+                        </Filter>
                 </MenuHeaderSection>
                 <PaginatedItems itemsPerPage={7} items={dishes} searchedDish={searchedDish}/>
             </MenuContainer>

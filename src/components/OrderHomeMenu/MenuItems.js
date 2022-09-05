@@ -14,7 +14,7 @@ export default function MenuItems({ currentItems, searchedDish }) {
     return (
         <>
             {updatedDishes && updatedDishes
-                .filter(dish => dish.dish_name.toLowerCase().includes(searchedDish))
+                .filter(dish => dish.dish_name.toLowerCase().includes(searchedDish.toLowerCase()))
                 .map(dish => <MenuItem  key={dish.dish_id} 
                                         id={dish.dish_id}
                                         dish={dish.dish_name} 
