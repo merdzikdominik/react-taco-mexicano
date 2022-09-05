@@ -72,7 +72,6 @@ const Icon = styled(FontAwesomeIcon).attrs(props => ({
     align-items: center;
     // padding: 5.8px;
     padding: 9px;
-    cursor: pointer;
 `;
 
 const Filter = styled.div`

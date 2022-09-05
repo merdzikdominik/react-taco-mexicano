@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -28,6 +29,28 @@ const Badge = styled.span`
     border-radius: 50%;
     padding: ${props => props.itemsAmount < 10 ? '7px 9px' : '7px'}; 
 
+    animation-name: ${props => props.amountChanged ? 'bump' : ''};
+    animation-duration: 0.3s;
+    transition: ease;
+
+    @keyframes bump {
+        0% {
+            transform: scale(0.9);
+        }
+        25% {
+            transform: scale(1.2);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        75% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
     @media (min-width: 1200px) {
         position: absolute;
         top: -15px;
@@ -41,11 +64,25 @@ export default function CartBadge() {
     const overallOrdersAmount = orders.reduce((acc, curr) => {
         return acc + curr.amount;
     }, 0);
+    const [ordersAmount, setOrdersAmount] = useState(0);
+    const [isAmountChanged, setIsAmountChanged] = useState(false);
+
+    useEffect(() => {
+        setIsAmountChanged(true);
+
+        const timer = setTimeout(() => {
+            setIsAmountChanged(false);
+        }, 300);
+
+        return () => {
+            clearTimeout(timer);
+        }
+    }, [orders]);
 
     return (
         <BadgeContainer>
             <FontAwesomeIcon icon={faShoppingCart} className='icon'/>
-            <Badge itemsAmount={overallOrdersAmount}>{overallOrdersAmount}</Badge>
+            <Badge amountChanged={isAmountChanged} itemsAmount={overallOrdersAmount}>{overallOrdersAmount}</Badge>
         </BadgeContainer>
     );
 }
