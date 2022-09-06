@@ -28,26 +28,16 @@ const Badge = styled.span`
     background-color: red;
     border-radius: 50%;
     padding: ${props => props.itemsAmount < 10 ? '7px 9px' : '7px'}; 
-
-    animation-name: ${props => props.amountChanged ? 'bump' : ''};
+    animation-name: ${props => props.amountChanged ? 'rotate' : ''};
     animation-duration: 0.3s;
     transition: ease;
 
-    @keyframes bump {
-        0% {
-            transform: scale(0.9);
+    @keyframes rotate {
+        from { 
+            transform: rotate(0) scale(1.5); 
         }
-        25% {
-            transform: scale(1.2);
-        }
-        50% {
-            transform: scale(1.5);
-        }
-        75% {
-            transform: scale(1.2);
-        }
-        100% {
-            transform: scale(1);
+        to { 
+            transform: rotate(360deg) scale(0.9); 
         }
     }
 
@@ -64,7 +54,6 @@ export default function CartBadge() {
     const overallOrdersAmount = orders.reduce((acc, curr) => {
         return acc + curr.amount;
     }, 0);
-    const [ordersAmount, setOrdersAmount] = useState(0);
     const [isAmountChanged, setIsAmountChanged] = useState(false);
 
     useEffect(() => {
