@@ -20,6 +20,10 @@ const Container = styled.div`
         border-radius: 15px;
         height: 500px;
         overflow: auto;
+
+        -webkit-box-shadow: -3px 7px 18px -3px rgba(66, 68, 90, 1);
+        -moz-box-shadow: -3px 7px 18px -3px rgba(66, 68, 90, 1);
+        box-shadow: -3px 7px 18px -3px rgba(66, 68, 90, 1);
         
         &::-webkit-scrollbar {
             width: 1px;
