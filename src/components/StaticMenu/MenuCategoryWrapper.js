@@ -26,16 +26,28 @@ const Container = styled.div`
         box-shadow: -3px 7px 18px -3px rgba(66, 68, 90, 1);
         
         &::-webkit-scrollbar {
-            width: 1px;
+            height: 12px;
+            width: 12px;
+            background: #fff;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: #eee;
+            -webkit-border-radius: 1ex;
+            -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+        }
+        
+        &::-webkit-scrollbar-corner {
+            background: #000;
         }
 
-        &:nth-child(1){ background-image: url(${mexicanPatternOrange}); }
-        &:nth-child(2){ background-image: url(${mexicanPatternDarkPink}); }
-        &:nth-child(3){ background-image: url(${mexicanPatternBlue}); }
-        &:nth-child(4){ background-image: url(${mexicanPatternGreen}); }
-        &:nth-child(5){ background-image: url(${mexicanPatternYellow}); }
-        &:nth-child(6){ background-image: url(${mexicanPatternRed}); }
-        &:nth-child(7){ 
+        &:nth-child(1) { background-image: url(${mexicanPatternOrange}); }
+        &:nth-child(2) { background-image: url(${mexicanPatternDarkPink}); }
+        &:nth-child(3) { background-image: url(${mexicanPatternBlue}); }
+        &:nth-child(4) { background-image: url(${mexicanPatternGreen}); }
+        &:nth-child(5) { background-image: url(${mexicanPatternYellow}); }
+        &:nth-child(6) { background-image: url(${mexicanPatternRed}); }
+        &:nth-child(7) { 
             background-image: url(${mexicanPatternPurple});
             grid-column: 1/3;
         }
