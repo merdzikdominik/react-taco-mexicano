@@ -6,7 +6,8 @@ import styled from 'styled-components';
 
 const BadgeContainer = styled.div`
     .icon {
-        font-size: 2rem;
+        // text-align: center;
+        font-size: 1.3rem;
     }
 
     @media (min-width: 1200px) {

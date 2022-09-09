@@ -20,7 +20,8 @@ const StyledUl = styled.ul`
     justify-content: center;
     z-index: 1000;
     width: 250px;
-    height: 100vh;
+    // height: 100vh;
+    height: 100%;
     font-size: 1.2rem;
     font-family: 'League Spartan', sans-serif;
     position: fixed;
@@ -35,7 +36,7 @@ const StyledUl = styled.ul`
 
     li {
         width: 90%;
-        padding: 35px 0;
+        padding: 7% 0;
         color: #FFBC23;
         border-bottom: 1px solid #333;
 
