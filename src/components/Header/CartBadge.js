@@ -29,11 +29,11 @@ const Badge = styled.span`
     background-color: red;
     border-radius: 50%;
     padding: ${props => props.itemsAmount < 10 ? '7px 9px' : '7px'}; 
-    animation-name: ${props => props.amountChanged ? 'rotate' : ''};
+    animation-name: ${props => props.amountChanged ? 'rotateBadge' : ''};
     animation-duration: 0.3s;
     transition: ease;
 
-    @keyframes rotate {
+    @keyframes rotateBadge {
         from { 
             transform: rotate(0) scale(1.5); 
         }
