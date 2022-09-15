@@ -3,6 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { faMobile, faAt } from "@fortawesome/free-solid-svg-icons";
 import mexicanStuff from '../../assets/mexican-sfuff.png';
+import mexicanPatternBlue from '../../assets/mexican-pattern__blue.jpg';
+import mexicanPatternYellow from '../../assets/mexican-pattern.jpg';
+import mexicanPatternPurple from '../../assets/mexican-pattern__purple.jpg';
+import mexicanPatternInstagram from '../../assets/mexican-pattern__instagram.jpg';
 
 const ContactContainer = styled.section`
     width: 100%;
@@ -20,6 +24,8 @@ const ContactContainer = styled.section`
 `;
 
 const Container = styled.div`
+    display: flex;
+    flex-direction: column;
     max-width: 500px;
     width: 100%;
     background-color: rgba(255,255,255,0.6);
@@ -29,6 +35,7 @@ const Container = styled.div`
     -moz-box-shadow: -8px 9px 20px -11px rgba(66, 68, 90, 1);
     box-shadow: -8px 9px 20px -11px rgba(66, 68, 90, 1);
     animation: rotate 0.5s both;
+    overflow: hidden;
     
     @keyframes rotate {
         90% {
@@ -56,6 +63,7 @@ const Container = styled.div`
         max-width: 1200px; 
         box-shadow: none;
         animation: none;
+        overflow: initial;
     }
 `;
 
@@ -83,6 +91,11 @@ const ContactOption = styled.div`
         border-bottom: none;
     }
 
+    &:nth-child(1) { background-image: url(${mexicanPatternPurple}); }
+    &:nth-child(2) { background-image: url(${mexicanPatternBlue}); }
+    &:nth-child(3) { background-image: url(${mexicanPatternYellow}); }
+    &:nth-child(4) { background-image: url(${mexicanPatternInstagram}); }
+
     @media (min-width: 1200px) {
         justify-content: space-evenly;
         border: none;
@@ -104,6 +117,11 @@ const ContactOption = styled.div`
         &:nth-child(2) {
             border-bottom: 1px solid #c4c4c4;
         }
+
+        &:nth-child(1) { background-image: none; }
+        &:nth-child(2) { background-image: none; }
+        &:nth-child(3) { background-image: none; }
+        &:nth-child(4) { background-image: none; }
 
         @keyframes slam {
             10% { transform: scale(4); }
@@ -129,29 +147,66 @@ const H1 = styled.h1`
 const FacebookIcon = styled(FontAwesomeIcon)`
     color: 	#4267B2;
     font-size: 3rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        // top: 0;
+        left: 50px;
+        width: 100px;
+        height: 100px;
+        color: red;
+        background-color: red;
+        z-index: 2000;
+    }
 `;
 
 const InstagramIcon = styled(FontAwesomeIcon)`
-    // color: red;
+    color: #fff;
     // font-size: 1.2rem;
     font-size: 3rem;
+
+    @media (min-width: 1200px) {
+        color: #000;
+    }
 `;
 
 const MobileIcon = styled(FontAwesomeIcon)`
-    color: #000;
+    color: #fff;
     // font-size: 1.2rem;
     font-size: 3rem;
+
+    @media (min-width: 1200px) {
+        color: #000;
+    }
 `;
 
 const EmailIcon = styled(FontAwesomeIcon)`
-    color: #000;
+    color: #fff;
     // font-size: 1.2rem;
     font-size: 3rem;
+
+    @media (min-width: 1200px) {
+        color: #000;
+    }
 `;
 
 const Text = styled.span`
     font-size: 1.3rem;
     text-align: right;
+    color: #fff;
+
+    a {
+        color: #fff;
+    }
+
+    @media (min-width: 1200px) {
+        color: #000;
+
+        a {
+            color: #000;
+        }
+    }
 `;
 
 export default function Contact() {

@@ -196,6 +196,7 @@ export default function Cart() {
                 </MakeOrderContainer>
             </CartContainer>
             <Mariachis showMariachi={dishesExist}/>
+            {/* TODO: consider changing 200 line to conditional rendering */}
             <NoOrdersInCart showCartIsEmptyText={dishesExist}>Twój koszyk jest pusty... Masz na coś ochotę?</NoOrdersInCart>
         </CartWrapper>
     );

@@ -120,6 +120,8 @@ const StyledUl = styled.ul`
     }
 `;
 
+// TODO: change links to navlinks for better accessibility
+
 export default function RightNavbar() {
     return (
         <>
