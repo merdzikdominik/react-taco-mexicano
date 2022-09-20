@@ -34,26 +34,18 @@ const Container = styled.div`
     -webkit-box-shadow: -8px 9px 20px -11px rgba(66, 68, 90, 1);
     -moz-box-shadow: -8px 9px 20px -11px rgba(66, 68, 90, 1);
     box-shadow: -8px 9px 20px -11px rgba(66, 68, 90, 1);
-    animation: rotate 0.5s both;
+    animation: wiggle 2s linear;
     overflow: hidden;
     
-    @keyframes rotate {
-        90% {
-            transform: rotate(5deg);
-        }
-        
-        60%, 85% {
-            transform: rotate(-5deg);
-        }
-      
-        70% {
-            transform: rotate(10deg);
-        }
-      
-        80% {
-            transform: rotate(-10deg);
-        }
-    }
+    @keyframes wiggle {
+        0%, 7% { transform: rotateZ(0); }
+        15% { transform: rotateZ(-15deg); }
+        20% { transform: rotateZ(10deg); }
+        25% { transform: rotateZ(-10deg); }
+        30% { transform: rotateZ(6deg); }
+        35% { transform: rotateZ(-4deg); }
+        40%, 100% { transform: rotateZ(0); }
+      }
 
     @media (min-width: 1200px) {
         display: grid;
@@ -151,8 +143,8 @@ const FacebookIcon = styled(FontAwesomeIcon)`
     &::after {
         content: '';
         position: absolute;
-        // top: 0;
-        left: 50px;
+        left: 0;
+        top: 0;
         width: 100px;
         height: 100px;
         color: red;
