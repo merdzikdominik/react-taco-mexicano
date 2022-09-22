@@ -14,7 +14,8 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 const Menu = styled.section`
     background-image: url(${mexicanStuff});
     width: 100%;
-    min-height: 100vh;
+    // TODO: adjutst the height so the footer is not visible for couple of ms
+    min-height: 100vh !important; 
     overflow: auto;
 `;
 

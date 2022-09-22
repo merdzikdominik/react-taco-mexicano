@@ -19,7 +19,6 @@ const ContactContainer = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: auto;
     font-family: 'League Spartan', sans-serif;
 `;
 
@@ -65,7 +64,6 @@ const ContactOption = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 30px 10px;
-    border: 1px solid #C4C4C4;
     border-left: none;
     border-right: none;
     
