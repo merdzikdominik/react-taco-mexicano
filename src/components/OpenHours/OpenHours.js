@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { OPEN_HOURS_POSITIONS } from "../../constants";
 import OpenHoursOption from "./OpenHoursOption";
+import mexicanPatternPurple from '../../assets/mexican-pattern__purple.jpg';
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 // import { motion } from 'framer-motion';
 
@@ -21,8 +22,13 @@ const DayContainer = styled.div`
     max-width: 500px;
     width: 100%;
     // background-color: green;
+    // background-image: url(${mexicanPatternPurple});
     border-radius: 15px;
     overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none !important;
+    }
 `;
 
 const H1 = styled.h1`
