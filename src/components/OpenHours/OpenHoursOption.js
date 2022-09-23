@@ -23,25 +23,8 @@ const MainContainer = styled.div`
     animation-delay: ${props => props.delay}s;
     animation-fill-mode: backwards;
 
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-    //   width: 200%;
-    //   height: 100%;
-    //   top: 30px;
-    //   left: -10px;
-    //   background-color: #fff;
-    //   transform: rotateZ(-10deg);
-    //   overflow: hidden;
-    // }
-
-    // &:nth-child(odd) {
-    //   color: #000;
-    //   background-color: #fff;
-    // }
-
     @keyframes bounce {
-        0% { top: -120px; left: -500px; }
+        0% { top: -120px; left: -550px; }
         10% { top: 0; left: 0; }
         20% { top: 20px; left: 20px; }
         30% { top: 5px; left: 30px; }
@@ -54,16 +37,6 @@ const MainContainer = styled.div`
         100% { top: 0; left: 0; }
     }
 `;
-
-// const Day = styled.span`
-//     position: relative;
-//     color: #fff;
-//     z-index: 10;
-// `;
-
-// const Time = styled(Day)`
-//     color: #000;
-// `;
 
 export default function OpenHoursOption({ day, time, delay }) {
     

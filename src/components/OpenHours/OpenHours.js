@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { OPEN_HOURS_POSITIONS } from "../../constants";
 import OpenHoursOption from "./OpenHoursOption";
-import mexicanPatternPurple from '../../assets/mexican-pattern__purple.jpg';
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 // import { motion } from 'framer-motion';
 
@@ -9,8 +8,7 @@ const MainContainer = styled.section`
     width: 100%;
     height: 100vh;
     margin-top: 60px;
-    // padding-top: 60px;
-    // background-color: red;
+    padding: 30px 20px;
     background-image: url(${mexicanStuff});
     display: flex;
     flex-direction: column;
@@ -21,10 +19,39 @@ const MainContainer = styled.section`
 const DayContainer = styled.div`
     max-width: 500px;
     width: 100%;
-    // background-color: green;
-    // background-image: url(${mexicanPatternPurple});
     border-radius: 15px;
-    overflow: auto;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 100%;
+        position: absolute;
+        top: -220px;
+        left: 0;
+        background-color: #FFF;
+        opacity: 0;
+        transform: rotate(45deg);
+        animation: reflect 2s ease-in-out;
+        animation-delay: 1s !important;
+        -webkit-transform: rotate(45deg);
+        -webkit-animation: reflect 2s ease-in-out;
+      }
+
+      @keyframes reflect {
+        0% { transform: scale(0) rotate(45deg); opacity: 0; }
+        80% { transform: scale(0) rotate(45deg); opacity: 0.5; }
+        81% { transform: scale(4) rotate(45deg); opacity: 1; }
+        100% { transform: scale(50) rotate(45deg); opacity: 0; }
+      }
+      @-webkit-keyframes reflect {
+        0% { transform: scale(0) rotate(45deg); opacity: 0; }
+        80% { transform: scale(0) rotate(45deg); opacity: 0.5; }
+        81% { transform: scale(4) rotate(45deg); opacity: 1; }
+        100% { transform: scale(50) rotate(45deg); opacity: 0; }
+      }
 
     &::-webkit-scrollbar {
         display: none !important;
