@@ -14,6 +14,7 @@ const MainContainer = styled.div`
     overflow: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: relative;
     top: 0;
     left: 0;
@@ -35,6 +36,27 @@ const MainContainer = styled.div`
         80% { top: 10px; left: 20px; }
         90% { top: 5px; left: 10px; }
         100% { top: 0; left: 0; }
+    }
+
+    @media (min-width: 1200px) {
+        border-radius: 15px;
+        -webkit-animation: fly .8s ease-in-out forwards;
+        animation: drop .8s ease-in-out forwards;
+        animation-delay: ${props => props.delay}s;
+        animation-fill-mode: backwards;
+
+        &:last-child:nth-child(3n - 2) {
+            grid-column-end: 3;
+        }
+
+        @keyframes drop {
+            0% {transform: translateY(-200px) scaleY(0.9); opacity: 0;}
+            5% {opacity: .7;}
+            50% {transform: translateY(0px) scaleY(1); opacity: 1;}
+            65% {transform: translateY(-17px) scaleY(.9); opacity: 1;}
+            75% {transform: translateY(-22px) scaleY(.9); opacity: 1;}
+            100% {transform: translateY(0px) scaleY(1); opacity: 1;}
+          }
     }
 `;
 

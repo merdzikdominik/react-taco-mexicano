@@ -16,11 +16,9 @@ const Container = styled.div`
 
     @media (min-width: 1200px) {
         color: #eee;
-        // border: 1px solid #000;
         border-radius: 15px;
         height: 500px;
         overflow: auto;
-
         -webkit-box-shadow: -3px 7px 18px -3px rgba(66, 68, 90, 1);
         -moz-box-shadow: -3px 7px 18px -3px rgba(66, 68, 90, 1);
         box-shadow: -3px 7px 18px -3px rgba(66, 68, 90, 1);
@@ -37,9 +35,7 @@ const Container = styled.div`
             -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
         }
         
-        &::-webkit-scrollbar-corner {
-            background: #000;
-        }
+        &::-webkit-scrollbar-corner { background: #000; }
 
         &:nth-child(1) { background-image: url(${mexicanPatternOrange}); }
         &:nth-child(2) { background-image: url(${mexicanPatternDarkPink}); }
@@ -47,16 +43,9 @@ const Container = styled.div`
         &:nth-child(4) { background-image: url(${mexicanPatternGreen}); }
         &:nth-child(5) { background-image: url(${mexicanPatternYellow}); }
         &:nth-child(6) { background-image: url(${mexicanPatternRed}); }
-        &:nth-child(7) { 
-            background-image: url(${mexicanPatternPurple});
-            grid-column: 1/3;
-        }
-    }
+        &:nth-child(7) { background-image: url(${mexicanPatternPurple}); }
 
-    @media (min-width: 1540px) {
-        &:nth-child(7){ 
-            grid-column: 2/3;
-        }
+        &:last-child:nth-child(3n - 2) { grid-column-end: 3; }
     }
 `;
 

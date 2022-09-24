@@ -20,6 +20,10 @@ const ContactContainer = styled.section`
     justify-content: center;
     align-items: center;
     font-family: 'League Spartan', sans-serif;
+
+    @media (min-width: 1200px) {
+        padding: 0;
+    }
 `;
 
 const Container = styled.div`

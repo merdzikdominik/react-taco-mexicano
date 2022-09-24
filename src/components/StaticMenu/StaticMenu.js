@@ -8,19 +8,28 @@ const Container = styled.section`
     width: 100%;
     margin-top: 60px;
     background-image: url(${mexicanStuff});
+
+    @media (min-width: 1200px) {
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+`;
+
+const InnerContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     @media (min-width: 1200px) {
-        min-height: 100vh;
+        max-width: 1200px;
+        margin: auto;
         display: grid;
         place-items: center;
-        grid-template-columns: repeat(auto-fit, 500px);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 20px;
         overflow: auto;
-        padding: 20px 0 ;
+        padding: 0 15px;
     }
 `;
 
@@ -41,7 +50,9 @@ export default function StaticMenu() {
 
     return (
         <Container>
-            {dishesByCategory}
+            <InnerContainer>
+                {dishesByCategory}
+            </InnerContainer>
         </Container>
     );
 }

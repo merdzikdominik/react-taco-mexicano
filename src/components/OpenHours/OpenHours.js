@@ -14,6 +14,8 @@ const MainContainer = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 1200px) { padding: 30px 0; }
 `;
 
 const DayContainer = styled.div`
@@ -53,8 +55,18 @@ const DayContainer = styled.div`
         100% { transform: scale(50) rotate(45deg); opacity: 0; }
       }
 
-    &::-webkit-scrollbar {
-        display: none !important;
+    &::-webkit-scrollbar { display: none !important; }
+
+    @media (min-width: 1200px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
+        grid-gap: 20px;
+        max-width: 1200px; 
+        animation: none;
+        overflow: initial;
+
+        &::after { animation: none; display: none; }
     }
 `;
 

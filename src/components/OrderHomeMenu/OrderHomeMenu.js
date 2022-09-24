@@ -18,6 +18,10 @@ const Menu = styled.section`
     // TODO: adjutst the height so the footer is not visible for couple of ms
     min-height: 100vh !important; 
     overflow: auto;
+
+    @media (min-width: 1200px) {
+        padding: 0;
+    }
 `;
 
 const MenuContainer = styled.div`
