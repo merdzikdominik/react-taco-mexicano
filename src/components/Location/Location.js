@@ -1,26 +1,22 @@
 import styled from "styled-components";
 import Map from "./Map";
+import mexicanStuff from '../../assets/mexican-sfuff.png';
 
 const MainContainer = styled.section`
     width: 100%;
     height: 100vh;
-    background-color: red;
+    margin-top: 60px;
+    background-image: url(${mexicanStuff});
+    // background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
 `;
 
-const MapContainer = styled.div`
-    width: 500px;
-    height: 500px;
-`;
-
 export default function Location() {
     return (
         <MainContainer>
-            <MapContainer>
-                <Map />
-            </MapContainer>
+            <Map />
         </MainContainer>
     );
 }

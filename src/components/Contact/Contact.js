@@ -21,9 +21,7 @@ const ContactContainer = styled.section`
     align-items: center;
     font-family: 'League Spartan', sans-serif;
 
-    @media (min-width: 1200px) {
-        padding: 0;
-    }
+    @media (min-width: 1200px) { padding: 0; }
 `;
 
 const Container = styled.div`
@@ -81,9 +79,7 @@ const ContactOption = styled.div`
         border-bottom: none;
     }
 
-    &:nth-child(2) {
-        border-bottom: none;
-    }
+    &:nth-child(2) { border-bottom: none; }
 
     &:nth-child(1) { background-image: url(${mexicanPatternPurple}); }
     &:nth-child(2) { background-image: url(${mexicanPatternBlue}); }
@@ -108,9 +104,7 @@ const ContactOption = styled.div`
             border-bottom: 1px solid #c4c4c4;
         }
     
-        &:nth-child(2) {
-            border-bottom: 1px solid #c4c4c4;
-        }
+        &:nth-child(2) { border-bottom: 1px solid #c4c4c4; }
 
         &:nth-child(1) { background-image: none; }
         &:nth-child(2) { background-image: none; }
@@ -144,11 +138,11 @@ const FacebookIcon = styled(FontAwesomeIcon)`
 
     &::after {
         content: '';
-        position: absolute;
+        position: relative;
         left: 0;
         top: 0;
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
         color: red;
         background-color: red;
         z-index: 2000;
@@ -160,9 +154,7 @@ const InstagramIcon = styled(FontAwesomeIcon)`
     // font-size: 1.2rem;
     font-size: 3rem;
 
-    @media (min-width: 1200px) {
-        color: #000;
-    }
+    @media (min-width: 1200px) { color: #000; }
 `;
 
 const MobileIcon = styled(FontAwesomeIcon)`
@@ -170,9 +162,7 @@ const MobileIcon = styled(FontAwesomeIcon)`
     // font-size: 1.2rem;
     font-size: 3rem;
 
-    @media (min-width: 1200px) {
-        color: #000;
-    }
+    @media (min-width: 1200px) { color: #000; }
 `;
 
 const EmailIcon = styled(FontAwesomeIcon)`
@@ -180,9 +170,7 @@ const EmailIcon = styled(FontAwesomeIcon)`
     // font-size: 1.2rem;
     font-size: 3rem;
 
-    @media (min-width: 1200px) {
-        color: #000;
-    }
+    @media (min-width: 1200px) { color: #000; }
 `;
 
 const Text = styled.span`
@@ -190,16 +178,12 @@ const Text = styled.span`
     text-align: right;
     color: #fff;
 
-    a {
-        color: #fff;
-    }
+    a { color: #fff; }
 
     @media (min-width: 1200px) {
         color: #000;
 
-        a {
-            color: #000;
-        }
+        a { color: #000; }
     }
 `;
 
