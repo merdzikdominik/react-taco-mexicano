@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import logo from '../../assets/logo-copy2.png';
 
 const LogoContainer = styled.div`
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     position: absolute;
     z-index: 999;
 
@@ -11,8 +11,8 @@ const LogoContainer = styled.div`
         position: relative;
         left: 0;
         // padding: 0 100px;
-        width: 150px;
-        height: 150px;
+        width: 115px;
+        height: 115px;
     }
 `;
 

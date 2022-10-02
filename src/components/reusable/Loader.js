@@ -13,8 +13,7 @@ const Taco = styled.div`
     width: 316px;
     height: 205px;
     background-image: url(${tacoLoader});
-    animation: pulsing 0.5s linear;
-    animation-duration: infinite;
+    animation: pulsing 0.5s linear infinite;
     
     @keyframes pulsing {
         0% { transform: scale(1); }

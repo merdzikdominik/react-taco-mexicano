@@ -4,15 +4,21 @@ import Loader from "../reusable/Loader";
 
 const Iframe = styled.iframe`
     width: 100%;
-    height: 100%;
-    border: none;
+    height: 60%;
+    // height: 100%;
     position: absolute;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: ${props => props.loading ? 'none' : '8px 8px 24px 0px rgba(66, 68, 90, 1)' };
 `;
 
-export default function Map() {
+export default function Map({onIsLoading}) {
     const [isLoading, setIsLoading] = useState(true);
 
-    const handleHideSpinner = () => setIsLoading(false); 
+    const handleLoadingMap = () => {
+        setIsLoading(false); 
+        onIsLoading(false);
+    }
 
     return (
         <>
@@ -20,7 +26,8 @@ export default function Map() {
             <Iframe id="gmap_canvas" 
                     src="https://maps.google.com/maps?q=taco%20mexicano%20tarnowskie%20g%C3%B3ry&t=&z=13&ie=UTF8&iwloc=&output=embed" 
                     scrolling="no" 
-                    onLoad={handleHideSpinner}
+                    onLoad={handleLoadingMap}
+                    loading={isLoading}
             />
         </>
     );
