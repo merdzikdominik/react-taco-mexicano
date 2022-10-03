@@ -8,8 +8,6 @@ const MainContainer = styled.section`
     width: 100%;
     height: 100vh;
     margin-top: 60px;
-    // background-image: url(${mexicanStuff});
-    // background-image: url(${bluredMap});
     background-image: url(${props => props.loading ? mexicanStuff : bluredMap }); 
     background-size: ${props => props.loading ? 'auto' : 'cover'};
     display: flex;
