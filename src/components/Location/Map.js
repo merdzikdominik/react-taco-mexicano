@@ -27,7 +27,7 @@ export default function Map({onIsLoading}) {
                     src="https://maps.google.com/maps?q=taco%20mexicano%20tarnowskie%20g%C3%B3ry&t=&z=13&ie=UTF8&iwloc=&output=embed" 
                     scrolling="no" 
                     onLoad={handleLoadingMap}
-                    loading={isLoading}
+                    $loading={isLoading}
             />
         </>
     );

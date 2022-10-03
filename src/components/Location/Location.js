@@ -25,7 +25,7 @@ export default function Location() {
     }
 
     return (
-        <MainContainer loading={isLoading}>
+        <MainContainer $loading={isLoading}>
             <Map onIsLoading={handleLoading}/>
         </MainContainer>
     );
