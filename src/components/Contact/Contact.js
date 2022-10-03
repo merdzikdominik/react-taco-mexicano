@@ -74,6 +74,16 @@ const ContactOption = styled.div`
         color: #000;
     }
 
+    &:nth-child(3)::before {
+        content: '';
+        position: absolute;
+        margin-left: 1px;
+        border-radius: 50%;
+        background-color: #fff;
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
     &:nth-child(1), &:nth-child(4) {
         border-top: none;
         border-bottom: none;
@@ -103,6 +113,8 @@ const ContactOption = styled.div`
             border-top: 1px solid #c4c4c4;
             border-bottom: 1px solid #c4c4c4;
         }
+
+        &:nth-child(3)::before { display: none; }
     
         &:nth-child(2) { border-bottom: 1px solid #c4c4c4; }
 
@@ -135,18 +147,8 @@ const H1 = styled.h1`
 const FacebookIcon = styled(FontAwesomeIcon)`
     color: 	#4267B2;
     font-size: 3rem;
-
-    &::after {
-        content: '';
-        position: relative;
-        left: 0;
-        top: 0;
-        width: 200px;
-        height: 200px;
-        color: red;
-        background-color: red;
-        z-index: 2000;
-    }
+    position: relative;
+    font-weight: 300;
 `;
 
 const InstagramIcon = styled(FontAwesomeIcon)`
@@ -201,7 +203,7 @@ export default function Contact() {
                     <Text>tacotg@interia.eu</Text>
                 </ContactOption>
                 <ContactOption>
-                    <FacebookIcon icon={faFacebook}/>
+                    <FacebookIcon icon={faFacebook} className='white-background'/>
                     <Text><a href='https://www.facebook.com/TGTaco'>Facebook</a></Text>
                 </ContactOption>
                 <ContactOption>
