@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
-import { faMobile, faAt } from "@fortawesome/free-solid-svg-icons";
+import { faAt, faPhone } from "@fortawesome/free-solid-svg-icons";
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 import mexicanPatternBlue from '../../assets/mexican-pattern__blue.jpg';
 import mexicanPatternYellow from '../../assets/mexican-pattern.jpg';
@@ -161,16 +161,14 @@ const InstagramIcon = styled(FontAwesomeIcon)`
 
 const MobileIcon = styled(FontAwesomeIcon)`
     color: #fff;
-    // font-size: 1.2rem;
-    font-size: 3rem;
+    font-size: 2.7rem;
 
     @media (min-width: 1200px) { color: #000; }
 `;
 
 const EmailIcon = styled(FontAwesomeIcon)`
     color: #fff;
-    // font-size: 1.2rem;
-    font-size: 3rem;
+    font-size: 2.7rem;
 
     @media (min-width: 1200px) { color: #000; }
 `;
@@ -195,7 +193,7 @@ export default function Contact() {
             <H1>Skontaktuj się z nami za pośrednictwem:</H1>
             <Container>
                 <ContactOption>
-                    <MobileIcon icon={faMobile}/>
+                    <MobileIcon icon={faPhone}/>
                     <Text>32 285 84 44</Text>
                 </ContactOption>
                 <ContactOption>
