@@ -48,22 +48,19 @@ const MinusButton = styled(FontAwesomeIcon)`
     font-size: 1.5rem;
     transition: all 0.3s ease-in-out;
     color: #000;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 
     &:hover {
         font-size: 1.3rem;
         transition: all 0.2s ease-in; 
         color: #fff;
     }
-
-    // &:not( :hover ) {
-    //     font-size: 1.5rem;
-    //     transition: all 0.3s ease-in-out;
-    //     color: #000;
-    // }
 `;
 
 const PlusButton = styled(MinusButton)``;
-
 
 export default function CartItem({ id, dish, price, amount }) {
     const formattedPrice = Number(price * amount).toFixed(2);
