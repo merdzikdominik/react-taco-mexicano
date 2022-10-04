@@ -13,12 +13,9 @@ const CartWrapper = styled.section`
     display: flex;
     flex-direction: column;
     background-image: url(${mexicanStuff});
-    // background-repeat: no-repeat;
-    // background-size: cover;
 `;
 
 const CartContainer = styled.div`
-    // width: 100%;
     padding: 60px 0;
     margin-top: 60px;
     display: flex;
@@ -100,21 +97,11 @@ const Mariachis = styled.div`
         animation-duration: 0.3s;
 
         @keyframes bump {
-            0% {
-                transform: scale(0.9);
-            }
-            25% {
-                transform: scale(1.2);
-            }
-            50% {
-                transform: scale(1.5);
-            }
-            75% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(0.9); }
+            25% { transform: scale(1.2); }
+            50% { transform: scale(1.5); }
+            75% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
     }
 `;
@@ -196,8 +183,7 @@ export default function Cart() {
                 </MakeOrderContainer>
             </CartContainer>
             <Mariachis showMariachi={dishesExist}/>
-            {/* TODO: consider changing 200 line to conditional rendering */}
-            <NoOrdersInCart showCartIsEmptyText={dishesExist}>Twój koszyk jest pusty... Masz na coś ochotę?</NoOrdersInCart>
+            {dishes.length === 0 && <NoOrdersInCart showCartIsEmptyText={dishesExist}>Twój koszyk jest pusty... Masz na coś ochotę?</NoOrdersInCart>}
         </CartWrapper>
     );
 }
