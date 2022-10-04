@@ -14,15 +14,41 @@ const MainContainer = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 20px;
 `;
 
 const FormContainer = styled.div`
-    width: 80%;
-    height: 700px;
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
     background-color: green;
+    display: flex;
+    justify-content: center;
 `;
 
-// TODO: array.map is a side effect, put all array operations inside useEffect hook
+const Form = styled.form`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+
+    button {
+        width: 200px;
+        overflow: hidden;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+`;
+
+const PersonalDataHeader = styled.h3`
+    color: #fff;
+    // font-size: 1.7rem;
+    text-align: center;
+`;
+
 export default function Checkout() {
     const dispatch = useDispatch();
     const orders = useSelector(state => state.dishes);
@@ -67,48 +93,54 @@ export default function Checkout() {
 
     return (
         <MainContainer>
-            Podsumowanie
             <FormContainer>
-                <form onSubmit={handleFormSubmit}>
-                    <Input label='Imię' input={{
-                        id: `formInput`,
-                        type: 'text',
-                        placeholder: 'Wprowadź imię',
-                        ref: firstNameRef
-                    }}/>
-                    <Input label='Nazwisko' input={{
-                        id: `formInput`,
-                        type: 'text',
-                        placeholder: 'Wprowadź nazwisko',
-                        ref: secondNameRef
-                    }}/>
-                    <Input label='Miasto' input={{
-                        id: `formInput`,
-                        type: 'text',
-                        placeholder: 'Wprowadź miasto',
-                        ref: cityRef
-                    }}/>
-                    <Input label='Ulica' input={{
-                        id: `formInput`,
-                        type: 'text',
-                        placeholder: 'Wprowadź ulicę',
-                        ref: streetRef
-                    }}/>
-                    <Input label='Nr domu' input={{
-                        id: `formInput`,
-                        type: 'text',
-                        placeholder: 'Wprowadź numer domu',
-                        ref: houseRef
-                    }}/>
-                    <Input label='Nr mieszkania (opcjonalnie)' input={{
-                        id: `formInput`,
-                        type: 'text',
-                        placeholder: 'Wprowadź numer mieszkania',
-                        ref: flatRef
-                    }}/>
+                <Form onSubmit={handleFormSubmit}>
+                    <PersonalDataHeader>Formularz Osobowy</PersonalDataHeader>
+                    <Input  
+                            input={{
+                                type: 'text',
+                                placeholder: 'Imię',
+                                ref: firstNameRef
+                            }}
+                    />
+                    <Input  
+                            input={{
+                                type: 'text',
+                                placeholder: 'Nazwisko',
+                                ref: secondNameRef
+                            }}
+                    />
+                    <Input   
+                            input={{
+                                type: 'text',
+                                placeholder: 'Miasto',
+                                ref: cityRef
+                            }}
+                    />
+                    <Input  
+                            input={{
+                                type: 'text',
+                                placeholder: 'Ulica',
+                                ref: streetRef
+                            }}
+                    />
+                    <Input  
+                            input={{
+                                type: 'text',
+                                placeholder: 'Numer domu',
+                                ref: houseRef
+                            }}
+                    />
+                    <Input  
+                            input={{
+                                type: 'text',
+                                placeholder: 'Numer mieszkania (opcjonalnie)',
+                                ref: flatRef
+                            }}
+                    />
 
                     <button type='submit'>Prześlij dane</button>
-                </form>
+                </Form>
             </FormContainer>
         </MainContainer>
     );
