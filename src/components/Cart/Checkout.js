@@ -6,6 +6,8 @@ import { ref, child, push, update } from "firebase/database"
 import { db } from "../../firebase";
 import { useNavigate } from 'react-router-dom';
 import { clearDishes } from "../../store/actions/action-creators";
+// import SliderButton from "../StartingPage/Slider/SliderButton";
+import Button from "../reusable/Button";
 
 const MainContainer = styled.section`
     width: 100%;
@@ -33,14 +35,7 @@ const Form = styled.form`
     justify-content: center;
     padding: 0;
     margin: 0;
-    gap: 20px;
-
-    button {
-        width: 200px;
-        overflow: hidden;
-        margin: 0 auto;
-        padding: 0 10px;
-    }
+    gap: 15px;
 `;
 
 const PersonalDataHeader = styled.h3`
@@ -102,6 +97,14 @@ export default function Checkout() {
                                 placeholder: 'Imię',
                                 ref: firstNameRef
                             }}
+                            styles={
+                                {
+                                    containerPadding: {
+                                        padding: '0 30px'
+                                    },
+                                    padding: '10px 5px'
+                                }
+                            }
                     />
                     <Input  
                             input={{
@@ -109,6 +112,14 @@ export default function Checkout() {
                                 placeholder: 'Nazwisko',
                                 ref: secondNameRef
                             }}
+                            styles={
+                                {
+                                    containerPadding: {
+                                        padding: '0 30px'
+                                    },
+                                    padding: '10px 5px'
+                                }
+                            }
                     />
                     <Input   
                             input={{
@@ -116,6 +127,14 @@ export default function Checkout() {
                                 placeholder: 'Miasto',
                                 ref: cityRef
                             }}
+                            styles={
+                                {
+                                    containerPadding: {
+                                        padding: '0 30px'
+                                    },
+                                    padding: '10px 5px'
+                                }
+                            }
                     />
                     <Input  
                             input={{
@@ -123,6 +142,14 @@ export default function Checkout() {
                                 placeholder: 'Ulica',
                                 ref: streetRef
                             }}
+                            styles={
+                                {
+                                    containerPadding: {
+                                        padding: '0 30px'
+                                    },
+                                    padding: '10px 5px'
+                                }
+                            }
                     />
                     <Input  
                             input={{
@@ -130,6 +157,14 @@ export default function Checkout() {
                                 placeholder: 'Numer domu',
                                 ref: houseRef
                             }}
+                            styles={
+                                {
+                                    containerPadding: {
+                                        padding: '0 30px'
+                                    },
+                                    padding: '10px 5px'
+                                }
+                            }
                     />
                     <Input  
                             input={{
@@ -137,9 +172,24 @@ export default function Checkout() {
                                 placeholder: 'Numer mieszkania (opcjonalnie)',
                                 ref: flatRef
                             }}
+                            styles={
+                                {
+                                    containerPadding: {
+                                        padding: '0 30px'
+                                    },
+                                    padding: '10px 5px'
+                                }
+                            }
                     />
 
-                    <button type='submit'>Prześlij dane</button>
+                    {/* <button type='submit'>Prześlij dane</button> */}
+                    <Button content='Prześlij dane' 
+                            type='submit'
+                            styles={{
+                                padding: '20px 30px',
+                                position: 'initial',
+                            }}
+                    />
                 </Form>
             </FormContainer>
         </MainContainer>

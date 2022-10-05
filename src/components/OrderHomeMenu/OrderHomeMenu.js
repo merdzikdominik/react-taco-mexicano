@@ -108,7 +108,11 @@ export default function OrderHomeMenu() {
                                         onChange: handleGetSearchedDish,
                                         // style: { borderRadius: '5px' }
                                     }}
-                                    containerPadding='0'
+                                    styles={{
+                                        containerPadding: {
+                                            padding: '0'
+                                        }
+                                    }}
                             />
                         </Filter>
                 </MenuHeaderSection>

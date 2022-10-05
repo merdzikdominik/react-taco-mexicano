@@ -44,7 +44,7 @@ export default function SliderContent() {
                     Najważniejszym składnikiem każdego dania jest pasja. Cieszymy się, że wraz z każdym kęsem możesz próbować piękna meksykańskiej kuchni.
                 </span>
             </SliderMessage>
-            <SliderButton />
+            <SliderButton location='zamow-do-domu' content='Zamów do domu' />
         </>
     );
     
