@@ -26,6 +26,7 @@ const FormContainer = styled.div`
     background-color: green;
     display: flex;
     justify-content: center;
+    border-radius: 10px;
 `;
 
 const Form = styled.form`
@@ -95,14 +96,16 @@ export default function Checkout() {
                             input={{
                                 type: 'text',
                                 placeholder: 'Imię',
-                                ref: firstNameRef
+                                ref: firstNameRef,
+                                required: true
                             }}
                             styles={
                                 {
                                     containerPadding: {
                                         padding: '0 30px'
                                     },
-                                    padding: '10px 5px'
+                                    padding: '10px 5px',
+                                    borderRadius: '5px'
                                 }
                             }
                     />
@@ -110,14 +113,16 @@ export default function Checkout() {
                             input={{
                                 type: 'text',
                                 placeholder: 'Nazwisko',
-                                ref: secondNameRef
+                                ref: secondNameRef,
+                                required: true
                             }}
                             styles={
                                 {
                                     containerPadding: {
                                         padding: '0 30px'
                                     },
-                                    padding: '10px 5px'
+                                    padding: '10px 5px',
+                                    borderRadius: '5px'
                                 }
                             }
                     />
@@ -125,14 +130,16 @@ export default function Checkout() {
                             input={{
                                 type: 'text',
                                 placeholder: 'Miasto',
-                                ref: cityRef
+                                ref: cityRef,
+                                required: true
                             }}
                             styles={
                                 {
                                     containerPadding: {
                                         padding: '0 30px'
                                     },
-                                    padding: '10px 5px'
+                                    padding: '10px 5px',
+                                    borderRadius: '5px'
                                 }
                             }
                     />
@@ -140,14 +147,16 @@ export default function Checkout() {
                             input={{
                                 type: 'text',
                                 placeholder: 'Ulica',
-                                ref: streetRef
+                                ref: streetRef,
+                                required: true
                             }}
                             styles={
                                 {
                                     containerPadding: {
                                         padding: '0 30px'
                                     },
-                                    padding: '10px 5px'
+                                    padding: '10px 5px',
+                                    borderRadius: '5px'
                                 }
                             }
                     />
@@ -155,14 +164,16 @@ export default function Checkout() {
                             input={{
                                 type: 'text',
                                 placeholder: 'Numer domu',
-                                ref: houseRef
+                                ref: houseRef,
+                                required: true
                             }}
                             styles={
                                 {
                                     containerPadding: {
                                         padding: '0 30px'
                                     },
-                                    padding: '10px 5px'
+                                    padding: '10px 5px',
+                                    borderRadius: '5px'
                                 }
                             }
                     />
@@ -177,7 +188,8 @@ export default function Checkout() {
                                     containerPadding: {
                                         padding: '0 30px'
                                     },
-                                    padding: '10px 5px'
+                                    padding: '10px 5px',
+                                    borderRadius: '5px'
                                 }
                             }
                     />

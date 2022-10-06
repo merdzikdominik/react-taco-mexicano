@@ -5,10 +5,11 @@ const MainContainer = styled.div`
 `;
 
 const CustomInput = styled.input`
-    max-width: 600px;
+    max-width: ${props => props.styles && props.styles.width ? props.styles.width : '600px'};
     width: 100%;
     padding: ${props => props.styles && props.styles.padding ? props.styles.padding : '5px'};
     border: none;
+    border-radius: ${props => props.styles && props.styles.borderRadius ? props.styles.borderRadius : 'none'};
 
     &:focus { outline: none; }
 `;

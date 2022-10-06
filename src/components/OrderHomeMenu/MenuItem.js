@@ -127,8 +127,13 @@ export default function MenuItem({ id, dish, price, category }) {
                                     min: '0',
                                     max: '7',
                                     placeholder: '0',
-                                    style: {width: '35px', textAlign: 'center', borderRadius: '5px'}
+                                    // style: {width: '35px', textAlign: 'center', borderRadius: '5px'}
                                 }}
+                            styles={{
+                                width: '35px',
+                                textAlign: 'center',
+                                borderRadius: '5px'
+                            }}
                             containerPadding='0 15px'
                     />
                     <Button type='submit' onClick={() => setClicked(true)} isClicked={clicked}><FontAwesomeIcon icon={faCartPlus}/></Button>
