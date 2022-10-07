@@ -16,7 +16,7 @@ const CustomInput = styled.input`
 
 export default function Input({ input, containerPadding, styles }) {
     return (
-        <MainContainer padding={containerPadding} styles={styles}>
+        <MainContainer styles={styles}>
             <CustomInput {...input} styles={styles}/>
         </MainContainer>
     );
