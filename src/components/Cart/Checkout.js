@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import { clearDishes } from "../../store/actions/action-creators";
 // import SliderButton from "../StartingPage/Slider/SliderButton";
 import Button from "../reusable/Button";
+import mexicanStuff from '../../assets/mexican-sfuff.png';
+
 
 const MainContainer = styled.section`
     width: 100%;
@@ -17,6 +19,7 @@ const MainContainer = styled.section`
     justify-content: center;
     align-items: center;
     padding: 0 20px;
+    background-image: url(${mexicanStuff});
 `;
 
 const FormContainer = styled.div`
@@ -27,6 +30,9 @@ const FormContainer = styled.div`
     display: flex;
     justify-content: center;
     border-radius: 10px;
+    -webkit-box-shadow: -2px 8px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: -2px 8px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: -2px 8px 24px 0px rgba(66, 68, 90, 1);
 `;
 
 const Form = styled.form`
