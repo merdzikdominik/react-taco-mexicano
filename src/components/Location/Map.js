@@ -14,6 +14,10 @@ const Iframe = styled.iframe`
 export default function Map({onIsLoading}) {
     const [isLoading, setIsLoading] = useState(true);
 
+    // useEffect(() => {
+    //     console.log(isLoading);
+    // }, [isLoading])
+
     const handleLoadingMap = () => {
         setIsLoading(false); 
         onIsLoading(false);
