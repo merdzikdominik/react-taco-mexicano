@@ -3,11 +3,8 @@ import PaginatedItems from './PaginatedItems';
 import useDishes from '../../hooks/useDishes';
 import Input from '../reusable/Input';
 import { useState } from 'react';
-import mexicanPattern from '../../assets/mexican-pattern.jpg';
 import mexicanPatternGreen from '../../assets/mexican-pattern__green.jpg';
-// import VideoBackground from './VideoBackground';
 import mexicanStuff from '../../assets/mexican-sfuff.png';
-// import BrownStripe from './BrownStripe';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
@@ -70,9 +67,7 @@ const H1 = styled.h1`
     }
 `;
 
-const Icon = styled(FontAwesomeIcon).attrs(props => ({
-    icon: faSearch
-}))`
+const SearchIcon = styled(FontAwesomeIcon)`
     color: #000;
     background-color: #fff;
     align-items: center;
@@ -99,14 +94,12 @@ export default function OrderHomeMenu() {
                 <MenuHeaderSection>
                     <H1>Na co masz dziś ochotę?</H1>
                         <Filter>
-                            <Icon icon={faSearch}/>    
-                            <Input  label='' 
-                                    input={{
+                            <SearchIcon icon={faSearch}/>    
+                            <Input  input={{
                                         id: 'filter',
                                         type: 'text',
                                         placeholder: 'Wyszukaj danie',
                                         onChange: handleGetSearchedDish,
-                                        // style: { borderRadius: '5px' }
                                     }}
                                     styles={{
                                         containerPadding: {
