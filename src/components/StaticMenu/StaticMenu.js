@@ -33,9 +33,10 @@ const InnerContainer = styled.div`
     }
 `;
 
+const dishCategories = ['Przystawka', 'Zupa', 'Sałatka', 'Danie meksykańskie', 'Danie z grilla', 'Danie rybne', 'Deser'];
+
 export default function StaticMenu() {
     const dishes = useDishes();
-    const dishCategories = ['Przystawka', 'Zupa', 'Sałatka', 'Danie meksykańskie', 'Danie z grilla', 'Danie rybne', 'Deser'];
 
     const filteredDishes = dishCategories.map(category => {
         return {
@@ -46,7 +47,7 @@ export default function StaticMenu() {
 
     const dishesByCategory = dishCategories.map(category => filteredDishes.map((item, index) => {
         if (item.category === category) return <MenuCategoryWrapper key={index} category={category} items={item.dishes} />;
-    }))
+    return null}));
 
     return (
         <Container>
