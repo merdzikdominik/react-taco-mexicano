@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { useState, useEffect, useRef } from "react";
 import SliderContent from "./SliderContent";
 
-const StyledSlideShow = styled.section`
+const StyledSlideShow = styled.div`
     margin: 0 auto;
     overflow: hidden;
     max-width: 100%;
@@ -93,7 +93,7 @@ export default function SlideShow() {
             <StyledSlideShow>
                 <SliderContent/>
                 <StyledSlideShowSlider>
-                    {sliderData.map((photo, index) => <StyledImage className='slide' key={index} src={photo.image} alt='picture'/>)}
+                    {sliderData.map((photo, index) => <StyledImage className='slide' key={index} src={photo.image} alt={photo.alt}/>)}
                 </StyledSlideShowSlider>
                 <StyledSlideShowDots>
                     {sliderData.map((_, imageIndex) => <StyledSlideShowDot key={imageIndex} style={{backgroundColor: index === imageIndex ? '#FFBC23' : '#c4c4c4'}} onClick={() => setIndex(imageIndex)}></StyledSlideShowDot>)}

@@ -4,15 +4,26 @@ import qualityRibbon from '../../assets/quality-ribbon.png'
 import delivs from '../../assets/deliveries.png'
 import charity from '../../assets/charity.png'
 
+const MainContainer = styled.section`
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-color: #F3F3F3;
+    font-family: 'League Spartan', sans-serif;
+    overflow-y: hidden;
+`
+
 const Content = styled.div`
     display: flex;
     flex-direction: column;
-    font-family: 'League Spartan', sans-serif;
-    background-color: #F3F3F3;
+    // font-family: 'League Spartan', sans-serif;
+    // background-color: #F3F3F3;
 `;
 
-const InfoContainer = styled.section`
+const InfoContainer = styled.div`
     width: 100%;
+    // min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -69,7 +80,7 @@ const Header = styled.h1`
 
 export default function StartingPage() {
     return (
-        <>
+        <MainContainer>
             <SlideShow/>
             <Content>
                 <Header>Dlaczego warto u nas zjeść? To proste!</Header>
@@ -94,6 +105,6 @@ export default function StartingPage() {
                     </Info>
                 </InfoContainer>
             </Content>
-        </>
+        </MainContainer>
     );
 }
