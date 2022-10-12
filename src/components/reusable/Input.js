@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const MainContainer = styled.div`
-    padding: ${props => props.styles && props.styles.containerPadding ? props.styles.containerPadding.padding : '0 50px'};
+    padding: ${props => props.styles && props.styles.containerPadding ? props.styles.containerPadding : '0 50px'};
 `;
 
 const CustomInput = styled.input`

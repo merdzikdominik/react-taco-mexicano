@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledButton = styled.button`
     max-width: 280px;
     // width: 100%;
-    position: ${props => props.styles ? props.styles.position : 'absolute'};
+    position: ${props => props.styles && props.styles.position ? props.styles.position : 'absolute'};
     top: 485px;
     left: 0;
     right: 0;
@@ -15,7 +15,7 @@ const StyledButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: ${props => props.styles ? props.styles.padding : '20px 40px'};
+    padding: ${props => props.styles && props.styles.padding ? props.styles.padding : '20px 40px'};
     text-transform: uppercase;
     font-size: 1.1rem;
     font-family: 'League Spartan', sans-serif;
@@ -40,7 +40,6 @@ const StyledButton = styled.button`
 
     @media (min-width: 1200px) {
         max-width: 300px;
-        // width: 100%;
         top: 530px;
     }
 `;

@@ -102,9 +102,7 @@ export default function OrderHomeMenu() {
                                         onChange: handleGetSearchedDish,
                                     }}
                                     styles={{
-                                        containerPadding: {
-                                            padding: '0'
-                                        }
+                                        containerPadding: '0'
                                     }}
                             />
                         </Filter>

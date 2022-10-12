@@ -30,9 +30,24 @@ const FormContainer = styled.div`
     display: flex;
     justify-content: center;
     border-radius: 10px;
+    animation: slam 0.5s ease-in;
+    // animation-duration: 0.5s;
     -webkit-box-shadow: -2px 8px 24px 0px rgba(66, 68, 90, 1);
     -moz-box-shadow: -2px 8px 24px 0px rgba(66, 68, 90, 1);
     box-shadow: -2px 8px 24px 0px rgba(66, 68, 90, 1);
+
+    @keyframes slam {
+        10% { transform: scale(4); }
+        20% { transform: scale(3.5); }
+        30% { transform: scale(3);}
+        40% { transform: scale(2.5); }
+        50% { transform: scale(2); }
+        60% { transform: scale(1.5); }
+        70% { transform: scale(1); }
+        80% { transform: scale(1.2); }
+        90% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
 `;
 
 const Form = styled.form`
@@ -107,9 +122,7 @@ export default function Checkout() {
                             }}
                             styles={
                                 {
-                                    containerPadding: {
-                                        padding: '0 30px'
-                                    },
+                                    containerPadding: '0 30px',
                                     padding: '10px 5px',
                                     borderRadius: '5px'
                                 }
@@ -124,9 +137,7 @@ export default function Checkout() {
                             }}
                             styles={
                                 {
-                                    containerPadding: {
-                                        padding: '0 30px'
-                                    },
+                                    containerPadding: '0 30px',
                                     padding: '10px 5px',
                                     borderRadius: '5px'
                                 }
@@ -141,9 +152,7 @@ export default function Checkout() {
                             }}
                             styles={
                                 {
-                                    containerPadding: {
-                                        padding: '0 30px'
-                                    },
+                                    containerPadding: '0 30px',
                                     padding: '10px 5px',
                                     borderRadius: '5px'
                                 }
@@ -158,9 +167,7 @@ export default function Checkout() {
                             }}
                             styles={
                                 {
-                                    containerPadding: {
-                                        padding: '0 30px'
-                                    },
+                                    containerPadding: '0 30px',
                                     padding: '10px 5px',
                                     borderRadius: '5px'
                                 }
@@ -175,9 +182,7 @@ export default function Checkout() {
                             }}
                             styles={
                                 {
-                                    containerPadding: {
-                                        padding: '0 30px'
-                                    },
+                                    containerPadding: '0 30px',
                                     padding: '10px 5px',
                                     borderRadius: '5px'
                                 }
@@ -191,9 +196,7 @@ export default function Checkout() {
                             }}
                             styles={
                                 {
-                                    containerPadding: {
-                                        padding: '0 30px'
-                                    },
+                                    containerPadding: '0 30px',
                                     padding: '10px 5px',
                                     borderRadius: '5px'
                                 }
@@ -204,7 +207,6 @@ export default function Checkout() {
                     <Button content='Prześlij dane' 
                             type='submit'
                             styles={{
-                                padding: '20px 30px',
                                 position: 'initial',
                             }}
                     />
