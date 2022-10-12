@@ -11,11 +11,13 @@ const Content = styled.div`
     background-color: #F3F3F3;
 `;
 
-const BadgeContainer = styled.section`
+const InfoContainer = styled.section`
     width: 100%;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     line-height: 30px;
 
     @media (min-width: 1200px) {
@@ -23,7 +25,7 @@ const BadgeContainer = styled.section`
     }
 `;
 
-const Badge = styled.div`
+const Info = styled.div`
     display: flex;
     flex-direction: column;
 
@@ -71,26 +73,26 @@ export default function StartingPage() {
             <SlideShow/>
             <Content>
                 <Header>Dlaczego warto u nas zjeść? To proste!</Header>
-                <BadgeContainer>
-                    <Badge>
+                <InfoContainer>
+                    <Info>
                         <Image src={qualityRibbon}/>
                         <Text>
-                            Zapewniamy 100% gwarancje świeżych składników, z których przygotowywane są nasze dania
+                            Zapewniamy 100% gwarancji świeżych składników, z których przygotowywane są nasze dania
                         </Text>
-                    </Badge>
-                    <Badge>
+                    </Info>
+                    <Info>
                         <Image src={delivs}/>
                         <Text>
                             Dzięki współpracy ze znanymi firmami dowozowymi nie trzeba długo czekać na zamówienie
                         </Text>
-                    </Badge>
-                    <Badge>
+                    </Info>
+                    <Info>
                         <Image src={charity}/>
                         <Text>
                             Zamawiając u nas jedzenie tym samym wspomagasz potrzebujących, nie tylko Ty się najesz :)
                         </Text>
-                    </Badge>
-                </BadgeContainer>
+                    </Info>
+                </InfoContainer>
             </Content>
         </>
     );
