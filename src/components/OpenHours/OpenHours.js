@@ -6,7 +6,7 @@ import mexicanStuff from '../../assets/mexican-sfuff.png';
 
 const MainContainer = styled.section`
     width: 100%;
-    height: 100vh;
+    height: 120vh;
     margin-top: 60px;
     padding: 30px 20px;
     background-image: url(${mexicanStuff});
@@ -15,7 +15,10 @@ const MainContainer = styled.section`
     justify-content: center;
     align-items: center;
 
-    @media (min-width: 1200px) { padding: 30px 0; }
+    @media (min-width: 1200px) {
+        height: 100vh; 
+        padding: 30px 0; 
+    }
 `;
 
 const DayContainer = styled.div`
