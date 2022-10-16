@@ -1,9 +1,5 @@
 import styled from "styled-components";
-// import mexicanPatternBlue from '../../assets/mexican-pattern__blue.jpg';
-// import mexicanPatternYellow from '../../assets/mexican-pattern.jpg';
 import mexicanPatternRed from '../../assets/mexican-pattern__red.jpg';
-// import mexicanPatternInstagram from '../../assets/mexican-pattern__instagram.jpg';
-import { motion } from 'framer-motion';
 
 const MainContainer = styled.div`
     width: 100%;
@@ -11,7 +7,7 @@ const MainContainer = styled.div`
     color: #fff;
     background-image: url(${mexicanPatternRed});
     // background-color: #BBBABA;
-    overflow: auto;
+    overflow: hidden !important;
     display: flex;
     justify-content: space-between;
     align-items: center;

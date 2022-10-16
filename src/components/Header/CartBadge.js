@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const BadgeContainer = styled.div`
     position: relative;
-    left: 7px; 
+    left: ${props => props.orders.length > 0 ? '7' : '0'}px; 
 
     .icon { font-size: 1.3rem; }
 
@@ -67,7 +67,7 @@ export default function CartBadge() {
     }, [orders]);
 
     return (
-        <BadgeContainer>
+        <BadgeContainer orders={orders}>
             <FontAwesomeIcon icon={faShoppingCart} className='icon'/>
             <Badge amountChanged={isAmountChanged} itemsAmount={overallOrdersAmount}>{overallOrdersAmount}</Badge>
         </BadgeContainer>
