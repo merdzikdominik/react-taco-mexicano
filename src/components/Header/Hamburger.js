@@ -40,13 +40,13 @@ const StyledHamburger = styled.div`
     }
 `;
 
-const burgerEnabledTheme = {
-    right: '0'
-};
+// const burgerEnabledTheme = {
+//     right: '0'
+// };
 
-const burgerDisabledTheme = {
-    right: '-150',
-};
+// const burgerDisabledTheme = {
+//     right: '-150',
+// };
 
 export default function Hamburger(props) {
     const burgerClicked = useSelector(state => state.hamburgerReducer.isClicked);
@@ -57,13 +57,13 @@ export default function Hamburger(props) {
     }
 
     return (
-        <ThemeProvider theme={burgerClicked ? burgerEnabledTheme : burgerDisabledTheme}>
+        <>
             <StyledHamburger onClick={handleBurger} clicked={burgerClicked}>
                 <div/>
                 <div/>
                 <div/>
             </StyledHamburger>
             <RightNavbar/>
-        </ThemeProvider>
+        </>
     );
 }

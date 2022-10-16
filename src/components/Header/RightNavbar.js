@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CartBadge from "./CartBadge";
 import { changeMobileMenuState } from "../../store/actions/action-creators";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,7 +26,7 @@ const StyledUl = styled.ul`
     top: 0;
     background-color: #FFBC23;
     background-image: url(${mexicanPattern});
-    right: ${props => props.theme.right}%;
+    right: ${props => props.showMenu ? '0' : '-150'}%;
     transition: all 0.3s ease-in-out;
     -webkit-box-shadow: -9px 8px 11px -7px rgba(66, 68, 90, 1);
     -moz-box-shadow: -9px 8px 11px -7px rgba(66, 68, 90, 1);
@@ -109,6 +109,7 @@ const StyledUl = styled.ul`
 `;
 
 export default function RightNavbar() {
+    const isHamburgerClicked = useSelector(state => state.hamburgerReducer.isClicked);
     const dispatch = useDispatch();
 
     const handleMenuOpening = () => {
@@ -117,7 +118,7 @@ export default function RightNavbar() {
 
     return (
         <>
-            <StyledUl>
+            <StyledUl showMenu={isHamburgerClicked}>
                 <li>
                     <NavLink to='koszyk' onClick={handleMenuOpening}><CartBadge/>Koszyk</NavLink>
                 </li>
