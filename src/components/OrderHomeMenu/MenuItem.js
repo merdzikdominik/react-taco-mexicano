@@ -130,7 +130,7 @@ export default function MenuItem({ id, dish, price, category }) {
                                     // style: {width: '35px', textAlign: 'center', borderRadius: '5px'}
                                 }}
                             styles={{
-                                width: '25px',
+                                width: '35px',
                                 textAlign: 'center',
                                 borderRadius: '5px',
                                 containerPadding: '0 7px'
