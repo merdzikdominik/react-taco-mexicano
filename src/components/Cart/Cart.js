@@ -149,8 +149,8 @@ const NoOrdersInCart = styled.h1`
 `;
 
 export default function Cart() {
-    const dishes = useSelector(state => state.dishes);
-    const totalPrice = useSelector(state => state.totalPrice);
+    const dishes = useSelector(state => state.dishesReducer.dishes);
+    const totalPrice = useSelector(state => state.dishesReducer.totalPrice);
     const [dishesExist, setDishesExist] = useState(false); 
 
     const formattedTotalPrice = totalPrice.toFixed(2);

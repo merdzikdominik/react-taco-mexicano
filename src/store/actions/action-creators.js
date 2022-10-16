@@ -35,3 +35,9 @@ export const clearDishes = () => {
         type: 'CLEAR_DISHES'
     }
 };
+
+export const changeMobileMenuState = () => {
+    return {
+        type: 'CHANGE_HAMBURGER_STATE'
+    }
+};

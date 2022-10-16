@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
 import RightNavbar from './RightNavbar';
-import { useState } from 'react';
+import { changeMobileMenuState } from '../../store/actions/action-creators';
 import { ThemeProvider } from 'styled-components';
 
 const StyledHamburger = styled.div`
@@ -48,15 +49,16 @@ const burgerDisabledTheme = {
 };
 
 export default function Hamburger(props) {
-    const [burgerClicked, setBurgerClicked] = useState(false);
+    const burgerClicked = useSelector(state => state.hamburgerReducer.isClicked);
+    const dispatch = useDispatch();
     
-    const burgerHandler = () => {
-        setBurgerClicked(prev => !prev);
+    const handleBurger = () => {
+        dispatch(changeMobileMenuState());
     }
 
     return (
         <ThemeProvider theme={burgerClicked ? burgerEnabledTheme : burgerDisabledTheme}>
-            <StyledHamburger onClick={burgerHandler} clicked={burgerClicked}>
+            <StyledHamburger onClick={handleBurger} clicked={burgerClicked}>
                 <div/>
                 <div/>
                 <div/>

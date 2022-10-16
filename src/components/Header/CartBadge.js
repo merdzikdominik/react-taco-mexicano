@@ -48,7 +48,7 @@ const Badge = styled.span`
 `;
 
 export default function CartBadge() {
-    const orders = useSelector(state => state.dishes);
+    const orders = useSelector(state => state.dishesReducer.dishes);
     const overallOrdersAmount = orders.reduce((acc, curr) => {
         return acc + curr.amount;
     }, 0);

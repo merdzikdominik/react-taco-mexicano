@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import CartBadge from "./CartBadge";
+import { changeMobileMenuState } from "../../store/actions/action-creators";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapLocationDot, faPhone, faClock, faClipboardList, faHouse } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
@@ -107,26 +109,32 @@ const StyledUl = styled.ul`
 `;
 
 export default function RightNavbar() {
+    const dispatch = useDispatch();
+
+    const handleMenuOpening = () => {
+        dispatch(changeMobileMenuState());
+    }
+
     return (
         <>
             <StyledUl>
                 <li>
-                    <NavLink to='koszyk'><CartBadge/>Koszyk</NavLink>
+                    <NavLink to='koszyk' onClick={handleMenuOpening}><CartBadge/>Koszyk</NavLink>
                 </li>
                 <li>
-                    <NavLink to='zamow-do-domu'><FontAwesomeIcon icon={faHouse}/>Zamów do domu</NavLink>
+                    <NavLink to='zamow-do-domu' onClick={handleMenuOpening}><FontAwesomeIcon icon={faHouse}/>Zamów do domu</NavLink>
                 </li>
                 <li>
-                    <NavLink to='menu'><FontAwesomeIcon icon={faClipboardList}/>Menu</NavLink>
+                    <NavLink to='menu' onClick={handleMenuOpening}><FontAwesomeIcon icon={faClipboardList}/>Menu</NavLink>
                 </li>
                 <li>
-                    <NavLink to='kontakt'><FontAwesomeIcon icon={faPhone}/>Kontakt</NavLink>
+                    <NavLink to='kontakt' onClick={handleMenuOpening}><FontAwesomeIcon icon={faPhone}/>Kontakt</NavLink>
                 </li>
                 <li>
-                    <NavLink to='godziny-otwarcia'><FontAwesomeIcon icon={faClock}/>Godziny Otwarcia</NavLink>
+                    <NavLink to='godziny-otwarcia' onClick={handleMenuOpening}><FontAwesomeIcon icon={faClock}/>Godziny Otwarcia</NavLink>
                 </li>
                 <li>
-                    <NavLink to='lokalizacja'><FontAwesomeIcon icon={faMapLocationDot}/>Lokalizacja</NavLink>
+                    <NavLink to='lokalizacja' onClick={handleMenuOpening}><FontAwesomeIcon icon={faMapLocationDot}/>Lokalizacja</NavLink>
                 </li>
             </StyledUl>
         </>
