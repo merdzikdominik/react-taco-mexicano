@@ -5,12 +5,17 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import styled from 'styled-components';
 
 const BadgeContainer = styled.div`
+    position: relative;
+    left: 7px; 
+
     .icon {
-        // text-align: center;
         font-size: 1.3rem;
     }
 
     @media (min-width: 1200px) {
+        position: initial;
+        left: 0;
+
         .icon {
             font-size: 1.3rem;
         }

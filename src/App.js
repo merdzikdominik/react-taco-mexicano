@@ -15,7 +15,9 @@ import Page404 from './components/Page404/Page404';
 function App() {
   // const isFillingForm = useSelector(state => state.fillingFormReducer.isFillingForm);
   const cartHasItems = useSelector(state => state.dishes.length !== 0);
-  console.log(cartHasItems);
+  // const gowno = useSelector(state => state);
+  // console.log(gowno);
+  // console.log(cartHasItems);
 
   return (
     <>

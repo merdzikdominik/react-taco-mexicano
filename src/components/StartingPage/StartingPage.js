@@ -10,19 +10,17 @@ const MainContainer = styled.section`
     height: 100%;
     background-color: #F3F3F3;
     font-family: 'League Spartan', sans-serif;
-    overflow-y: hidden;
 `
 
 const Content = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    // font-family: 'League Spartan', sans-serif;
-    // background-color: #F3F3F3;
 `;
 
 const InfoContainer = styled.div`
     width: 100%;
-    // min-height: 100vh;
     height: 100%;
     display: flex;
     flex-direction: column;

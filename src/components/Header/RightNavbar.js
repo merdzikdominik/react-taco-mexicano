@@ -1,12 +1,9 @@
-// import { useState } from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CartBadge from "./CartBadge";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapLocationDot, faPhone, faClock, faClipboardList, faHouse } from "@fortawesome/free-solid-svg-icons";
-// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import mexicanPattern from '../../assets/mexican-pattern.jpg';
-// import Cart from '../Cart/Cart';
 
 const StyledUl = styled.ul`
     margin: 0;
@@ -20,7 +17,6 @@ const StyledUl = styled.ul`
     justify-content: center;
     z-index: 1000;
     width: 250px;
-    // height: 100vh;
     height: 100%;
     font-size: 1.2rem;
     font-family: 'League Spartan', sans-serif;
@@ -40,9 +36,7 @@ const StyledUl = styled.ul`
         color: #FFBC23;
         border-bottom: 1px solid #333;
 
-        &:nth-child(6) {
-            border: none;
-        }
+        &:nth-child(6) { border: none; }
     }
 
     a {
@@ -54,21 +48,13 @@ const StyledUl = styled.ul`
     }
 
     @-webkit-keyframes move {
-        from {
-            mask-position: 2px 19px;
-        }
-          to {
-            mask-position: 500px 19px;
-        }
+        from { mask-position: 2px 19px; }
+        to { mask-position: 500px 19px; }
     }
         
     @keyframes move {
-        from {
-            mask-position: 2px 19px;
-        }
-        to {
-            mask-position: 500px 19px;
-        }
+        from { mask-position: 2px 19px; }
+        to { mask-position: 500px 19px; }
     }
 
     @media (min-width: 1200px) {
@@ -120,29 +106,27 @@ const StyledUl = styled.ul`
     }
 `;
 
-// TODO: change links to navlinks for better accessibility
-
 export default function RightNavbar() {
     return (
         <>
             <StyledUl>
                 <li>
-                    <Link to='koszyk'><CartBadge/>Koszyk</Link>
+                    <NavLink to='koszyk'><CartBadge/>Koszyk</NavLink>
                 </li>
                 <li>
-                    <Link to='zamow-do-domu'><FontAwesomeIcon icon={faHouse}/>Zamów do domu</Link>
+                    <NavLink to='zamow-do-domu'><FontAwesomeIcon icon={faHouse}/>Zamów do domu</NavLink>
                 </li>
                 <li>
-                    <Link to='menu'><FontAwesomeIcon icon={faClipboardList}/>Menu</Link>
+                    <NavLink to='menu'><FontAwesomeIcon icon={faClipboardList}/>Menu</NavLink>
                 </li>
                 <li>
-                    <Link to='kontakt'><FontAwesomeIcon icon={faPhone}/>Kontakt</Link>
+                    <NavLink to='kontakt'><FontAwesomeIcon icon={faPhone}/>Kontakt</NavLink>
                 </li>
                 <li>
-                    <Link to='godziny-otwarcia'><FontAwesomeIcon icon={faClock}/>Godziny Otwarcia</Link>
+                    <NavLink to='godziny-otwarcia'><FontAwesomeIcon icon={faClock}/>Godziny Otwarcia</NavLink>
                 </li>
                 <li>
-                    <Link to='lokalizacja'><FontAwesomeIcon icon={faMapLocationDot}/>Lokalizacja</Link>
+                    <NavLink to='lokalizacja'><FontAwesomeIcon icon={faMapLocationDot}/>Lokalizacja</NavLink>
                 </li>
             </StyledUl>
         </>

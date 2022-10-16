@@ -16,13 +16,14 @@ const Container = styled.div`
     background-color: rgba(255,255,255,.4);
     border-radius: 15px;
     overflow-x: hidden;
+    gap: 20px;
 `;
 
 const LeftSide = styled.div`
     display: flex;
     flex-direction: column;
     width: 70%;
-    min-width: 120px;
+    min-width: 70px;
     padding: 10px;
     color: #fff;
 
@@ -33,16 +34,21 @@ const LeftSide = styled.div`
 
 const RighSide = styled.div`
     // max-width: 250px;
+    min-width: 150px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 5px;
+    padding: 10px;
     color: #fff;
 `;
 
 const Form = styled.form`
     display: flex;
+`;
+
+const Category = styled.span`
+    font-weight: 600;
 `;
 
 const Button = styled.button`
@@ -52,12 +58,6 @@ const Button = styled.button`
     animation-name: ${props => props.isClicked ? 'bump' : ''};
     animation-duration: 0.3s;
     transition: ease;
-
-    // &:active {
-    //     animation-name: bump;
-    //     animation-duration: 1.3s;
-    //     transition: ease-out;
-    // }
 
     @keyframes bump {
         0% {
@@ -114,7 +114,7 @@ export default function MenuItem({ id, dish, price, category }) {
     return (
         <Container>
             <LeftSide>
-                <span>{category}</span>
+                <Category>{category}</Category>
                 <span>{dish}</span>
             </LeftSide>
             <RighSide>
@@ -130,11 +130,11 @@ export default function MenuItem({ id, dish, price, category }) {
                                     // style: {width: '35px', textAlign: 'center', borderRadius: '5px'}
                                 }}
                             styles={{
-                                width: '35px',
+                                width: '25px',
                                 textAlign: 'center',
-                                borderRadius: '5px'
+                                borderRadius: '5px',
+                                containerPadding: '0 7px'
                             }}
-                            containerPadding='0 15px'
                     />
                     <Button type='submit' onClick={() => setClicked(true)} isClicked={clicked}><FontAwesomeIcon icon={faCartPlus}/></Button>
                 </Form>

@@ -54,7 +54,7 @@ const H1 = styled.h1`
 `;
 
 export default function MenuCategoryWrapper({ category, items }) {
-    const dishesList = items.map((dish, index) => <MenuItem key={index} title={dish.dish_name} price={dish.dish_price}/>)
+    const dishesList = items.map((dish, index) => <MenuItem key={index} title={dish.dish_name} price={dish.dish_price}/>);
 
     return (
         <Container>

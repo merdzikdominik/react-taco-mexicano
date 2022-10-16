@@ -40,7 +40,7 @@ export default function PaginatedItems({ itemsPerPage, items, searchedDish }) {
 
     return (
         <>
-            <MenuItems currentItems={currentItems} searchedDish={searchedDish} />
+            <MenuItems currentItems={currentItems} items={items} searchedDish={searchedDish} />
             <Pagination
                 breakLabel="..."
                 nextLabel="next >"

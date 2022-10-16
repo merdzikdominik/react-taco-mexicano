@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
-import useDishes from '../../hooks/useDishes';
 import MenuItem from './MenuItem';
 
-export default function MenuItems({ currentItems, searchedDish }) {
-    const dishes = useDishes();
+export default function MenuItems({ currentItems, items, searchedDish }) {
     const [updatedDishes, setUpdatedDishes] = useState(currentItems);
 
     useEffect(() => {
-        if (searchedDish !== '') setUpdatedDishes(dishes);
+        if (searchedDish !== '') setUpdatedDishes(items);
         else setUpdatedDishes(currentItems);
-    }, [dishes, searchedDish, currentItems])
+    }, [items, searchedDish, currentItems])
 
     return (
         <>
