@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Hamburger from './Hamburger';
 import Logo from './Logo';
-import { Navigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const StyledNav = styled.nav`
     width: 100%;
@@ -12,9 +12,7 @@ const StyledNav = styled.nav`
     top: 0;
     z-index: 1000;
 
-    @media (min-width: 1200px) {
-        justify-content: space-around;
-    }
+    @media (min-width: 1200px) { justify-content: space-around; }
 `;
 
 export default function Nav() {
