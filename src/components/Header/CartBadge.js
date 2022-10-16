@@ -8,17 +8,13 @@ const BadgeContainer = styled.div`
     position: relative;
     left: 7px; 
 
-    .icon {
-        font-size: 1.3rem;
-    }
+    .icon { font-size: 1.3rem; }
 
     @media (min-width: 1200px) {
         position: initial;
         left: 0;
 
-        .icon {
-            font-size: 1.3rem;
-        }
+        .icon { font-size: 1.3rem; }
     }
 `;
 
@@ -39,12 +35,8 @@ const Badge = styled.span`
     transition: ease;
 
     @keyframes rotateBadge {
-        from { 
-            transform: rotate(0) scale(1.5); 
-        }
-        to { 
-            transform: rotate(360deg) scale(0.9); 
-        }
+        from { transform: rotate(0) scale(1.5); }
+        to { transform: rotate(360deg) scale(0.9); }
     }
 
     @media (min-width: 1200px) {
