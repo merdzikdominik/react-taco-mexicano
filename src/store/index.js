@@ -3,17 +3,11 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import dishesReducer from './reducers/dishesReducer';
 import hamburgerReducer from './reducers/hamburgerReducer';
-// import fetchCacheReducer from './reducers/fetchCacheReducer';
 
 const dishesPersistConfig = {
     key: 'dishes',
     storage
 };
-
-// const hamburgerPersistConfig = {
-//     key: 'hamburger',
-//     storage
-// }
 
 const persistedDishesReducer = persistReducer(dishesPersistConfig, dishesReducer);
 
