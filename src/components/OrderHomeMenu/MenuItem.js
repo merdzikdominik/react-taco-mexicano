@@ -127,7 +127,6 @@ export default function MenuItem({ id, dish, price, category }) {
                                     min: '0',
                                     max: '7',
                                     placeholder: '0',
-                                    // style: {width: '35px', textAlign: 'center', borderRadius: '5px'}
                                 }}
                             styles={{
                                 width: '35px',
