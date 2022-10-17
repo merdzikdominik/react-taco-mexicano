@@ -6,7 +6,6 @@ const MainContainer = styled.div`
     padding: 50px 20px;
     color: #fff;
     background-image: url(${mexicanPatternRed});
-    // background-color: #BBBABA;
     overflow: hidden !important;
     display: flex;
     justify-content: space-between;
@@ -41,9 +40,7 @@ const MainContainer = styled.div`
         animation-delay: ${props => props.delay}s;
         animation-fill-mode: backwards;
 
-        &:last-child:nth-child(3n - 2) {
-            grid-column-end: 3;
-        }
+        &:last-child:nth-child(3n - 2) { grid-column-end: 3; }
 
         @keyframes drop {
             0% {transform: translateY(-200px) scaleY(0.9); opacity: 0;}
