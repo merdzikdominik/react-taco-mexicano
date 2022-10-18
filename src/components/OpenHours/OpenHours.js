@@ -88,7 +88,8 @@ export default function OpenHours() {
     return (
         <MainContainer  initial={{ width: 0 }}
                         animate={{ width: '100%' }}
-                        exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
+                        exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+        >
             <H1>Kiedy jesteśmy otwarci?</H1>
             <DayContainer>
                 {OPEN_HOURS_POSITIONS.map(day => <OpenHoursOption key={day.id} day={day.day} time={day.time} delay={day.delay}/>)}

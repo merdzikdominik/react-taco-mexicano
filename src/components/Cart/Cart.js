@@ -170,7 +170,8 @@ export default function Cart() {
     return (
         <CartWrapper    initial={{ width: 0 }}
                         animate={{ width: '100%' }}
-                        exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
+                        exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+        >
             <CartContainer showCartContainer={dishesExist}>
                 <OrdersContainer ordersExist={dishesExist}>
                     {dishes.map(item => <CartItem   key={item.id} 

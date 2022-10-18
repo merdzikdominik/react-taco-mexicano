@@ -96,7 +96,8 @@ export default function OrderHomeMenu() {
     return (
         <Menu   initial={{ width: 0 }}
                 animate={{ width: '100%' }}
-                exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
+                exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+        >
             <MenuContainer>
                 <MenuHeaderSection>
                     <H1>Na co masz dziś ochotę?</H1>
