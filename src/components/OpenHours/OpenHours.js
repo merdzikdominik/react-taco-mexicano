@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 import { OPEN_HOURS_POSITIONS } from "../../constants";
 import OpenHoursOption from "./OpenHoursOption";
@@ -79,6 +80,10 @@ const H1 = styled.h1`
 `;
 
 export default function OpenHours() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
+
     return (
         <MainContainer>
             <H1>Kiedy jesteśmy otwarci?</H1>

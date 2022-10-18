@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 // import { useSelector } from 'react-redux';
 import useDishes from "../../hooks/useDishes";
@@ -33,10 +34,14 @@ const InnerContainer = styled.div`
     }
 `;
 
-const dishCategories = ['Przystawka', 'Zupa', 'Sałatka', 'Danie meksykańskie', 'Danie z grilla', 'Danie rybne', 'Deser'];
 
 export default function StaticMenu() {
     const dishes = useDishes();
+    const dishCategories = ['Przystawka', 'Zupa', 'Sałatka', 'Danie meksykańskie', 'Danie z grilla', 'Danie rybne', 'Deser'];
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
 
     const filteredDishes = dishCategories.map(category => {
         return {

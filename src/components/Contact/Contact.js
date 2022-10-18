@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { faAt, faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -188,6 +189,10 @@ const Text = styled.span`
 `;
 
 export default function Contact() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
+
     return (
         <ContactContainer>
             <H1>Skontaktuj się z nami za pośrednictwem:</H1>

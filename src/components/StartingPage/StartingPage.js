@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import SlideShow from '../StartingPage/Slider/SlideShow';
 import qualityRibbon from '../../assets/quality-ribbon.png'
@@ -77,6 +78,10 @@ const Header = styled.h1`
 `
 
 export default function StartingPage() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
+    
     return (
         <MainContainer>
             <SlideShow/>

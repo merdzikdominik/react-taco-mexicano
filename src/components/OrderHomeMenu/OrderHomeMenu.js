@@ -1,8 +1,8 @@
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PaginatedItems from './PaginatedItems';
 import useDishes from '../../hooks/useDishes';
 import Input from '../reusable/Input';
-import { useState } from 'react';
 import mexicanPatternGreen from '../../assets/mexican-pattern__green.jpg';
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -83,6 +83,10 @@ const Filter = styled.div`
 export default function OrderHomeMenu() {
     const dishes = useDishes();
     const [searchedDish, setSearchedDish] = useState('');
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
     
     const handleGetSearchedDish = (event) => {
         setSearchedDish(event.target.value);

@@ -77,8 +77,6 @@ export default function SlideShow() {
             if (timeoutRef.current) clearTimeout(timeoutRef.current);
         }
 
-        resetTimeout();
-
         timeoutRef.current = setTimeout(() => {
             setIndex(prev => prev === sliderData.length - 1 ? 0 : prev + 1)
         }, 2500);

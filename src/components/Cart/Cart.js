@@ -156,8 +156,14 @@ export default function Cart() {
     const formattedTotalPrice = totalPrice.toFixed(2);
 
     useEffect(() => {
-        if(dishes.length > 0) setDishesExist(true);
-        else setDishesExist(false);
+        window.scrollTo(0, 0);
+
+        if(dishes.length > 0) {
+            setDishesExist(true);
+        }
+        else {
+            setDishesExist(false);
+        }
     }, [dishes])
 
     return (
