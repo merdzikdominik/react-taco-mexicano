@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useEffect } from "react";
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { faAt, faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +10,7 @@ import mexicanPatternYellow from '../../assets/mexican-pattern.jpg';
 import mexicanPatternPurple from '../../assets/mexican-pattern__purple.jpg';
 import mexicanPatternInstagram from '../../assets/mexican-pattern__instagram.jpg';
 
-const ContactContainer = styled.section`
+const ContactContainer = styled(motion.section)`
     width: 100%;
     min-height: 100vh;
     height: 100%;
@@ -194,7 +195,9 @@ export default function Contact() {
     })
 
     return (
-        <ContactContainer>
+        <ContactContainer   initial={{ width: 0 }}
+                            animate={{ width: '100%' }}
+                            exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
             <H1>Skontaktuj się z nami za pośrednictwem:</H1>
             <Container>
                 <ContactOption>

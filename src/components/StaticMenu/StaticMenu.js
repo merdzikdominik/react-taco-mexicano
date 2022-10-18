@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import styled from "styled-components";
+import { motion } from 'framer-motion';
 // import { useSelector } from 'react-redux';
 import useDishes from "../../hooks/useDishes";
 import MenuCategoryWrapper from "./MenuCategoryWrapper";
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 
-const Container = styled.section`
+const Container = styled(motion.section)`
     width: 100%;
     margin-top: 60px;
     background-image: url(${mexicanStuff});
@@ -55,7 +56,9 @@ export default function StaticMenu() {
     return null}));
 
     return (
-        <Container>
+        <Container  initial={{ width: 0 }}
+                    animate={{ width: '100%' }}
+                    exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
             <InnerContainer>
                 {dishesByCategory}
             </InnerContainer>

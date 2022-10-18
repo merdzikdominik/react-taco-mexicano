@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import MenuItem from "./MenuItem";
+import { motion } from 'framer-motion';
 import mexicanPatternOrange from '../../assets/mexican-pattern__orange.jpg';
 import mexicanPatternDarkPink from '../../assets/mexican-pattern__darkpink.jpg';
 import mexicanPatternBlue from '../../assets/mexican-pattern__blue.jpg';

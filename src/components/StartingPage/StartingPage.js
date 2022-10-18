@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import SlideShow from '../StartingPage/Slider/SlideShow';
 import qualityRibbon from '../../assets/quality-ribbon.png'
 import delivs from '../../assets/deliveries.png'
 import charity from '../../assets/charity.png'
 
-const MainContainer = styled.section`
+const MainContainer = styled(motion.section)`
     width: 100%;
     min-height: 100vh;
     height: 100%;
@@ -83,7 +84,10 @@ export default function StartingPage() {
     })
     
     return (
-        <MainContainer>
+        <MainContainer  initial={{ width: 0 }}
+                        animate={{ width: '100%' }}
+                        exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+        >
             <SlideShow/>
             <Content>
                 <Header>Dlaczego warto u nas zjeść? To proste!</Header>

@@ -1,11 +1,12 @@
 import { useEffect } from "react";
+import { motion } from 'framer-motion';
 import styled from "styled-components";
 import { OPEN_HOURS_POSITIONS } from "../../constants";
 import OpenHoursOption from "./OpenHoursOption";
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 // import { motion } from 'framer-motion';
 
-const MainContainer = styled.section`
+const MainContainer = styled(motion.section)`
     width: 100%;
     height: 120vh;
     margin-top: 60px;
@@ -85,7 +86,9 @@ export default function OpenHours() {
     })
 
     return (
-        <MainContainer>
+        <MainContainer  initial={{ width: 0 }}
+                        animate={{ width: '100%' }}
+                        exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
             <H1>Kiedy jesteśmy otwarci?</H1>
             <DayContainer>
                 {OPEN_HOURS_POSITIONS.map(day => <OpenHoursOption key={day.id} day={day.day} time={day.time} delay={day.delay}/>)}

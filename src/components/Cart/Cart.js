@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import CartItem from './CartItem';
@@ -7,7 +8,7 @@ import mexicanPattern from '../../assets/mexican-pattern.jpg';
 import mariaczips from '../../assets/mariaczi_the_fastest.gif';
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 
-const CartWrapper = styled.section`
+const CartWrapper = styled(motion.section)`
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -167,7 +168,9 @@ export default function Cart() {
     }, [dishes])
 
     return (
-        <CartWrapper>
+        <CartWrapper    initial={{ width: 0 }}
+                        animate={{ width: '100%' }}
+                        exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
             <CartContainer showCartContainer={dishesExist}>
                 <OrdersContainer ordersExist={dishesExist}>
                     {dishes.map(item => <CartItem   key={item.id} 

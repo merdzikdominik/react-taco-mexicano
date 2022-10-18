@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import PaginatedItems from './PaginatedItems';
 import useDishes from '../../hooks/useDishes';
 import Input from '../reusable/Input';
@@ -8,7 +9,7 @@ import mexicanStuff from '../../assets/mexican-sfuff.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Menu = styled.section`
+const Menu = styled(motion.section)`
     background-image: url(${mexicanStuff});
     width: 100%;
     padding: 0 10px;
@@ -93,7 +94,9 @@ export default function OrderHomeMenu() {
     }
 
     return (
-        <Menu>
+        <Menu   initial={{ width: 0 }}
+                animate={{ width: '100%' }}
+                exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}>
             <MenuContainer>
                 <MenuHeaderSection>
                     <H1>Na co masz dziś ochotę?</H1>
