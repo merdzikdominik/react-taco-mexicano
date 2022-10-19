@@ -88,7 +88,7 @@ export default function OpenHours() {
     return (
         <MainContainer  initial={{ width: 0 }}
                         animate={{ width: '100%' }}
-                        exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+                        exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
         >
             <H1>Kiedy jesteśmy otwarci?</H1>
             <DayContainer>

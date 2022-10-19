@@ -197,7 +197,7 @@ export default function Contact() {
     return (
         <ContactContainer   initial={{ width: 0 }}
                             animate={{ width: '100%' }}
-                            exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+                            exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
         >
             <H1>Skontaktuj się z nami za pośrednictwem:</H1>
             <Container>
