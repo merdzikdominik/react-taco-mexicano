@@ -4,7 +4,7 @@ import Map from "./Map";
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 import bluredMap from '../../assets/blured_map_background.jpg';
 
-const MainContainer = styled.section`
+const MainPageContainer = styled.section`
     width: 100%;
     height: 100vh;
     margin-top: 60px;
@@ -23,8 +23,8 @@ export default function Location() {
     }
 
     return (
-        <MainContainer $loading={isLoading}>
+        <MainPageContainer $loading={isLoading}>
             <Map onIsLoading={handleLoading}/>
-        </MainContainer>
+        </MainPageContainer>
     );
 }

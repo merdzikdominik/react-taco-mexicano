@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 import { motion } from 'framer-motion';
-import styled from "styled-components";
 import { OPEN_HOURS_POSITIONS } from "../../constants";
+import styled from "styled-components";
 import OpenHoursOption from "./OpenHoursOption";
 import mexicanStuff from '../../assets/mexican-sfuff.png';
-// import { motion } from 'framer-motion';
 
-const MainContainer = styled(motion.section)`
+const MainPageContainer = styled(motion.section)`
     width: 100%;
     height: 120vh;
     margin-top: 60px;
@@ -83,17 +82,23 @@ const H1 = styled.h1`
 export default function OpenHours() {
     useEffect(() => {
         window.scrollTo(0, 0);
-    })
+    }, [])
+
+    const openHoursTabs = OPEN_HOURS_POSITIONS.map(day => <OpenHoursOption  key={day.id} 
+                                                                            day={day.day} 
+                                                                            time={day.time} 
+                                                                            delay={day.delay}
+                                                         />);
 
     return (
-        <MainContainer  initial={{ width: 0 }}
-                        animate={{ width: '100%' }}
-                        exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
+        <MainPageContainer  initial={{ width: 0 }}
+                            animate={{ width: '100%' }}
+                            exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
         >
             <H1>Kiedy jesteśmy otwarci?</H1>
             <DayContainer>
-                {OPEN_HOURS_POSITIONS.map(day => <OpenHoursOption key={day.id} day={day.day} time={day.time} delay={day.delay}/>)}
+                {openHoursTabs}
             </DayContainer>
-        </MainContainer>
+        </MainPageContainer>
     );
 }

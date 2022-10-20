@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
 import CartItem from './CartItem';
 import mexicanPattern from '../../assets/mexican-pattern.jpg';
 import mariaczips from '../../assets/mariaczi_the_fastest.gif';
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 
-const CartWrapper = styled(motion.section)`
+const MainPageContainer = styled(motion.section)`
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -93,7 +93,6 @@ const Mariachis = styled.div`
 
     @media (min-width: 1200px) {
         display: ${props => props.showMariachi ? 'block' : 'none'};
-
         animation-name: bump;
         animation-duration: 0.3s;
 
@@ -138,14 +137,13 @@ const Button = styled.button`
       }
 `;
 
-const NoOrdersInCart = styled.h1`
+const NoOrdersInCartH1 = styled.h1`
     text-align: center;
     position: absolute;
     top: 50%;
     left: 0;
     right: 0;
     margin: 0 auto;
-    display: ${props => props.showCartIsEmptyText ? 'none' : 'block'};
     padding: 0 30px;
 `;
 
@@ -165,12 +163,13 @@ export default function Cart() {
         else {
             setDishesExist(false);
         }
+
     }, [dishes])
 
     return (
-        <CartWrapper    initial={{ width: 0 }}
-                        animate={{ width: '100%' }}
-                        exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
+        <MainPageContainer  initial={{ width: 0 }}
+                            animate={{ width: '100%' }}
+                            exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
         >
             <CartContainer showCartContainer={dishesExist}>
                 <OrdersContainer ordersExist={dishesExist}>
@@ -193,7 +192,7 @@ export default function Cart() {
                 </MakeOrderContainer>
             </CartContainer>
             <Mariachis showMariachi={dishesExist}/>
-            {dishes.length === 0 && <NoOrdersInCart showCartIsEmptyText={dishesExist}>Twój koszyk jest pusty... Masz na coś ochotę?</NoOrdersInCart>}
-        </CartWrapper>
+            {dishes.length === 0 && <NoOrdersInCartH1>Twój koszyk jest pusty... Masz na coś ochotę?</NoOrdersInCartH1>}
+        </MainPageContainer>
     );
 }

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const CartItemContainer = styled.div`
     width: 100%;
     padding: 20px;
     margin: 10px 0;
@@ -15,7 +15,7 @@ const Container = styled.div`
     font-family: 'League Spartan', sans-serif;
 `;
 
-const OrderInfo = styled.div`
+const OrderInfoContainer = styled.div`
     display: flex;
     flex-direction: column;
 `;
@@ -28,15 +28,14 @@ const Price = styled(Dish)`
     font-weight: 700;
 `;
 
-const QuantityContainer = styled(OrderInfo)`
+const QuantityContainer = styled(OrderInfoContainer)`
     width: 90px;
     justify-content: center;
     align-items: center;
 `;
 
-const QuantityInfo = styled.div`
-    width: 90px;
-    display: flex;
+const QuantityInfo = styled(QuantityContainer)`
+    flex-direction: row;
     justify-content: space-between;
 `;
 
@@ -76,11 +75,11 @@ export default function CartItem({ id, dish, price, amount }) {
     }
 
     return (
-        <Container>
-            <OrderInfo>
+        <CartItemContainer>
+            <OrderInfoContainer>
                 <Dish>{dish}</Dish>
                 <Price>{formattedPrice} zł</Price>
-            </OrderInfo>
+            </OrderInfoContainer>
             <QuantityContainer>
                 <QuantityHeader>Ilość</QuantityHeader>
                 <QuantityInfo>
@@ -89,6 +88,6 @@ export default function CartItem({ id, dish, price, amount }) {
                     <PlusButton icon={faPlusCircle} onClick={incrementItemHandler.bind(null, id)}>+</PlusButton>
                 </QuantityInfo>
             </QuantityContainer>
-        </Container>
+        </CartItemContainer>
     );
 }

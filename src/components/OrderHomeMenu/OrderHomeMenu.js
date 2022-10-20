@@ -1,25 +1,22 @@
 import { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import styled from 'styled-components';
 import PaginatedItems from './PaginatedItems';
 import useDishes from '../../hooks/useDishes';
 import Input from '../reusable/Input';
 import mexicanPatternGreen from '../../assets/mexican-pattern__green.jpg';
 import mexicanStuff from '../../assets/mexican-sfuff.png';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Menu = styled(motion.section)`
+const MainPageContainer = styled(motion.section)`
     background-image: url(${mexicanStuff});
     width: 100%;
     padding: 0 10px;
-    // TODO: adjutst the height so the footer is not visible for couple of ms
     min-height: 100vh !important; 
     overflow: auto;
 
-    @media (min-width: 1200px) {
-        padding: 0;
-    }
+    @media (min-width: 1200px) { padding: 0; }
 `;
 
 const MenuContainer = styled.div`
@@ -37,12 +34,10 @@ const MenuContainer = styled.div`
     -moz-box-shadow: -7px 4px 24px -12px rgba(66, 68, 90, 1);
     box-shadow: -7px 4px 24px -12px rgba(66, 68, 90, 1);
 
-    @media (min-width: 1200px) {
-        max-width: 800px;
-    }
+    @media (min-width: 1200px) { max-width: 800px; }
 `;
 
-const MenuHeaderSection = styled.div`
+const MenuHeaderContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -63,16 +58,13 @@ const H1 = styled.h1`
     margin: 0;
     color: #fff;
     
-    @media (min-width: 1200px) {
-        text-align: right;
-    }
+    @media (min-width: 1200px) { text-align: right; }
 `;
 
 const SearchIcon = styled(FontAwesomeIcon)`
     color: #000;
     background-color: #fff;
     align-items: center;
-    // padding: 5.8px;
     padding: 9px;
 `;
 
@@ -87,19 +79,19 @@ export default function OrderHomeMenu() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    })
+    }, [])
     
     const handleGetSearchedDish = (event) => {
         setSearchedDish(event.target.value);
     }
 
     return (
-        <Menu   initial={{ width: 0 }}
-                animate={{ width: '100%' }}
-                exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
+        <MainPageContainer  initial={{ width: 0 }}
+                            animate={{ width: '100%' }}
+                            exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
         >
             <MenuContainer>
-                <MenuHeaderSection>
+                <MenuHeaderContainer>
                     <H1>Na co masz dziś ochotę?</H1>
                         <Filter>
                             <SearchIcon icon={faSearch}/>    
@@ -114,9 +106,9 @@ export default function OrderHomeMenu() {
                                     }}
                             />
                         </Filter>
-                </MenuHeaderSection>
+                </MenuHeaderContainer>
                 <PaginatedItems itemsPerPage={7} items={dishes} searchedDish={searchedDish}/>
             </MenuContainer>
-        </Menu>
+        </MainPageContainer>
     );
 }

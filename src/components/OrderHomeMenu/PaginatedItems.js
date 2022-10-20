@@ -1,7 +1,6 @@
 import { useState, useEffect} from 'react';
-import styled from 'styled-components';
 import ReactPaginate from 'react-paginate';
-// import useDishes from '../../hooks/useDishes';
+import styled from 'styled-components';
 import MenuItems from './MenuItems';
 
 const Pagination = styled(ReactPaginate)`
@@ -9,30 +8,20 @@ const Pagination = styled(ReactPaginate)`
     margin: 0 auto;
     padding: 0;
 
-    li {
-        display: inline-block;
-    }
+    li { display: inline-block; }
 `;
 
 export default function PaginatedItems({ itemsPerPage, items, searchedDish }) {
-    // We start with an empty list of items.
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
-    // Here we use item offsets; we could also use page offsets
-    // following the API or data you're working with.
     const [itemOffset, setItemOffset] = useState(0);
-    // const items = useDishes();
 
     useEffect(() => {
-        // Fetch items from another resources.
         const endOffset = itemOffset + itemsPerPage;
-        // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
         setCurrentItems(items.slice(itemOffset, endOffset));
         setPageCount(Math.ceil(items.length / itemsPerPage));
-        // setPageCount(items.length);
     }, [itemOffset, itemsPerPage, items]);
   
-    // Invoke when user click to request another page.
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % items.length;
         setItemOffset(newOffset);

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const StyledButton = styled.button`
     max-width: 280px;
-    // width: 100%;
     position: ${props => props.styles && props.styles.position ? props.styles.position : 'absolute'};
     top: 485px;
     left: 0;
@@ -28,9 +27,7 @@ const StyledButton = styled.button`
 
     transition: background 300ms ease-in-out;
 
-    button {
-        padding: 0;
-    }
+    button { padding: 0; }
 
     &:hover {
         background-position: 0;

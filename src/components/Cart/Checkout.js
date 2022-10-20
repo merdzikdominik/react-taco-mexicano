@@ -1,12 +1,11 @@
 import { useRef } from "react";
-import styled from "styled-components";
 import { useSelector, useDispatch } from 'react-redux';
-import Input from '../reusable/Input'
+import { useNavigate } from 'react-router-dom';
 import { ref, child, push, update } from "firebase/database"
 import { db } from "../../firebase";
-import { useNavigate } from 'react-router-dom';
 import { clearDishes } from "../../store/actions/action-creators";
-// import SliderButton from "../StartingPage/Slider/SliderButton";
+import styled from "styled-components";
+import Input from '../reusable/Input'
 import Button from "../reusable/Button";
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 
@@ -31,7 +30,6 @@ const FormContainer = styled.div`
     justify-content: center;
     border-radius: 10px;
     animation: slam 0.5s ease-in;
-    // animation-duration: 0.5s;
     -webkit-box-shadow: -2px 8px 24px 0px rgba(66, 68, 90, 1);
     -moz-box-shadow: -2px 8px 24px 0px rgba(66, 68, 90, 1);
     box-shadow: -2px 8px 24px 0px rgba(66, 68, 90, 1);
@@ -62,7 +60,6 @@ const Form = styled.form`
 
 const PersonalDataHeader = styled.h3`
     color: #fff;
-    // font-size: 1.7rem;
     text-align: center;
 `;
 
@@ -202,8 +199,6 @@ export default function Checkout() {
                                 }
                             }
                     />
-
-                    {/* <button type='submit'>Prześlij dane</button> */}
                     <Button content='Prześlij dane' 
                             type='submit'
                             styles={{

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import MenuItem from "./MenuItem";
-import { motion } from 'framer-motion';
 import mexicanPatternOrange from '../../assets/mexican-pattern__orange.jpg';
 import mexicanPatternDarkPink from '../../assets/mexican-pattern__darkpink.jpg';
 import mexicanPatternBlue from '../../assets/mexican-pattern__blue.jpg';
@@ -9,7 +8,7 @@ import mexicanPatternYellow from '../../assets/mexican-pattern.jpg';
 import mexicanPatternRed from '../../assets/mexican-pattern__red.jpg';
 import mexicanPatternPurple from '../../assets/mexican-pattern__purple.jpg';
 
-const Container = styled.div`
+const Content = styled.article`
     width: 100%;
     max-width: 500px;
     padding: 15px;
@@ -54,13 +53,13 @@ const H1 = styled.h1`
     text-align: center;
 `;
 
-export default function MenuCategoryWrapper({ category, items }) {
+export default function MenuCategoryContainer({ category, items }) {
     const dishesList = items.map((dish, index) => <MenuItem key={index} title={dish.dish_name} price={dish.dish_price}/>);
 
     return (
-        <Container>
+        <Content>
             <H1>{category}</H1>
             {dishesList}
-        </Container>
+        </Content>
     );
 }

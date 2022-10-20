@@ -10,13 +10,12 @@ const LogoContainer = styled.div`
     @media (min-width: 1200px) {
         position: relative;
         left: 0;
-        // padding: 0 100px;
         width: 115px;
         height: 115px;
     }
 `;
 
-const StyledLogo = styled.img`
+const LogoImage = styled.img`
     width: inherit;
     height: inherit;
 `;
@@ -24,7 +23,7 @@ const StyledLogo = styled.img`
 export default function Logo() {
     return (
         <LogoContainer>
-            <StyledLogo src={logo}/>
+            <LogoImage src={logo}/>
         </LogoContainer>
     );
 }

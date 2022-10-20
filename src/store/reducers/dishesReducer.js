@@ -27,8 +27,6 @@ export default function dishesReducer(state = initialState, action) {
                 updatedDishes = state.dishes.concat(action.payload);
             }
 
-            console.log('added', state)
-
             return {
                 ...state,
                 dishes: updatedDishes,
@@ -58,8 +56,6 @@ export default function dishesReducer(state = initialState, action) {
             if (foundDishAmount === 1) {
                 updatedDishes = state.dishes.filter(dish => dish.id !== action.payload.id);
             }
-
-            console.log('removed', state)
 
             return {
                 ...state,

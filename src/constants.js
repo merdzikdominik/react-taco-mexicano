@@ -22,3 +22,22 @@ export const OPEN_HOURS_POSITIONS = [
     {id: '6', day: 'Sobota', time: '10:00 - 23:00', delay: 1.3},
     {id: '7', day: 'Niedziela', time: '10:00 - 23:00', delay: 1.5}
 ];
+
+export const SLIDER_DATA = [
+    {
+        image: 'https://www.findhomeaway.com/filemanager/manager/source/taco.jpg',
+        alt: 'taco picture'
+    },
+    {
+        image: 'https://www.findhomeaway.com/filemanager/manager/source/Esquites-1.jpg',
+        alt: 'esquites picture'
+    },
+    {
+        image: 'https://www.findhomeaway.com/filemanager/manager/source/Enchilada.jpg',
+        alt: 'enchilada picture'
+    },
+    {
+        image: 'https://www.findhomeaway.com/files/blog/202109201832446148d3cc4df40.jpg',
+        alt: 'full table of food picture'
+    }
+];

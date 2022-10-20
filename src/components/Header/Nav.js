@@ -1,9 +1,9 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Hamburger from './Hamburger';
 import Logo from './Logo';
-import { Link } from 'react-router-dom';
 
-const StyledNav = styled.nav`
+const NavContainer = styled.nav`
     width: 100%;
     height: 60px;
     background-color: #3E3E3E;
@@ -17,9 +17,9 @@ const StyledNav = styled.nav`
 
 export default function Nav() {
     return (
-        <StyledNav>
+        <NavContainer>
             <Link to='/'><Logo/></Link>
             <Hamburger/>
-        </StyledNav>
+        </NavContainer>
     );
 }

@@ -6,7 +6,7 @@ import qualityRibbon from '../../assets/quality-ribbon.png'
 import delivs from '../../assets/deliveries.png'
 import charity from '../../assets/charity.png'
 
-const MainContainer = styled(motion.section)`
+const MainPageContainer = styled(motion.section)`
     width: 100%;
     min-height: 100vh;
     height: 100%;
@@ -14,7 +14,7 @@ const MainContainer = styled(motion.section)`
     font-family: 'League Spartan', sans-serif;
 `
 
-const Content = styled.div`
+const ContentContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,18 +31,14 @@ const InfoContainer = styled.div`
     justify-content: center;
     line-height: 30px;
 
-    @media (min-width: 1200px) {
-        flex-direction: row;
-    }
+    @media (min-width: 1200px) { flex-direction: row; }
 `;
 
 const Info = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media (min-width: 1200px) {
-        flex-direction: row;
-    }
+    @media (min-width: 1200px) { flex-direction: row; }
 `;
 
 const Image = styled.img`
@@ -73,7 +69,7 @@ const Text = styled.div`
     }
 `;
 
-const Header = styled.h1`
+const H1 = styled.h1`
     text-align: center;
     padding: 20px 0;
 `
@@ -81,16 +77,16 @@ const Header = styled.h1`
 export default function StartingPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
-    })
+    }, [])
     
     return (
-        <MainContainer  initial={{ width: 0 }}
-                        animate={{ width: '100%' }}
-                        exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
+        <MainPageContainer  initial={{ width: 0 }}
+                            animate={{ width: '100%' }}
+                            exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
         >
             <SlideShow/>
-            <Content>
-                <Header>Dlaczego warto u nas zjeść? To proste!</Header>
+            <ContentContainer>
+                <H1>Dlaczego warto u nas zjeść? To proste!</H1>
                 <InfoContainer>
                     <Info>
                         <Image src={qualityRibbon}/>
@@ -111,7 +107,7 @@ export default function StartingPage() {
                         </Text>
                     </Info>
                 </InfoContainer>
-            </Content>
-        </MainContainer>
+            </ContentContainer>
+        </MainPageContainer>
     );
 }

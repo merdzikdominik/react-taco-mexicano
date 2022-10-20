@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import styled from "styled-components";
 import { motion } from 'framer-motion';
-// import { useSelector } from 'react-redux';
+import styled from "styled-components";
 import useDishes from "../../hooks/useDishes";
-import MenuCategoryWrapper from "./MenuCategoryWrapper";
+import MenuCategoryContainer from "./MenuCategoryContainer";
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 
-const Container = styled(motion.section)`
+const MainPageContainer = styled(motion.section)`
     width: 100%;
     margin-top: 60px;
     background-image: url(${mexicanStuff});
@@ -17,7 +16,7 @@ const Container = styled(motion.section)`
     }
 `;
 
-const InnerContainer = styled.div`
+const DishesContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,7 +41,7 @@ export default function StaticMenu() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    })
+    }, [])
 
     const filteredDishes = dishCategories.map(category => {
         return {
@@ -52,17 +51,20 @@ export default function StaticMenu() {
     });
 
     const dishesByCategory = dishCategories.map(category => filteredDishes.map((item, index) => {
-        if (item.category === category) return <MenuCategoryWrapper key={index} category={category} items={item.dishes} />;
-    return null}));
+        if (item.category === category) {
+            return <MenuCategoryContainer key={index} category={category} items={item.dishes} />;
+        }
+        return null;
+    }));
 
     return (
-        <Container  initial={{ width: 0 }}
-                    animate={{ width: '100%' }}
-                    exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
+        <MainPageContainer  initial={{ width: 0 }}
+                            animate={{ width: '100%' }}
+                            exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
         >
-            <InnerContainer>
+            <DishesContainer>
                 {dishesByCategory}
-            </InnerContainer>
-        </Container>
+            </DishesContainer>
+        </MainPageContainer>
     );
 }

@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import CartBadge from "./CartBadge";
 import { changeMobileMenuState } from "../../store/actions/action-creators";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapLocationDot, faPhone, faClock, faClipboardList, faHouse } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
+import CartBadge from "./CartBadge";
 import mexicanPattern from '../../assets/mexican-pattern.jpg';
 
 const StyledUl = styled.ul`
@@ -87,14 +87,14 @@ const StyledUl = styled.ul`
                 position: absolute;
                 width: 100%;
                 height: 1px;
-                bottom: 0;
+                bottom: -2px;
                 left: 0;
                 background-color: yellow;
                 visibility: hidden;
                 -webkit-transform: scaleX(0);
                 transform: scaleX(0);
-                -webkit-transition: all .5s cubic-bezier(1,.25,0,.75) 0s;
-                transition: all .5s cubic-bezier(1,.25,0,.75) 0s;
+                -webkit-transition: all .2s cubic-bezier(1,.25,0,.75) 0s;
+                transition: all .2s cubic-bezier(1,.25,0,.75) 0s;
             }
 
             &:hover:before {
@@ -104,6 +104,9 @@ const StyledUl = styled.ul`
             }
 
         }
+
+        a.active { border-bottom: 2px solid yellow; }
+        a.inactive { border-bottom: none; }
 
     }
 `;
@@ -120,22 +123,57 @@ export default function RightNavbar() {
         <>
             <StyledUl showMenu={isHamburgerClicked}>
                 <li>
-                    <NavLink to='koszyk' onClick={handleMenuOpening}><CartBadge/>Koszyk</NavLink>
+                    <NavLink    to='koszyk' 
+                                onClick={handleMenuOpening} 
+                                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+                    >
+                        <CartBadge/>
+                        Koszyk
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to='zamow-do-domu' onClick={handleMenuOpening}><FontAwesomeIcon icon={faHouse}/>Zamów do domu</NavLink>
+                    <NavLink    to='zamow-do-domu' 
+                                onClick={handleMenuOpening} 
+                                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+                    >
+                        <FontAwesomeIcon icon={faHouse}/>
+                        Zamów do domu
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to='menu' onClick={handleMenuOpening}><FontAwesomeIcon icon={faClipboardList}/>Menu</NavLink>
+                    <NavLink    to='menu' 
+                                onClick={handleMenuOpening} 
+                                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+                    >
+                        <FontAwesomeIcon icon={faClipboardList}/>
+                        Menu
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to='kontakt' onClick={handleMenuOpening}><FontAwesomeIcon icon={faPhone}/>Kontakt</NavLink>
+                    <NavLink    to='kontakt' 
+                                onClick={handleMenuOpening} 
+                                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+                    >
+                        <FontAwesomeIcon icon={faPhone}/>
+                        Kontakt
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to='godziny-otwarcia' onClick={handleMenuOpening}><FontAwesomeIcon icon={faClock}/>Godziny Otwarcia</NavLink>
+                    <NavLink    to='godziny-otwarcia' 
+                                onClick={handleMenuOpening} 
+                                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+                    >
+                        <FontAwesomeIcon icon={faClock}/>Godziny Otwarcia
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to='lokalizacja' onClick={handleMenuOpening}><FontAwesomeIcon icon={faMapLocationDot}/>Lokalizacja</NavLink>
+                    <NavLink    to='lokalizacja' 
+                                onClick={handleMenuOpening} 
+                                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+                    >
+                        <FontAwesomeIcon icon={faMapLocationDot}/>
+                        Lokalizacja
+                    </NavLink>
                 </li>
             </StyledUl>
         </>

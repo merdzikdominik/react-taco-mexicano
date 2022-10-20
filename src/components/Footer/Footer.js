@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledFooter = styled.footer`
+const FooterContainer = styled.footer`
     width: 100%;
     background-color: #eee;
     display: flex;
@@ -11,9 +11,7 @@ const StyledFooter = styled.footer`
     position: relative;
     z-index: 7;
 
-    span {
-        padding: 30px 0;
-    }
+    span { padding: 30px 0; }
 
     @media (min-width: 380px) {
         justify-content: space-between;
@@ -23,8 +21,8 @@ const StyledFooter = styled.footer`
 
 export default function Footer() {
     return (
-        <StyledFooter>
+        <FooterContainer>
             <span><b>&copy; Taco Mexicano</b> | All rights reserved </span>
-        </StyledFooter>
+        </FooterContainer>
     );
 }

@@ -1,12 +1,12 @@
 import { useRef, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/actions/action-creators';
-import styled from 'styled-components';
-import Input from '../reusable/Input';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
+import Input from '../reusable/Input';
 
-const Container = styled.div`
+const ItemContainer = styled.article`
     width: 90%;
     display: flex;
     margin: 0 auto;
@@ -19,7 +19,7 @@ const Container = styled.div`
     gap: 20px;
 `;
 
-const LeftSide = styled.div`
+const ItemInfoContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -27,13 +27,10 @@ const LeftSide = styled.div`
     padding: 10px;
     color: #fff;
 
-    @media (min-width: 1200px) {
-        width: 80%;
-    }
+    @media (min-width: 1200px) { width: 80%; }
 `;
 
-const RighSide = styled.div`
-    // max-width: 250px;
+const ItemOrderContainer = styled.div`
     min-width: 150px;
     width: 100%;
     display: flex;
@@ -51,6 +48,10 @@ const Category = styled.span`
     font-weight: 600;
 `;
 
+const Dish = styled(Category)`
+    font-weight: initial;
+`;
+
 const Button = styled.button`
     border: none;
     background-color: transparent;
@@ -60,21 +61,11 @@ const Button = styled.button`
     transition: ease;
 
     @keyframes bump {
-        0% {
-            transform: scale(0.9);
-        }
-        25% {
-            transform: scale(1.2);
-        }
-        50% {
-            transform: scale(1.5);
-        }
-        75% {
-            transform: scale(1.2);
-        }
-        100% {
-            transform: scale(1);
-        }
+        0% { transform: scale(0.9); }
+        25% { transform: scale(1.2); }
+        50% { transform: scale(1.5); }
+        75% { transform: scale(1.2); }
+        100% { transform: scale(1); }
     }
 `;
 
@@ -93,12 +84,12 @@ export default function MenuItem({ id, dish, price, category }) {
         }
     }, [clicked]);
 
-    const addToCartHandler = (event) => {       
+    const handleAddToCart = (event) => {       
         event.preventDefault();
-
         const amount = +inputRef.current.value;
 
         if (amount === 0) return;
+
         const payload = {
             id,
             dish,
@@ -112,14 +103,14 @@ export default function MenuItem({ id, dish, price, category }) {
     }
 
     return (
-        <Container>
-            <LeftSide>
+        <ItemContainer>
+            <ItemInfoContainer>
                 <Category>{category}</Category>
-                <span>{dish}</span>
-            </LeftSide>
-            <RighSide>
+                <Dish>{dish}</Dish>
+            </ItemInfoContainer>
+            <ItemOrderContainer>
                 <span>{price} zł</span>
-                <Form onSubmit={addToCartHandler}>
+                <Form onSubmit={handleAddToCart}>
                     <Input  input={{
                                     id: 'search',
                                     type: 'number',
@@ -137,7 +128,7 @@ export default function MenuItem({ id, dish, price, category }) {
                     />
                     <Button type='submit' onClick={() => setClicked(true)} isClicked={clicked}><FontAwesomeIcon icon={faCartPlus}/></Button>
                 </Form>
-            </RighSide>
-        </Container>
+            </ItemOrderContainer>
+        </ItemContainer>
     );
 }

@@ -16,22 +16,16 @@ const SliderMessage = styled.div`
     line-height: 30px;
     color: #fff;
 
-    span {
-        padding: 0 70px;
-    }
+    span { padding: 0 70px; }
 
     @media (min-width: 350px) {
-        span {
-            font-size: 1.8rem;
-        }
+        span { font-size: 1.8rem; }
     }
 
     @media (min-width: 1200px) {
         top: 90px;
 
-        span {
-            font-size: 2rem;
-        }
+        span { font-size: 2rem; }
     }
 
 `;

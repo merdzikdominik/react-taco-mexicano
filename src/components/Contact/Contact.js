@@ -1,16 +1,16 @@
-import styled from "styled-components";
 import { useEffect } from "react";
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { faAt, faPhone } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 import mexicanPatternBlue from '../../assets/mexican-pattern__blue.jpg';
 import mexicanPatternYellow from '../../assets/mexican-pattern.jpg';
 import mexicanPatternPurple from '../../assets/mexican-pattern__purple.jpg';
 import mexicanPatternInstagram from '../../assets/mexican-pattern__instagram.jpg';
 
-const ContactContainer = styled(motion.section)`
+const MainPageContainer = styled(motion.section)`
     width: 100%;
     min-height: 100vh;
     height: 100%;
@@ -26,13 +26,12 @@ const ContactContainer = styled(motion.section)`
     @media (min-width: 1200px) { padding: 0; }
 `;
 
-const Container = styled.div`
+const ContactContainer = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 500px;
     width: 100%;
     background-color: rgba(255,255,255,0.6);
-    // background-color: #fff;
     border-radius: 15px;
     -webkit-box-shadow: -8px 9px 20px -11px rgba(66, 68, 90, 1);
     -moz-box-shadow: -8px 9px 20px -11px rgba(66, 68, 90, 1);
@@ -62,7 +61,7 @@ const Container = styled.div`
     }
 `;
 
-const ContactOption = styled.div`
+const ContactOptionContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -141,7 +140,6 @@ const ContactOption = styled.div`
 `;
 
 const H1 = styled.h1`
-    // margin: 0;
     font-size: 1.7rem;
     text-align: center;
 `;
@@ -155,7 +153,6 @@ const FacebookIcon = styled(FontAwesomeIcon)`
 
 const InstagramIcon = styled(FontAwesomeIcon)`
     color: #fff;
-    // font-size: 1.2rem;
     font-size: 3rem;
 
     @media (min-width: 1200px) { color: #000; }
@@ -192,32 +189,32 @@ const Text = styled.span`
 export default function Contact() {
     useEffect(() => {
         window.scrollTo(0, 0);
-    })
+    }, [])
 
     return (
-        <ContactContainer   initial={{ width: 0 }}
+        <MainPageContainer  initial={{ width: 0 }}
                             animate={{ width: '100%' }}
                             exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
         >
             <H1>Skontaktuj się z nami za pośrednictwem:</H1>
-            <Container>
-                <ContactOption>
+            <ContactContainer>
+                <ContactOptionContainer>
                     <MobileIcon icon={faPhone}/>
                     <Text>32 285 84 44</Text>
-                </ContactOption>
-                <ContactOption>
+                </ContactOptionContainer>
+                <ContactOptionContainer>
                     <EmailIcon icon={faAt}/>
                     <Text>tacotg@interia.eu</Text>
-                </ContactOption>
-                <ContactOption>
+                </ContactOptionContainer>
+                <ContactOptionContainer>
                     <FacebookIcon icon={faFacebook} className='white-background'/>
                     <Text><a href='https://www.facebook.com/TGTaco'>Facebook</a></Text>
-                </ContactOption>
-                <ContactOption>
+                </ContactOptionContainer>
+                <ContactOptionContainer>
                     <InstagramIcon icon={faInstagram}/>
                     <Text><a href='https://www.instagram.com/taco_mexicano_tg/'>Instagram</a></Text>
-                </ContactOption>
-            </Container>
-        </ContactContainer>
+                </ContactOptionContainer>
+            </ContactContainer>
+        </MainPageContainer>
     );
 }

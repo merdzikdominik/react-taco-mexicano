@@ -1,38 +1,33 @@
-import styled from "styled-components";
-import { sliderData } from "../../../slider-data";
-import { ThemeProvider } from "styled-components";
 import { useState, useEffect, useRef } from "react";
+import { SLIDER_DATA } from "../../../constants";
+import styled from "styled-components";
 import SliderContent from "./SliderContent";
 
-const StyledSlideShow = styled.div`
+const SlideShowContainer = styled.div`
     margin: 0 auto;
     overflow: hidden;
     max-width: 100%;
     max-height: 600px;
 
-    @media (min-width: 1200px) {
-        max-height: 650px;
-    }
+    @media (min-width: 1200px) { max-height: 650px; }
 `;
 
-const StyledSlideShowSlider = styled.div`
+const SlideShowSlider = styled.div`
     white-space: nowrap;
-    transform: translate3d(${props => props.theme.index}%, 0, 0);
+    transform: translate3d(${props => props.index ? -props.index*100 : ''}%, 0, 0);
     transition: ease 1000ms;
 `;
 
-const StyledSlideShowDots = styled.div`
+const SlideShowDotsContainer = styled.div`
     text-align: center;
     position: relative;
     top: -40px;
     z-index: 2;
 
-    @media (min-width: 1200px) {
-        top: -60px;
-    }
+    @media (min-width: 1200px) { top: -60px; }
 `;
 
-const StyledSlideShowDot = styled.div`
+const SlideShowDot = styled.div`
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -56,17 +51,8 @@ const StyledImage = styled.img`
     min-height: 300px;
     filter: brightness(70%);
 
-    @media (min-width: 1200px) {
-        height: 650px;
-    }
+    @media (min-width: 1200px) { height: 650px; }
 `;
-
-const slideTheme = (index) => {
-    return {
-        index: -index * 100,
-        backgroundColor: '#6a0dad'
-    };
-}
 
 export default function SlideShow() {
     const [index, setIndex] = useState(0);
@@ -78,7 +64,7 @@ export default function SlideShow() {
         }
 
         timeoutRef.current = setTimeout(() => {
-            setIndex(prev => prev === sliderData.length - 1 ? 0 : prev + 1)
+            setIndex(prev => prev === SLIDER_DATA.length - 1 ? 0 : prev + 1)
         }, 2500);
 
         return () => {
@@ -87,16 +73,19 @@ export default function SlideShow() {
     }, [index]);
 
     return (
-        <ThemeProvider theme={slideTheme(index)}>
-            <StyledSlideShow>
-                <SliderContent/>
-                <StyledSlideShowSlider>
-                    {sliderData.map((photo, index) => <StyledImage className='slide' key={index} src={photo.image} alt={photo.alt}/>)}
-                </StyledSlideShowSlider>
-                <StyledSlideShowDots>
-                    {sliderData.map((_, imageIndex) => <StyledSlideShowDot key={imageIndex} style={{backgroundColor: index === imageIndex ? '#FFBC23' : '#c4c4c4'}} onClick={() => setIndex(imageIndex)}></StyledSlideShowDot>)}
-                </StyledSlideShowDots>
-            </StyledSlideShow>
-        </ThemeProvider>
+        <SlideShowContainer>
+            <SliderContent/>
+            <SlideShowSlider index={index}>
+                {SLIDER_DATA.map((photo, index) => <StyledImage  className='slide' 
+                                                                key={index} 
+                                                                src={photo.image} 
+                                                                alt={photo.alt}/>)}
+            </SlideShowSlider>
+            <SlideShowDotsContainer>
+                {SLIDER_DATA.map((_, imageIndex) => <SlideShowDot    key={imageIndex} 
+                                                                    style={{backgroundColor: index === imageIndex ? '#FFBC23' : '#c4c4c4'}} 
+                                                                    onClick={() => setIndex(imageIndex)}></SlideShowDot>)}
+            </SlideShowDotsContainer>
+        </SlideShowContainer>
     );
 }

@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Content = styled.div`
     width: 100%;
     padding: 10px;
     display: flex;
     align-items: center;
-    // color: #eee;
     font-size: 1.2rem;
 `;
 
-const DishesContainer = styled.div`
+const Dishes = styled.div`
     width: 50%;
     display: flex;
     flex-direction: column;
     text-align: left;
 `;
-const PriceContainer = styled.div`
+
+const Price = styled.div`
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -25,13 +25,13 @@ const PriceContainer = styled.div`
 
 export default function MenuItem({ title, price }) {
     return (
-        <Container>
-            <DishesContainer>
+        <Content>
+            <Dishes>
                 <span>{title}</span>
-            </DishesContainer>
-            <PriceContainer>
+            </Dishes>
+            <Price>
                 <span>{price} zł</span>
-            </PriceContainer>
-        </Container>
+            </Price>
+        </Content>
     );
 }

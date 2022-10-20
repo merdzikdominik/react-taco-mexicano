@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import mexicanPatternRed from '../../assets/mexican-pattern__red.jpg';
 
-const MainContainer = styled.div`
+const OptionContainer = styled.div`
     width: 100%;
     padding: 50px 20px;
     color: #fff;
@@ -56,9 +56,9 @@ const MainContainer = styled.div`
 export default function OpenHoursOption({ day, time, delay }) {
     
     return (
-        <MainContainer delay={delay}>
+        <OptionContainer delay={delay}>
           <span>{day}</span>
           <span>{time}</span>
-        </MainContainer>
+        </OptionContainer>
     );
 }

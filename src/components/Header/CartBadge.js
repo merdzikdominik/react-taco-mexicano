@@ -13,8 +13,6 @@ const BadgeContainer = styled.div`
     @media (min-width: 1200px) {
         position: initial;
         left: 0;
-
-        .icon { font-size: 1.3rem; }
     }
 `;
 
