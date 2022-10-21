@@ -10,7 +10,7 @@ import Button from "../reusable/Button";
 import mexicanStuff from '../../assets/mexican-sfuff.png';
 
 
-const MainContainer = styled.section`
+const MainPageContainer = styled.section`
     width: 100%;
     height: 100vh;
     display: flex;
@@ -106,7 +106,7 @@ export default function Checkout() {
     }
 
     return (
-        <MainContainer>
+        <MainPageContainer>
             <FormContainer>
                 <Form onSubmit={handleFormSubmit}>
                     <PersonalDataHeader>Formularz Osobowy</PersonalDataHeader>
@@ -207,6 +207,6 @@ export default function Checkout() {
                     />
                 </Form>
             </FormContainer>
-        </MainContainer>
+        </MainPageContainer>
     );
 }
