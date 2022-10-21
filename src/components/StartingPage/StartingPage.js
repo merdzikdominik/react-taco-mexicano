@@ -76,6 +76,7 @@ const H1 = styled.h1`
 
 export default function StartingPage() {
     useEffect(() => {
+        console.log(process.env);
         window.scrollTo(0, 0);
     }, [])
     
