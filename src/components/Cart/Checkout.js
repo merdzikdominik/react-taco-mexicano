@@ -96,7 +96,6 @@ export default function Checkout() {
         const updates = {};
 
         updates['/Orders/' + newOrderKey] = userData;
-        console.log(userData);
 
         localStorage.clear();
         dispatch(clearDishes());
