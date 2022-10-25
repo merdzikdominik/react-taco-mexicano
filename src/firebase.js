@@ -1,16 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyDYHbo65qOe1witLKeG7UgCr0Ctro1tUJs",
-//     authDomain: "orders-store-22da3.firebaseapp.com",
-//     databaseURL: "https://orders-store-22da3-default-rtdb.firebaseio.com",
-//     projectId: "orders-store-22da3",
-//     storageBucket: "orders-store-22da3.appspot.com",
-//     messagingSenderId: "282141583036",
-//     appId: "1:282141583036:web:7e7555b1aa2dc365d652b9"
-//   };
-
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -21,6 +11,5 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_FIREBASE_APP_ID
   };
 
-// initializeApp(firebaseConfig);
 const app = initializeApp(firebaseConfig);
 export const db = getDatabase(app);
