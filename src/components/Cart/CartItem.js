@@ -1,65 +1,18 @@
 import { useDispatch } from 'react-redux';
 import { decrement, addToCart } from '../../store/actions/action-creators';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components';
-
-const CartItemContainer = styled.div`
-    width: 100%;
-    padding: 20px;
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(255,255,255,0.3);
-    border-radius: 10px;
-    font-family: 'League Spartan', sans-serif;
-`;
-
-const OrderInfoContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-const Dish = styled.span`
-    font-size: 20px;
-`;
-
-const Price = styled(Dish)`
-    font-weight: 700;
-`;
-
-const QuantityContainer = styled(OrderInfoContainer)`
-    width: 90px;
-    justify-content: center;
-    align-items: center;
-`;
-
-const QuantityInfo = styled(QuantityContainer)`
-    flex-direction: row;
-    justify-content: space-between;
-`;
-
-const QuantityHeader = styled(Dish)``;
-const QuantityNumber = styled(Price)``;
-
-const MinusButton = styled(FontAwesomeIcon)`
-    cursor: pointer;
-    font-size: 1.5rem;
-    transition: all 0.3s ease-in-out;
-    color: #000;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-
-    &:hover {
-        font-size: 1.3rem;
-        transition: all 0.2s ease-in; 
-        color: #fff;
-    }
-`;
-
-const PlusButton = styled(MinusButton)``;
+import {
+    CartItemContainer,
+    OrderInfoContainer,
+    Dish,
+    Price,
+    QuantityContainer,
+    QuantityHeader,
+    QuantityInfo,
+    MinusButton,
+    QuantityNumber,
+    PlusButton
+} from './CartItem.styles';
 
 export default function CartItem({ id, dish, price, amount }) {
     const formattedPrice = Number(price * amount).toFixed(2);
