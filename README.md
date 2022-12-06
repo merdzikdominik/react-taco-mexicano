@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+![picture representing the restaurant Application Website](https://github.com/merdzikdominik/react-taco-mexicano/blob/main/src/assets/taco-background.jpg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Taco Mexicano SPA application written in React.js.
 
-## Available Scripts
+## For development purposes
 
-In the project directory, you can run:
+To install and enable the application on personal computer device, copy paste the following command: `https://github.com/merdzikdominik/react-taco-mexicano.git`
+to your terminal and click enter.
 
-### `npm start`
+Then head to the app location and open it in your `Code Editor`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The next step is running `npm i` in your terminal to install all required packages.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The last step is running `npm start`, after performing this command the application will launch on your PC.
 
-### `npm test`
+## Main purpose
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The main purpose of developing this web application was to compare my current Frontend skills with previous projects. I've had very good time writing it, since thanks to this project I could learn more new things related with React. Facing new issues while development also gave me new experience which was invaluable.
 
-### `npm run build`
+## Technical Information
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In order to create this application I used React.js as a frontend and Firebase as backend to store user data. I also used Adobe Photoshop CC to create custom textures.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*Dependencies used*
+- Styled Components
+- react-paginate
+- react-scroll-motion
+- react-redux
+- redux-persist
+- react-router
+- framer-motion
+- fortawesome
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## More about App
 
-### `npm run eject`
+The whole project is a Single Page Application and greets us with the slider presenting restaurant goods available in the menu. On the Order Home subpage there is a possibility to order a dish to our home, it's being stored within the cart. In order to purchase the selected dishes, all what needs to be done is to click 'Realizuj zamówienie', user will be redirected to another subpage and will have to fill the purchase form. All orders are being persisted even though the user will exit or refresh the page. This ordering feature also has case insensitive filter, so user is allowed to search for the dish even with enabled caps lock. I've put a pagination as well so user will be able to look through the entire menu. All dish data has been stored in JSON format file, and fetched into the menu. The very same data was also used within the static menu on another subpage of the application. App also has a subpage where user is informed on which day the restaurant is open. The last subpage is a google map with the location of the spot, I've put a loading screen to avoid bad user-experience while waiting for the map being loaded. If a user will put invalid sentence into the URL then he will face a page with 'NO PAGE FOUND' message. All pages have smooth transition while switching them, so it looks kind of fancy.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Screenshots
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![picture representing the restaurant Application Website](https://github.com/merdzikdominik/react-taco-mexicano/blob/main/src/assets/welcomepage.png)
+![picture representing the restaurant Application Website](https://github.com/merdzikdominik/react-taco-mexicano/blob/main/src/assets/orderhome.PNG)
