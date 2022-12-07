@@ -4,7 +4,7 @@ Taco Mexicano SPA application written in React.js.
 
 ## For development purposes
 
-To install and enable the application on personal computer device, copy paste the following command: `https://github.com/merdzikdominik/react-taco-mexicano.git`
+To install and enable the application on personal computer device, copy paste the following command: `git clone https://github.com/merdzikdominik/react-taco-mexicano.git`
 to your terminal and click enter.
 
 Then head to the app location and open it in your `Code Editor`.
