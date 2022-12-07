@@ -3,7 +3,7 @@ import {
     CustomInput 
 } from "./Input.styles";
 
-export default function Input({ input, containerPadding, styles }) {
+export default function Input({ input, styles }) {
     return (
         <MainContainer styles={styles}>
             <CustomInput {...input} styles={styles}/>
