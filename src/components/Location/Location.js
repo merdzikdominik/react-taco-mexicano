@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styled from "styled-components";
 import Map from "./Map";
 import { MainPageContainer } from "./Location.styles";
 

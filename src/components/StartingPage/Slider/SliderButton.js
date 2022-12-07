@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Button from '../../reusable/Button';
-import styled from 'styled-components';
 
 export default function SliderButton() {
     return (
