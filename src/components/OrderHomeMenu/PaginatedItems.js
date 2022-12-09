@@ -23,12 +23,12 @@ export default function PaginatedItems({ itemsPerPage, items, searchedDish }) {
             <MenuItems currentItems={currentItems} items={items} searchedDish={searchedDish} />
             <Pagination
                 breakLabel="..."
-                nextLabel="next >"
+                nextLabel="przód >"
                 onPageChange={handlePageClick}
                 pageRangeDisplayed={5}
                 marginPagesDisplayed={1}
                 pageCount={pageCount}
-                previousLabel="< previous"
+                previousLabel="< wstecz"
 
                 pageClassName="page-item"
                 pageLinkClassName="page-link"
