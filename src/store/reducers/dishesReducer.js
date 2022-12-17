@@ -36,7 +36,6 @@ export default function dishesReducer(state = initialState, action) {
 
         case 'REMOVE_DISH_FROM_ORDER': {
             let updatedDish, updatedDishes, updatedTotalPrice;
-
             const foundDish = state.dishes.find(dish => dish.id === action.payload.id);
             const foundDishIndex = state.dishes.findIndex(dish => dish.id === action.payload.id);
             const foundDishAmount = foundDish.amount;

@@ -19,12 +19,9 @@ export default function CartItem({ id, dish, price, amount }) {
 
     const dispatch = useDispatch();
 
-    const handleIncrementItem = (id) => {
-        dispatch(addToCart({ id, amount: 1}));
-    }
-
-    const handleDecrementItem = (id) => {
-        dispatch(decrement(id));
+    const handleItemAmount = (id, operation) => {
+        if (operation === 'increment') dispatch(addToCart({id, amount: 1}));
+        if (operation === 'decrement') dispatch(decrement(id));
     }
 
     return (
@@ -36,9 +33,9 @@ export default function CartItem({ id, dish, price, amount }) {
             <QuantityContainer>
                 <QuantityHeader>Ilość</QuantityHeader>
                 <QuantityInfo>
-                    <MinusButton icon={faMinusCircle} onClick={handleDecrementItem.bind(null, id)}>-</MinusButton>
+                    <MinusButton icon={faMinusCircle} onClick={handleItemAmount.bind(null, id, 'decrement')}>-</MinusButton>
                     <QuantityNumber>{amount}</QuantityNumber>
-                    <PlusButton icon={faPlusCircle} onClick={handleIncrementItem.bind(null, id)}>+</PlusButton>
+                    <PlusButton icon={faPlusCircle} onClick={handleItemAmount.bind(null, id, 'increment')}>+</PlusButton>
                 </QuantityInfo>
             </QuantityContainer>
         </CartItemContainer>

@@ -8,7 +8,7 @@ import {
     ItemContainer, 
     ItemInfoContainer, 
     Category, 
-    Dish, 
+    DishName, 
     ItemOrderContainer, 
     Form, 
     Button 
@@ -52,7 +52,7 @@ export default function MenuItem({ id, dish, price, category }) {
         <ItemContainer>
             <ItemInfoContainer>
                 <Category>{category}</Category>
-                <Dish>{dish}</Dish>
+                <DishName>{dish}</DishName>
             </ItemInfoContainer>
             <ItemOrderContainer>
                 <span>{price} zł</span>

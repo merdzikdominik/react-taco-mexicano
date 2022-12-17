@@ -42,7 +42,7 @@ export const Category = styled.span`
     font-weight: 600;
 `;
 
-export const Dish = styled(Category)`
+export const DishName = styled(Category)`
     font-weight: initial;
 `;
 
