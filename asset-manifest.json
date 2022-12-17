@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/react-taco-mexicano/static/css/main.deaf410e.css",
+    "main.js": "/react-taco-mexicano/static/js/main.0b7cdd60.js",
+    "static/media/mexican-sfuff.png": "/react-taco-mexicano/static/media/mexican-sfuff.aa41ffea093366b4d187.png",
+    "static/media/logo-copy2.png": "/react-taco-mexicano/static/media/logo-copy2.6b7f1f319566c91160aa.png",
+    "static/media/mariaczi_the_fastest.gif": "/react-taco-mexicano/static/media/mariaczi_the_fastest.8c0899c954936683b398.gif",
+    "static/media/mexican-pattern__instagram.jpg": "/react-taco-mexicano/static/media/mexican-pattern__instagram.af0da4dc2b829c2ad3b0.jpg",
+    "static/media/blured_map_background.jpg": "/react-taco-mexicano/static/media/blured_map_background.3901f13c318025704c9f.jpg",
+    "static/media/charity.png": "/react-taco-mexicano/static/media/charity.49199bb9831060f71f64.png",
+    "static/media/mexican-pattern.jpg": "/react-taco-mexicano/static/media/mexican-pattern.ac64235d354028200314.jpg",
+    "static/media/mexican-pattern__red.jpg": "/react-taco-mexicano/static/media/mexican-pattern__red.9b9cd1def4c6db25642f.jpg",
+    "static/media/mexican-pattern__purple.jpg": "/react-taco-mexicano/static/media/mexican-pattern__purple.d5132cce5a03062c0149.jpg",
+    "static/media/mexican-pattern__blue.jpg": "/react-taco-mexicano/static/media/mexican-pattern__blue.c4314cc571a885cb17e9.jpg",
+    "static/media/mexican-pattern__orange.jpg": "/react-taco-mexicano/static/media/mexican-pattern__orange.079f78dd04dbf775c5f5.jpg",
+    "static/media/mexican-pattern__green.jpg": "/react-taco-mexicano/static/media/mexican-pattern__green.25b3b08fdeaa302775e6.jpg",
+    "static/media/mexican-pattern__darkpink.jpg": "/react-taco-mexicano/static/media/mexican-pattern__darkpink.b0f7540a00edd4122d45.jpg",
+    "static/media/deliveries.png": "/react-taco-mexicano/static/media/deliveries.9e2ba0fc9fbe5a3661ca.png",
+    "static/media/loading_taco.png": "/react-taco-mexicano/static/media/loading_taco.71a3e745436b691a32d5.png",
+    "static/media/quality-ribbon.png": "/react-taco-mexicano/static/media/quality-ribbon.308a2f7742622eb7ffaf.png",
+    "index.html": "/react-taco-mexicano/index.html",
+    "main.deaf410e.css.map": "/react-taco-mexicano/static/css/main.deaf410e.css.map",
+    "main.0b7cdd60.js.map": "/react-taco-mexicano/static/js/main.0b7cdd60.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.deaf410e.css",
+    "static/js/main.0b7cdd60.js"
+  ]
+}
